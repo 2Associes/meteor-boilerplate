@@ -11,3 +11,4 @@ A boilerplate for Meteor projects using Bootstrap
 - [nemo64:bootstrap](https://atmospherejs.com/meteor/nemo64:bootstrap) : Highly configurable bootstrap integration.
 - [pcel:loading](https://atmospherejs.com/meteor/pcel:loading) : A beautiful loading splash screen (please-wait + spinkit bundle).
 - [spiderable](https://atmospherejs.com/meteor/spiderable) : Makes the application crawlable to web spiders.
+- [tap:i18n](https://atmospherejs.com/meteor/tap:i18n) : A comprehensive internationalization solution for Meteor.
