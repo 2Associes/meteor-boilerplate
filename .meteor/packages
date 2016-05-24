@@ -22,3 +22,4 @@ insecure                # Allow all DB writes from clients (for prototyping)
 session
 iron:router
 jabbslad:basic-auth
+less

@@ -42,6 +42,7 @@ iron:url@1.0.11
 jabbslad:basic-auth@0.2.2
 jquery@1.11.8
 launch-screen@1.0.11
+less@2.6.0
 livedata@1.0.18
 logging@1.0.12
 meteor@1.1.14
