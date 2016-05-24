@@ -12,3 +12,4 @@ A boilerplate for Meteor projects using Bootstrap
 - [pcel:loading](https://atmospherejs.com/meteor/pcel:loading) : A beautiful loading splash screen (please-wait + spinkit bundle).
 - [spiderable](https://atmospherejs.com/meteor/spiderable) : Makes the application crawlable to web spiders.
 - [tap:i18n](https://atmospherejs.com/meteor/tap:i18n) : A comprehensive internationalization solution for Meteor.
+- [twbs:bootstrap](https://atmospherejs.com/meteor/twbs:bootstrap) : The most popular front-end framework for developing responsive, mobile first projects on the web.
