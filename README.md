@@ -9,3 +9,4 @@ A boilerplate for Meteor projects using Bootstrap
 - [mike:mocha](https://atmospherejs.com/meteor/mike:mocha) : Run mocha tests in the browser.
 - [mquandalle:bower](https://atmospherejs.com/meteor/mquandalle:bower) : Use Bower packages in your Meteor app.
 - [nemo64:bootstrap](https://atmospherejs.com/meteor/nemo64:bootstrap) : Highly configurable bootstrap integration.
+- [pcel:loading](https://atmospherejs.com/meteor/pcel:loading) : A beautiful loading splash screen (please-wait + spinkit bundle).
