@@ -13,3 +13,18 @@ A boilerplate for Meteor projects using Bootstrap
 - [spiderable](https://atmospherejs.com/meteor/spiderable) : Makes the application crawlable to web spiders.
 - [tap:i18n](https://atmospherejs.com/meteor/tap:i18n) : A comprehensive internationalization solution for Meteor.
 - [twbs:bootstrap](https://atmospherejs.com/meteor/twbs:bootstrap) : The most popular front-end framework for developing responsive, mobile first projects on the web.
+
+# Directory Structure
+```
+├── meteor-boilerplate/
+│   ├── .meteor
+│   ├── client
+│   ├── lib
+│   │   ├── router.js
+│   ├── server
+│   .gitignore
+│   package.json
+│   README.md
+```
+
+# Installation
