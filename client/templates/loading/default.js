@@ -15,7 +15,7 @@ Template.loadingDefault.rendered = function () {
   // loading.finish();
   // Session.set('splashLoaded', true);
 
-  // manually remove loading for demo after 3 seconds, comment below and uncomment above when you're ready
+  // uncomment below to manually remove loading for demo after 3 seconds
   var loading = this.loading;
   Meteor.setTimeout(function () {
     loading.finish();
