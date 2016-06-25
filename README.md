@@ -36,6 +36,7 @@ A boilerplate for Meteor projects using Bootstrap
 │   ├── .meteor
 │   ├── client
 │   │   ├── lib
+│   │   ├── stylesheets
 │   │   ├── templates
 │   │   │   ├── 404
 │   │   │   │   ├── notFound.html
