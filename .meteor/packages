@@ -22,7 +22,6 @@ insecure                # Allow all DB writes from clients (for prototyping)
 session
 iron:router
 jabbslad:basic-auth
-nemo64:bootstrap
 pcel:loading
 spiderable
 tap:i18n
