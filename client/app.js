@@ -5,7 +5,10 @@ getUserLanguage = function () {
 
 Meteor.startup(function () {
 
-  TAPi18n.setLanguage(getUserLanguage())
+  // Set default language on startup
+  TAPi18n.setLanguage(getUserLanguage());
 
+  // Add language lang attribute into html tag
   $('html').attr('lang', getUserLanguage());
+
 });
