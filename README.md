@@ -21,11 +21,15 @@ A boilerplate for Meteor projects using Less (with Autoprefixer), Font Awesome a
 
 	`git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>`
 
-2. Remove `.git` :  
+2. Change directory to `<yourapp>` and remove `.git` :  
 
 	`cd <yourapp> && rm -rf .git`
 
-3. Start `meteor` :  
+3. Install npm packages :
+
+	`meteor npm install`
+
+4. Start `meteor` :  
 
 	`meteor`
 
