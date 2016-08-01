@@ -1,3 +1,12 @@
+# 0.6.0 (2016-08-01)
+
+## Features
+
+* Add comments in Meteor.startup
+* Move variables up in default.js
+* Delete obsolete loadingDefaultMessage key
+* Update Meteor version to 1.4.0.1
+
 # 0.5.0 (2016-07-16)
 
 ## Features
