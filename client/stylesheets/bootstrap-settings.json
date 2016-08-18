@@ -1,10 +1,10 @@
 {
   "less": {
-    "customVariables": true,
+    "customVariables": false,
 
     "exposeMixins": true,
 
-    "compile": true,
+    "compile": false,
 
     "modules": {
        "alerts": true,
