@@ -1,3 +1,10 @@
+# 0.7.0
+
+## Features
+
+* Delete deprecated flemay:less-autoprefixer
+* Add Less 
+
 # 0.6.0 (2016-08-01)
 
 ## Features
