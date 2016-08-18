@@ -2,8 +2,11 @@
 
 ## Features
 
+* Add dummy markup
+* Add Bootstrap raw file
+* Update Bootstrap settings
 * Delete deprecated flemay:less-autoprefixer
-* Add Less 
+* Add Less
 
 # 0.6.0 (2016-08-01)
 
