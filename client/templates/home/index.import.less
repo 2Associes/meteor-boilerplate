@@ -1,22 +1,7 @@
-//.make-md-column(3);
-//&:extend(.img-responsive);
 
-h1 {
-  font-size: @font-size-base * 3;
-  color: @brand-success;
-
-  @media (min-width: @screen-sm-min) {
-    color: @brand-info;
-  }
-
-  @media (min-width: @screen-md-min) {
-    color: @brand-warning;
-  }
-
-  @media (min-width: @screen-lg-min) {
-    color: @brand-danger;
-  }
-}
+// Mixins         : .make-md-column(3);
+// Extends        : &:extend(.img-responsive);
+// Media Queries  : @media (min-width: @screen-sm-min) {}
 
 .home-content {
   &:extend(.text-center, .text-muted);
