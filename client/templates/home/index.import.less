@@ -1,19 +1,13 @@
-//.make-md-column(3);
-//&:extend(.img-responsive);
 
-h1 {
-  font-size: @font-size-base * 3;
-  color: @brand-success;
+// Mixins         : .make-md-column(3);
+// Extends        : &:extend(.img-responsive);
+// Media Queries  : @media (min-width: @screen-sm-min) {}
 
-  @media (min-width: @screen-sm-min) {
-    color: @brand-info;
-  }
+.home-content {
+  &:extend(.text-center, .text-muted);
+}
 
-  @media (min-width: @screen-md-min) {
-    color: @brand-warning;
-  }
-
-  @media (min-width: @screen-lg-min) {
-    color: @brand-danger;
-  }
+.home-content-text {
+  .make-xs-column(12);
+  .make-sm-column(4);
 }

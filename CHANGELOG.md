@@ -1,3 +1,14 @@
+# 0.7.0 (2016-08-20)
+
+## Features
+
+* Update Meteor version to 1.4.1
+* Add dummy markup
+* Add Bootstrap raw file
+* Update Bootstrap settings
+* Delete deprecated flemay:less-autoprefixer
+* Add Less
+
 # 0.6.0 (2016-08-01)
 
 ## Features
