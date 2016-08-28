@@ -17,6 +17,10 @@ Meteor.startup(() => {
       {
         text: 'Nisi officia laboris nulla cupidatat sit incididunt incididunt anim eu Lorem nostrud minim qui qui veniam consequat veniam. Incididunt dolore ut velit ad magna non tempor reprehenderit. Proident exercitation proident magna velit ex enim fugiat occaecat est culpa ut ipsum dolor fugiat adipisicing excepteur eu.',
       },
-    ]
+    ];
+
+    let timestamp = (new Date()).getTime();
+
+
   }
 });
