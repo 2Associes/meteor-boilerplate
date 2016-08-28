@@ -10,5 +10,7 @@ Template.body.helpers({
   //   { text: 'This is paragraph 2' },
   //   { text: 'This is paragraph 3' },
   // ],
-  
+  paragraphs() {
+    return Paragraphs.find({});
+  },
 });
