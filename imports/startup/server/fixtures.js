@@ -21,6 +21,16 @@ Meteor.startup(() => {
 
     let timestamp = (new Date()).getTime();
 
+    data.forEach((paragraph) => {
+
+      const paragraphId = Paragraphs.insert({
+        text: paragraph.text,
+        createdAt: new Date(timestamp),
+      });
+
+      
+
+    });
 
   }
 });
