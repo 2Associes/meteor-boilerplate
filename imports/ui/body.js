@@ -4,7 +4,7 @@ import { Paragraphs } from '../api/paragraphs.js';
 
 import './body.html';
 
-Template.body.helpers({
+Template.homeIndex.helpers({
   // Sample for static array
   // paragraphs: [
   //   { text: 'This is paragraph 1' },
