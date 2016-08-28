@@ -28,7 +28,7 @@ Meteor.startup(() => {
         createdAt: new Date(timestamp),
       });
 
-      
+      timestamp += 1; // ensure unique timestamp.
 
     });
 
