@@ -1,3 +1,4 @@
+import '../imports/ui/layouts/app.js';
 import '../imports/ui/body.js';
 
 getUserLanguage = function () {
