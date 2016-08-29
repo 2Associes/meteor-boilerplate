@@ -1,5 +1,6 @@
 import '../imports/ui/layouts/app.js';
 import '../imports/ui/components/loading.js';
+import '../imports/ui/components/header.js';
 import '../imports/ui/pages/not-found.js';
 import '../imports/ui/body.js';
 
