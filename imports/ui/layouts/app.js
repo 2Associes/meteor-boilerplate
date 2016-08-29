@@ -1,6 +1,6 @@
-import { Meteor } from 'meteor/meteor';
-
 import './app.html';
+
+import { Meteor } from 'meteor/meteor';
 
 Template.app.helpers({});
 
