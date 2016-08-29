@@ -1,8 +1,9 @@
-import { Meteor } from 'meteor/meteor';
+// import { Meteor } from 'meteor/meteor';
+//
+// import '../imports/api/paragraphs.js';
+//
+// Meteor.startup(() => {
+//   // code to run on server at startup
+// });
 
-// Define flemay:less-autoprefixer options
-AUTOPREFIXER_OPTIONS = '{ "browsers": ["Chrome 36", "iOS 7"]}';
-
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+import '/imports/startup/server';
