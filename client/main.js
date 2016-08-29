@@ -1,3 +1,5 @@
+import '/imports/startup/client';
+
 import '../imports/ui/layouts/app.js';
 import '../imports/ui/components/loading.js';
 import '../imports/ui/components/header.js';
