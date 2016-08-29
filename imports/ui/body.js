@@ -1,5 +1,3 @@
-import { Template } from 'meteor/templating';
-
 import { Paragraphs } from '../api/paragraphs.js';
 
 import './body.html';
