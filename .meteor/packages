@@ -29,3 +29,4 @@ huttonr:bootstrap3
 less@2.7.5
 shell-server@0.2.1
 kadira:flow-router
+kadira:blaze-layout
