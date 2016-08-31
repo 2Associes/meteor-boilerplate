@@ -1,3 +1,14 @@
+# 1.0.0 (2016-08-31)
+
+## Features
+
+* Migrate structure to Meteor 1.4.x
+* Update to Meteor 1.4.1.1
+* Update Bootstrap settings
+* Add `/imports` folder
+* Migrate from Iron:Router to Flow Router
+* Add Simple Schema package
+
 # 0.7.0 (2016-08-20)
 
 ## Features
