@@ -1,8 +1,10 @@
-import { Paragraphs } from '../api/paragraphs.js';
+import { Paragraphs } from '../../api/paragraphs.js';
 
-import './body.html';
+import { Meteor } from 'meteor/meteor';
 
-Template.homeIndex.helpers({
+import './home.html';
+
+Template.home.helpers({
   // Sample for static array
   // paragraphs: [
   //   { text: 'This is paragraph 1' },
@@ -15,3 +17,5 @@ Template.homeIndex.helpers({
     return Paragraphs.find({});
   },
 });
+
+Template.home.events({});
