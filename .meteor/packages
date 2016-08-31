@@ -20,7 +20,6 @@ ecmascript@0.5.8              # Enable ECMAScript2015+ syntax in app code
 autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
 session@1.1.6
-iron:router
 jabbslad:basic-auth
 pcel:loading
 spiderable@1.0.13
@@ -29,3 +28,5 @@ fortawesome:fontawesome
 huttonr:bootstrap3
 less@2.7.5
 shell-server@0.2.1
+kadira:flow-router
+kadira:blaze-layout
