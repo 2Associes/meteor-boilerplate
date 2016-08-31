@@ -1,6 +1,5 @@
 <template name="app">
   <div class="container app">
-    {{> header}}
-    {{> yield}}
+    {{> Template.dynamic template=content}}
   </div>
 </template>
