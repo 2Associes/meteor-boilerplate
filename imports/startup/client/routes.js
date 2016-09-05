@@ -11,8 +11,12 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/not-found', {
-  action: function() {
-    BlazeLayout.render("app", {content: "notFound"});
-  }
-});
+FlowRouter.notFound = {
+    // Subscriptions registered here don't have Fast Render support.
+    subscriptions: function() {
+
+    },
+    action: function() {
+      BlazeLayout.render("app", {content: "notFound"});
+    }
+};
