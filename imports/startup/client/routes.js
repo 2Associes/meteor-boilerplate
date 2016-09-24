@@ -6,17 +6,17 @@
 // });
 
 FlowRouter.route('/', {
+  name: 'home',
   action: function() {
-    BlazeLayout.render("app", {content: "home"});
+    BlazeLayout.render('app', {content: 'home'});
   }
 });
 
 FlowRouter.notFound = {
-    // Subscriptions registered here don't have Fast Render support.
-    subscriptions: function() {
-
-    },
-    action: function() {
-      BlazeLayout.render("app", {content: "notFound"});
-    }
+  // Subscriptions registered here don't have Fast Render support.
+  name: 'notFound',
+  subscriptions: function() {},
+  action: function() {
+    BlazeLayout.render('app', {content: 'notFound'});
+  }
 };
