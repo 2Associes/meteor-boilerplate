@@ -15,12 +15,12 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navigations-main-navbar" id="bs-example-navbar-collapse-1">
         <ul class="nav navbar-nav navigations-main-navbar-list">
-          <li class="active navigations-main-navbar-item">
+          <li class="navigations-main-navbar-item {{isActiveRoute 'home'}}">
             <a class="navigations-main-navbar-link" href="{{pathFor '/' }}">
               <i class="fa fa-home"></i> Home <span class="sr-only">(current)</span>
             </a>
           </li>
-          <li class="navigations-main-navbar-item">
+          <li class="navigations-main-navbar-item {{isActiveRoute 'notFound'}}">
             <a class="navigations-main-navbar-link" href="/i-do-not-exist">
               404
             </a>
