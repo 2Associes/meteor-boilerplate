@@ -5,7 +5,7 @@ AccountsTemplates.configure({
     // nav: 'nav',
     // footer: 'footer',
   },
-  defaultContentRegion: 'content',
+  defaultContentRegion: 'main',
   showForgotPasswordLink: true,
   overrideLoginErrors: true,
   enablePasswordChange: true,
