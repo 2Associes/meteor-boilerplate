@@ -8,7 +8,7 @@
 FlowRouter.route('/', {
   name: 'home',
   action: function() {
-    BlazeLayout.render('app', {content: 'home'});
+    BlazeLayout.render('app', {header: "header", main: "home"});
   }
 });
 
@@ -17,9 +17,16 @@ FlowRouter.notFound = {
   name: 'notFound',
   subscriptions: function() {},
   action: function() {
-    BlazeLayout.render('app', {content: 'notFound'});
+    BlazeLayout.render('app', {header: "header", main: "notFound"});
   }
 };
+
+// Configure Accounts Templates default
+AccountsTemplates.configure({
+  defaultLayoutRegions: {
+    header: 'header'
+  }
+});
 
 AccountsTemplates.configureRoute('changePwd');
 AccountsTemplates.configureRoute('forgotPwd');
