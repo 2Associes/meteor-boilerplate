@@ -7,19 +7,21 @@
 
 FlowRouter.route('/', {
   name: 'home',
+  // Subscriptions registered here don't have Fast Render support.
+  // subscriptions: function() {},
   action: function() {
     BlazeLayout.render('app', {header: "header", main: "home"});
   }
 });
 
-FlowRouter.notFound = {
-  // Subscriptions registered here don't have Fast Render support.
+FlowRouter.route('/not-found', {
   name: 'notFound',
-  subscriptions: function() {},
+  // Subscriptions registered here don't have Fast Render support.
+  // subscriptions: function() {},
   action: function() {
     BlazeLayout.render('app', {header: "header", main: "notFound"});
   }
-};
+});
 
 // Configure Accounts Templates default
 AccountsTemplates.configure({
