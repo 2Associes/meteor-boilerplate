@@ -1,17 +1,15 @@
 <template name="home">
   <article class="home">
-    <article class="home">
-      <div class="jumbotron">
-        <h1 class="home-heading">
-          {{{_ 'homeIndexHeading'}}}
-        </h1>
-      </div>
-      <div class="home-content">
-        {{#each paragraphs}}
-          {{> paragraph}}
-        {{/each}}
-      </div>
-    </article>
+    <div class="jumbotron">
+      <h1 class="home-heading">
+        {{{_ 'homeIndexHeading'}}}
+      </h1>
+    </div>
+    <div class="home-content">
+      {{#each paragraphs}}
+        {{> paragraph}}
+      {{/each}}
+    </div>
   </article>
 </template>
 
