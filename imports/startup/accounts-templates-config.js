@@ -9,9 +9,10 @@ AccountsTemplates.configure({
   showForgotPasswordLink: true,
   overrideLoginErrors: true,
   enablePasswordChange: true,
+  lowercaseUsername: true,
 
-  // sendVerificationEmail: true,
-  // enforceEmailVerification: true,
+  //sendVerificationEmail: true,
+  //enforceEmailVerification: true,
   //confirmPassword: true,
   //continuousValidation: false,
   //displayFormLabels: true,
