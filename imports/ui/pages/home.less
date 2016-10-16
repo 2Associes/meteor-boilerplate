@@ -6,6 +6,15 @@
   .container;
 }
 
+.home-header {
+  .jumbotron;
+  padding: 30px 15px;
+
+  @media (min-width: @screen-sm-min) {
+    padding: 48px 60px;
+  }
+}
+
 .home-content {
   &:extend(.text-center, .text-muted);
 }
