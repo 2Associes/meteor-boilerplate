@@ -9,7 +9,6 @@ AccountsTemplates.configure({
   showForgotPasswordLink: true,
   overrideLoginErrors: true,
   enablePasswordChange: true,
-  lowercaseUsername: true,
 
   //sendVerificationEmail: true,
   //enforceEmailVerification: true,
@@ -42,22 +41,6 @@ AccountsTemplates.addFields([
     displayName: "username",
     required: true,
     minLength: 5,
-    func: function(value){
-      if (Meteor.isClient) {
-          console.log("Validating username...");
-          var self = this;
-          Meteor.call("userExists", value, function(err, userExists){
-              if (!userExists)
-                  self.setSuccess();
-              else
-                  self.setError(userExists);
-              self.setValidating(false);
-          });
-          return;
-      }
-      // Server
-      return Meteor.call("userExists", value);
-    },
   },
   {
     _id: 'email',
