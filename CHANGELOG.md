@@ -1,3 +1,21 @@
+# 1.1.0 (2016-10-16)
+
+## Features
+
+* Update Meteor packages version
+* Add arillo:flow-router-helpers
+* Add zimme:active-route
+* Add meteortoys:allthings
+* Add useraccounts:bootstrap
+* Add accounts-password
+* Add accounts-facebook
+* Add useraccounts:flow-routing
+* Add softwarerero:accounts-t9n
+* Add service-configuration
+* Add digilord:faker
+* Add ejson@1.0.12
+* Fixed markup/styles (extends + mixins)
+
 # 1.0.0 (2016-08-31)
 
 ## Features

@@ -6,13 +6,33 @@
 // });
 
 FlowRouter.route('/', {
+  name: 'home',
+  // Subscriptions registered here don't have Fast Render support.
+  // subscriptions: function() {},
   action: function() {
-    BlazeLayout.render("app", {content: "home"});
+    BlazeLayout.render('app', {header: "header", main: "home"});
   }
 });
 
 FlowRouter.route('/not-found', {
+  name: 'notFound',
+  // Subscriptions registered here don't have Fast Render support.
+  // subscriptions: function() {},
   action: function() {
-    BlazeLayout.render("app", {content: "notFound"});
+    BlazeLayout.render('app', {header: "header", main: "notFound"});
   }
 });
+
+// Configure Accounts Templates default
+AccountsTemplates.configure({
+  defaultLayoutRegions: {
+    header: 'header'
+  }
+});
+
+AccountsTemplates.configureRoute('changePwd');
+AccountsTemplates.configureRoute('forgotPwd');
+AccountsTemplates.configureRoute('resetPwd');
+AccountsTemplates.configureRoute('signIn');
+AccountsTemplates.configureRoute('signUp');
+AccountsTemplates.configureRoute('verifyEmail');
