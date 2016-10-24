@@ -46,3 +46,4 @@ service-configuration@1.0.10
 coffeescript@1.2.6
 digilord:faker
 ejson@1.0.12
+alanning:roles
