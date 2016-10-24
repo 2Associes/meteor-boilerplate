@@ -23,6 +23,20 @@ FlowRouter.route('/not-found', {
   }
 });
 
+var adminRoutes = FlowRouter.group({
+  prefix: '/admin'
+});
+
+adminRoutes.route('/home', {
+  name: 'adminHome',
+  action: function() {
+    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+      BlazeLayout.render('app', {header: "header", main: "adminHome"});
+    }
+    BlazeLayout.render('app', {header: "header", main: "notFound"});
+  }
+});
+
 // Configure Accounts Templates default
 AccountsTemplates.configure({
   defaultLayoutRegions: {
