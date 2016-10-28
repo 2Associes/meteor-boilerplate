@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-import './home.html';
+import './adminHome.html';
 
 Template.adminHome.helpers({});
 

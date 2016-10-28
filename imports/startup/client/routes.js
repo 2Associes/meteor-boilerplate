@@ -30,10 +30,13 @@ var adminRoutes = FlowRouter.group({
 adminRoutes.route('/home', {
   name: 'adminHome',
   action: function() {
-    if (Roles.userIsInRole(Meteor.userId(), 'admin')) {
+    if (!Meteor.userId()) {
+      Router.go('signIn');
+    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) {
+      BlazeLayout.render('app', {header: "header", main: "notFound"});
+    } else {
       BlazeLayout.render('app', {header: "header", main: "adminHome"});
     }
-    BlazeLayout.render('app', {header: "header", main: "notFound"});
   }
 });
 
