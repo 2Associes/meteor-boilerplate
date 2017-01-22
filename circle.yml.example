@@ -1,0 +1,31 @@
+dependencies:
+  cache_directories:
+    - "node_modules"
+    - "~/.npm"
+    - "~/.meteor"
+  override:
+    # Cache Meteor
+    - if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
+    - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
+    - npm install -g chimp
+    - npm install -g selenium-standalone
+    - npm install
+test:
+  override:
+    - npm run dev:
+        background: true
+    - sleep 360
+    - npm run test
+deployment:
+  staging:
+    branch: "develop"
+    commands:
+      - echo $STAGING_SETTINGS > settings-staging.json
+      - echo $DEPLOYMENT_TOKEN > deployment_token.json
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=<YOUR_STAGING_DEPLOY_COMMAND>
+  production:
+    branch: "master"
+    commands:
+      - echo $PRODUCTION_SETTINGS > settings.json
+      - echo $DEPLOYMENT_TOKEN > deployment_token.json
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=<YOUR_PRODUCTION_DEPLOY_COMMAND>
