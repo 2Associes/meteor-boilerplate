@@ -1,3 +1,11 @@
+# 1.2.0 (2017-01-22)
+
+## Features
+
+* Update Meteor packages version
+* Add Chimp.js sample features test
+* Add CircleCI config
+
 # 1.1.0 (2016-10-16)
 
 ## Features
