@@ -16,3 +16,9 @@ test:
         background: true
     - sleep 360
     - npm run test
+deployment:
+  staging:
+    branch: "develop"
+    commands:
+      - echo $DEPLOYMENT_TOKEN > deployment_token.json
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy meteor-boilerplate.staging.2associes.net --settings settings-staging.json
