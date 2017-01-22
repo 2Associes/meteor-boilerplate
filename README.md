@@ -46,7 +46,11 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 
 4. Start `meteor` :  
 
-	`meteor`
+	`meteor npm run dev`
+
+5. Run `chimp` manually :  
+
+	`meteor npm run test`
 
 # Directory Structure
 
@@ -54,6 +58,9 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 ├── meteor-boilerplate/
 │   ├── .meteor
 │   ├── client
+│   ├── features
+│   │   ├── sample
+│   │   │   ├── support
 │   ├── i18n
 │   ├── imports
 │   │   ├── api
