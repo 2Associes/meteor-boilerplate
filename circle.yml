@@ -10,3 +10,9 @@ dependencies:
     - npm install -g chimp
     - npm install -g selenium-standalone
     - npm install
+test:
+  override:
+    - npm run dev:
+        background: true
+    - sleep 360
+    - npm run test
