@@ -14,5 +14,5 @@ test:
   override:
     - npm run dev:
         background: true
-    - sleep 360
+    - sleep 120
     - npm run test
