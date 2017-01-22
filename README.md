@@ -48,7 +48,11 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 
 	`meteor npm run dev`
 
-5. Run `chimp` manually :  
+5. Install [Chimp][1] locally :
+
+	`npm install chimp`
+
+6. When testing, run `chimp` manually :  
 
 	`meteor npm run test`
 
@@ -78,3 +82,5 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 |   │   ├── images
 │   ├── server
 ```
+
+[1]:https://chimp.readme.io
