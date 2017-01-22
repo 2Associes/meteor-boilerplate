@@ -22,10 +22,10 @@ deployment:
     commands:
       - echo $STAGING_SETTINGS > settings-staging.json
       - echo $DEPLOYMENT_TOKEN > deployment_token.json
-      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=$STAGING_DEPLOY_HOSTNAME
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=<YOUR_STAGING_DEPLOY_COMMAND>
   production:
     branch: "master"
     commands:
       - echo $PRODUCTION_SETTINGS > settings.json
       - echo $DEPLOYMENT_TOKEN > deployment_token.json
-      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=$PRODUCTION_DEPLOY_HOSTNAME
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=<YOUR_PRODUCTION_DEPLOY_COMMAND>
