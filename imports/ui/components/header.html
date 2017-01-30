@@ -86,7 +86,7 @@
                   Settings
                 </a>
               </li>
-              {{#if isAdmin}}
+              {{#if isInRole 'admin' 'default-group'}}
                 <li class="navigations-main-navbar-link-dropdown-item">
                   <a class="navigations-main-navbar-link-dropdown-link" href="{{pathFor 'adminHome'}}">
                     Admin
