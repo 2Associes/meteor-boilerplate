@@ -76,6 +76,7 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 │   │   │   ├── components
 │   │   │   ├── layouts
 │   │   │   ├── pages
+│   │   │   │   ├── admin
 │   │   │   ├── stylesheets
 │   │   │   │   ├── themes
 │   │   │   │   ├── utilities
