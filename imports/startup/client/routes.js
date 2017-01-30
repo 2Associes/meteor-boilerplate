@@ -23,6 +23,23 @@ FlowRouter.route('/not-found', {
   }
 });
 
+var adminRoutes = FlowRouter.group({
+  prefix: '/admin'
+});
+
+adminRoutes.route('/home', {
+  name: 'adminHome',
+  action: function() {
+    if (!Meteor.userId()) {
+      Router.go('signIn');
+    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
+      BlazeLayout.render('app', {header: "header", main: "notFound"});
+    } else {
+      BlazeLayout.render('app', {header: "header", main: "adminHome"});
+    }
+  }
+});
+
 // Configure Accounts Templates default
 AccountsTemplates.configure({
   defaultLayoutRegions: {
