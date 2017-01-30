@@ -1,3 +1,9 @@
+# 1.3.0 (2017-01-29)
+
+## Features
+
+* Add alanning:roles
+
 # 1.2.0 (2017-01-22)
 
 ## Features
