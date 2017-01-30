@@ -21,7 +21,8 @@ FlowRouter.notFound = {
 };
 
 var adminRoutes = FlowRouter.group({
-  prefix: '/admin'
+  prefix: '/admin',
+  name: 'admin'
 });
 
 adminRoutes.route('/home', {
