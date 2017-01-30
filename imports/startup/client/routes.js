@@ -14,14 +14,11 @@ FlowRouter.route('/', {
   }
 });
 
-FlowRouter.route('/not-found', {
-  name: 'notFound',
-  // Subscriptions registered here don't have Fast Render support.
-  // subscriptions: function() {},
+FlowRouter.notFound = {
   action: function() {
     BlazeLayout.render('app', {header: "header", main: "notFound"});
   }
-});
+};
 
 var adminRoutes = FlowRouter.group({
   prefix: '/admin'
