@@ -29,6 +29,7 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 - [useraccounts:bootstrap](https://atmospherejs.com/useraccounts/bootstrap) : Accounts Templates styled for Twitter Bootstrap
 - [useraccounts:flow-routing](https://atmospherejs.com/useraccounts/flow-routing) : UserAccounts package providing routes configuration capability via kadira:flow-router
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
+- [alanning:roles](https://atmospherejs.com/alanning/roles) : Authorization package for Meteor
 
 # Installation
 
