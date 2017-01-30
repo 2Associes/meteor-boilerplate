@@ -32,7 +32,7 @@ adminRoutes.route('/home', {
   action: function() {
     if (!Meteor.userId()) {
       Router.go('signIn');
-    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) {
+    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
       BlazeLayout.render('app', {header: "header", main: "notFound"});
     } else {
       BlazeLayout.render('app', {header: "header", main: "adminHome"});
