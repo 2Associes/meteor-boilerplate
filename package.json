@@ -4,7 +4,8 @@
   "scripts": {
     "start": "meteor run",
     "dev": "meteor run --settings settings-development.json",
-    "test": "chimp --ddp=http://localhost:3000 --browser=chrome"
+    "test": "chimp --ddp=http://localhost:3000 --browser=chrome",
+    "test-watch": "chimp --watch --ddp=http://localhost:3000 --browser=chrome"
   },
   "dependencies": {
     "bcrypt": "^0.8.7",
