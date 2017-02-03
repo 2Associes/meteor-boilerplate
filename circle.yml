@@ -14,7 +14,7 @@ test:
   override:
     - npm run dev:
         background: true
-    - sleep 720
+    - sleep 360
     - npm run test
 deployment:
   staging:
