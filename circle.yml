@@ -17,6 +17,8 @@ test:
   override:
     - npm run dev:
         background: true
+    - sleep 360
+    - npm run test
 deployment:
   staging:
     branch: "develop"
