@@ -49,13 +49,10 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 
 	`meteor npm run dev`
 
-5. Install [Chimp][1] locally :
-
-	`npm install chimp`
-
-6. When testing, run `chimp` manually :  
+5. Run [Chimp][1] acceptance tests once or in `@watch` mode :
 
 	`meteor npm run test`
+	`meteor npm run test-watch`
 
 # Directory Structure
 
@@ -64,8 +61,7 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 │   ├── .meteor
 │   ├── client
 │   ├── features
-│   │   ├── sample
-│   │   │   ├── support
+│   │   ├── step-definitions
 │   ├── i18n
 │   ├── imports
 │   │   ├── api
