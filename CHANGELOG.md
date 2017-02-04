@@ -1,3 +1,14 @@
+# 1.4.0 (2017-02-04)
+
+* Add Search Web feature test and step definitions
+* Add `helpers.coffee` to client on startup
+* Add `node` version 4.6.2 to `circle.yml`
+* Add `test-watch` npm command
+* Update Meteor to version 1.4.2.3 and `babel-runtime` dependency
+* Add `name` attribute to adminRoutes
+* Add Chimp dependency to package.json
+* Add FlowRouter.notFound route and feature test
+
 # 1.3.0 (2017-01-29)
 
 ## Features
