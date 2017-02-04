@@ -17,18 +17,18 @@ test:
   override:
     - npm run dev:
         background: true
-    - sleep 360
+    - sleep 180
     - npm run test
 deployment:
   staging:
     branch: develop
     commands:
-      - echo $STAGING_SETTINGS > settings-staging.json
+      - echo $SETTINGS_STAGING > settings-staging.json
       - echo $DEPLOYMENT_TOKEN > deployment_token.json
-      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy meteor-boilerplate.staging.2associes.net --settings settings-staging
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json
   production:
     branch: master
     commands:
-      - echo $PRODUCTION_SETTINGS > settings.json
+      - echo $SETTINGS > settings.json
       - echo $DEPLOYMENT_TOKEN > deployment_token.json
-      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=$PRODUCTION_DEPLOY_HOSTNAME
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_PRODUCTION --settings settings.json
