@@ -4,10 +4,13 @@
   "scripts": {
     "start": "meteor run",
     "dev": "meteor run --settings settings-development.json",
-    "test": "chimp --ddp=http://localhost:3000 --browser=chrome"
+    "test": "chimp --ddp=http://localhost:3000 --browser=chrome",
+    "test-watch": "chimp --watch --ddp=http://localhost:3000 --browser=chrome"
   },
   "dependencies": {
+    "babel-runtime": "^6.22.0",
     "bcrypt": "^0.8.7",
+    "chimp": "^0.47.1",
     "meteor-node-stubs": "~0.2.0"
   }
 }
