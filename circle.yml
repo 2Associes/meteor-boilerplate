@@ -21,13 +21,13 @@ test:
     - npm run test
 deployment:
   staging:
-    branch: "develop"
+    branch: develop
     commands:
       - echo $STAGING_SETTINGS > settings-staging.json
       - echo $DEPLOYMENT_TOKEN > deployment_token.json
       - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=$STAGING_DEPLOY_HOSTNAME
   production:
-    branch: "master"
+    branch: master
     commands:
       - echo $PRODUCTION_SETTINGS > settings.json
       - echo $DEPLOYMENT_TOKEN > deployment_token.json
