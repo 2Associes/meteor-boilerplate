@@ -14,9 +14,15 @@ Meteor.startup(() => {
     _.each(_.range(3), function(){
 
       let randomText = faker.lorem.paragraph();
+      let randomI18nEnText = faker.lorem.paragraph();
 
       Paragraphs.insert({
         text: randomText,
+        i18n: {
+          en: {
+            text: randomI18nEnText
+          }
+        },
         createdAt: new Date(timestamp)
       });
 
