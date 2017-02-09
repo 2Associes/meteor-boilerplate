@@ -15,6 +15,7 @@ dependencies:
     - npm install
 test:
   override:
+    - echo $SETTINGS_DEVELOPMENT > settings-development.json
     - npm run dev:
         background: true
     - sleep 90
