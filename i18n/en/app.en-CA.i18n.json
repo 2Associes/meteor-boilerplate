@@ -1,0 +1,8 @@
+{
+  "head": {
+    "title": "Meteor Boilerplate",
+    "description": "Build up your Meteor App."
+  },
+  "homeHeaderTitle": "Meteor Boilerplate",
+  "404notFoundHeading": "404 Not Found!"
+}

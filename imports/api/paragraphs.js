@@ -2,7 +2,7 @@ import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { Check } from 'meteor/check';
 
-export const Paragraphs = new Mongo.Collection('paragraphs');
+export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language : "fr-CA" });
 
 ParagraphSchema = new SimpleSchema({
   _id: {
