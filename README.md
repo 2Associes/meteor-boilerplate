@@ -20,12 +20,14 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 - [kadira:flow-router](https://atmospherejs.com/kadira/flow-router) : Carefully Designed Client Side Router for Meteor
 - [less](https://atmospherejs.com/meteor/less) : Leaner CSS language
 - [meteortoys:allthings](https://atmospherejs.com/meteortoys/allthings) : Insanely Handy Development Tools
+- [okgrow:analytics](https://atmospherejs.com/okgrow/analytics) : Complete Google Analytics, Mixpanel, KISSmetrics (and more) integration for Meteor
 - [pcel:loading](https://atmospherejs.com/meteor/pcel:loading) : A beautiful loading splash screen (please-wait + spinkit bundle)
 - [service-configuration](https://atmospherejs.com/meteor/service-configuration) : Manage the configuration for third-party services
 - [session](https://atmospherejs.com/meteor/session) : Session variable
 - [softwarerero:accounts-t9n](https://atmospherejs.com/softwarerero/accounts-t9n) : Almost i18n, with standard translations for basic meteor packages
 - [spiderable](https://atmospherejs.com/meteor/spiderable) : Makes the application crawlable to web spiders
 - [tap:i18n](https://atmospherejs.com/meteor/tap:i18n) : A comprehensive internationalization solution for Meteor
+- [tap:i18n-db](https://atmospherejs.com/tap/i18n-db) : Internationalization for Meteor Collections
 - [useraccounts:bootstrap](https://atmospherejs.com/useraccounts/bootstrap) : Accounts Templates styled for Twitter Bootstrap
 - [useraccounts:flow-routing](https://atmospherejs.com/useraccounts/flow-routing) : UserAccounts package providing routes configuration capability via kadira:flow-router
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers

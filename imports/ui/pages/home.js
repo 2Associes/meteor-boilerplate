@@ -1,8 +1,15 @@
-import { Paragraphs } from '../../api/paragraphs.js';
-
 import { Meteor } from 'meteor/meteor';
 
+import { Paragraphs } from '../../api/paragraphs.js';
+
 import './home.html';
+
+Template.home.onCreated(function(){
+
+  // Subscriptions
+  TAPi18n.subscribe("paragraphs");
+
+});
 
 Template.home.helpers({
   // Sample for static array
@@ -14,7 +21,7 @@ Template.home.helpers({
 
   // Mongo Collection
   paragraphs() {
-    return Paragraphs.find({});
+    return Paragraphs.find();
   },
 });
 

@@ -1,3 +1,21 @@
+# 1.5.0 (2017-02-25)
+
+* Update Meteor to 1.4.3.1
+* Update CircleCI time sleep value
+* Update settings files
+* Update Chimp and Babel dependencies
+* Update CircleCI sample files
+* Update Paragraph collection for i18n
+* Update Paragraph fixture
+* Rename i18n files
+* Rename example feature
+* Overwrite default timeout for features
+* Add tap:i18n-db package
+* Add okgrow:analytics package
+* Add footer component
+* Add language switcher component
+* Add Paragraph subscription to Home
+
 # 1.4.0 (2017-02-04)
 
 * Add Search Web feature test and step definitions
