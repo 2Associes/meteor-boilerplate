@@ -1,8 +1,10 @@
 module.exports = function() {
 
-  this.setDefaultTimeout(120 * 1000);
+  const timeToWait = 10*60*1000;
+  this.setDefaultTimeout(timeToWait+1);
 
   this.Given(/^I have visited "([^"]*)"$/, function (arg1) {
+    pause(timeToWait);
     browser.url(arg1);
   });
 
