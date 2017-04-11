@@ -33,6 +33,16 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
 - [alanning:roles](https://atmospherejs.com/alanning/roles) : Authorization package for Meteor
 
+# Prerequisites
+
+* [Node.js][2] >= 4.6.2
+
+We recommand using [Node Version Manager][3]
+
+```
+$ nvm install 4.6.2
+```
+
 # Installation
 
 1. Clone this repo to `<yourapp>` :  
@@ -46,19 +56,16 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 	```
 	$ cd <yourapp> && rm -rf .git
 	```
-
 3. Install npm packages :
 
 	```
 	$ meteor npm install
 	```
-
 4. Start `meteor` :  
 
 	```
 	$ meteor npm run dev
 	```
-
 5. Run [Chimp][1] acceptance tests once or in `@watch` mode :
 
 	```
@@ -96,3 +103,5 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 ```
 
 [1]:https://chimp.readme.io
+[2]:https://nodejs.org
+[3]:https://github.com/creationix/nvm
