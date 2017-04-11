@@ -16,7 +16,7 @@ dependencies:
 test:
   override:
     - echo $SETTINGS_DEVELOPMENT > settings-development.json
-    - npm run dev:
+    - meteor npm run dev:
         background: true
     - meteor npm run test
 deployment:
