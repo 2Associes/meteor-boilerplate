@@ -3,11 +3,11 @@ Meteor.startup(function() {
   // Add Facebook configuration entry
 
   ServiceConfiguration.configurations.update(
-    { service: "facebook" },
+    { service: 'facebook' },
     {
       $set: {
-        appId: "XXXXXXXXXXXXXXX",
-        secret: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
+        appId: 'XXXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
       },
     },
     { upsert: true },
@@ -16,10 +16,10 @@ Meteor.startup(function() {
   // Add GitHub configuration entry
   /*
   ServiceConfiguration.configurations.update(
-    { service: "github" },
+    { service: 'github' },
     { $set: {
-        clientId: "XXXXXXXXXXXXXXXXXXXX",
-        secret: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        clientId: 'XXXXXXXXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
       }
     },
     { upsert: true }
@@ -28,11 +28,11 @@ Meteor.startup(function() {
 
   // Add Google configuration entry
   // ServiceConfiguration.configurations.update(
-  //   { service: "google" },
+  //   { service: 'google' },
   //   { $set: {
-  //       clientId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  //       client_email: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  //       secret: "XXXXXXXXXXXXXXXXXXXXXXXX"
+  //       clientId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  //       client_email: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+  //       secret: 'XXXXXXXXXXXXXXXXXXXXXXXX'
   //     }
   //   },
   //   { upsert: true }
@@ -41,10 +41,10 @@ Meteor.startup(function() {
   // Add Linkedin configuration entry
   /*
   ServiceConfiguration.configurations.update(
-    { service: "linkedin" },
+    { service: 'linkedin' },
     { $set: {
-        clientId: "XXXXXXXXXXXXXX",
-        secret: "XXXXXXXXXXXXXXXX"
+        clientId: 'XXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXX'
       }
     },
     { upsert: true }

@@ -12,7 +12,7 @@ import '../imports/ui/pages/admin/adminHome.js';
 
 let getUserLanguage = function () {
   // Put here the logic for determining the user language
-  return "fr-CA";
+  return 'fr-CA';
 };
 
 Meteor.startup(function() {

@@ -2,7 +2,7 @@
 
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
-export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language: "fr-CA" });
+export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language: 'fr-CA' });
 
 ParagraphSchema = new SimpleSchema({
   _id: {

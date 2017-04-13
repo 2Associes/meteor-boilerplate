@@ -1,5 +1,5 @@
 import { Paragraphs } from '../paragraphs.js';
 
-TAPi18n.publish("paragraphs", function () {
+TAPi18n.publish('paragraphs', function () {
   return Paragraphs.i18nFind();
 });

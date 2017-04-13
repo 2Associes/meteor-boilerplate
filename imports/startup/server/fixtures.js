@@ -34,27 +34,27 @@ Meteor.startup(() => {
 
     users = [
       {
-        name: "Normal User",
-        username: "normaluser",
-        email: "normal@example.com",
+        name: 'Normal User',
+        username: 'normaluser',
+        email: 'normal@example.com',
         roles: [],
       },
       {
-        name: "View-Secrets User",
-        username: "viewsecretsuser",
-        email: "view@example.com",
+        name: 'View-Secrets User',
+        username: 'viewsecretsuser',
+        email: 'view@example.com',
         roles: ['view-secrets'],
       },
       {
-        name: "Manage-Users User",
-        username: "manageusersuser",
-        email: "manage@example.com",
+        name: 'Manage-Users User',
+        username: 'manageusersuser',
+        email: 'manage@example.com',
         roles: ['manage-users'],
       },
       {
-        name: "Admin User",
-        username: "adminuser",
-        email: "admin@example.com",
+        name: 'Admin User',
+        username: 'adminuser',
+        email: 'admin@example.com',
         roles: ['admin'],
       },
     ];
@@ -64,7 +64,7 @@ Meteor.startup(() => {
 
       id = Accounts.createUser({
         email: user.email,
-        password: "123456",
+        password: '123456',
         username: user.username,
         profile: {
           name: user.name,
