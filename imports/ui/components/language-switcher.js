@@ -19,8 +19,7 @@ Template.languageSwitcher.helpers({
               en: "FR"
             }
           });
-        }
-        else {
+        } else {
           languages.push({
             code: key,
             labels: {
