@@ -1,4 +1,4 @@
-module.exports = function() {
+module.exports = function () {
   this.setDefaultTimeout(10*60*1000);
 
   this.Given(/^I have visited "([^"]*)"$/, function (arg1) {

@@ -9,13 +9,13 @@ FlowRouter.route('/', {
   name: 'home',
   // Subscriptions registered here don't have Fast Render support.
   // subscriptions: function() {},
-  action: function() {
+  action: function () {
     BlazeLayout.render('app', {header: 'header', main: 'home', footer: 'footer'});
   },
 });
 
 FlowRouter.notFound = {
-  action: function() {
+  action: function () {
     BlazeLayout.render('app', {header: 'header', main: 'notFound', footer: 'footer'});
   },
 };
@@ -27,7 +27,7 @@ var adminRoutes = FlowRouter.group({
 
 adminRoutes.route('/home', {
   name: 'adminHome',
-  action: function() {
+  action: function () {
     if (!Meteor.userId()) {
       Router.go('signIn');
     } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {

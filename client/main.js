@@ -15,7 +15,7 @@ let getUserLanguage = function () {
   return 'fr-CA';
 };
 
-Meteor.startup(function() {
+Meteor.startup(function () {
   TAPi18n.setLanguage(getUserLanguage());
   $('html').attr('lang', getUserLanguage());
 });

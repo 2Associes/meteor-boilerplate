@@ -9,7 +9,7 @@ Meteor.startup(() => {
 
     let timestamp = new Date().getTime();
 
-    _.each(_.range(3), function() {
+    _.each(_.range(3), function () {
       let randomText = faker.lorem.paragraph();
       let randomI18nEnText = faker.lorem.paragraph();
 
