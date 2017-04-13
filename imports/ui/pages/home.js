@@ -3,10 +3,8 @@ import { Paragraphs } from '../../api/paragraphs.js';
 import './home.html';
 
 Template.home.onCreated(function(){
-
   // Subscriptions
   TAPi18n.subscribe("paragraphs");
-
 });
 
 Template.home.helpers({

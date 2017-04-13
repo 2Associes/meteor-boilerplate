@@ -34,9 +34,7 @@ Template.languageSwitcher.helpers({
       case "en-CA": return languages[1];
       default: return languages[0];
     }
-
   },
-
 });
 
 Template.languageSwitcher.events({

@@ -4,15 +4,12 @@ import { Paragraphs } from '../../api/paragraphs.js';
 
 // if the database is empty on server start, create some sample data.
 Meteor.startup(() => {
-
   if (!Paragraphs.findOne()) {
-
     console.log('No paragraph in the database... Create some sample paragraphs...');
 
     let timestamp = new Date().getTime();
 
     _.each(_.range(3), function(){
-
       let randomText = faker.lorem.paragraph();
       let randomI18nEnText = faker.lorem.paragraph();
 
@@ -31,7 +28,6 @@ Meteor.startup(() => {
   }
 
   if (!Meteor.users.findOne()) {
-
     console.log('No user in the database... Create some sample users with roles...');
 
     var users;
@@ -64,7 +60,6 @@ Meteor.startup(() => {
     ];
 
     _.each(users, function (user) {
-
       var id;
 
       id = Accounts.createUser({
@@ -81,8 +76,6 @@ Meteor.startup(() => {
         // after `Accounts.createUser` or `Accounts.onCreate`
         Roles.addUsersToRoles(id, user.roles, 'default-group');
       }
-
     });
   }
-
 });

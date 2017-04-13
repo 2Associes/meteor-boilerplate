@@ -15,12 +15,7 @@ let getUserLanguage = function () {
   return "fr-CA";
 };
 
-Meteor.startup(function () {
-
-  // Set default language on startup
+Meteor.startup(function() {
   TAPi18n.setLanguage(getUserLanguage());
-
-  // Add language lang attribute into html tag
   $('html').attr('lang', getUserLanguage());
-
 });
