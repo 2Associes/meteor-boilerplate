@@ -1,5 +1,5 @@
-import '/imports/startup';
-import '/imports/startup/client';
+import '../imports/startup';
+import '../imports/startup/client';
 
 import '../imports/ui/layouts/app.js';
 import '../imports/ui/components/loading.js';
