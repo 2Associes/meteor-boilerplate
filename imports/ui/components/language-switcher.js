@@ -33,9 +33,7 @@ Template.languageSwitcher.helpers({
 
     switch (currentLanguageCode) {
       case "fr-CA": return languages[0];
-        break;
       case "en-CA": return languages[1];
-        break;
       default: return languages[0];
     }
 
