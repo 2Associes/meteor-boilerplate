@@ -46,4 +46,4 @@ Template.languageSwitcher.events({
     $('html').attr('lang', lang);
   },
 
-})
+});
