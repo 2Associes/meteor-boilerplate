@@ -10,7 +10,7 @@ import '../imports/ui/pages/not-found.js';
 import '../imports/ui/pages/home.js';
 import '../imports/ui/pages/admin/adminHome.js';
 
-getUserLanguage = function () {
+let getUserLanguage = function () {
   // Put here the logic for determining the user language
   return "fr-CA";
 };
