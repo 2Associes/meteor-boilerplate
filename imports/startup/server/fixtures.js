@@ -38,28 +38,28 @@ Meteor.startup(() => {
 
     users = [
       {
-        name:"Normal User",
-        username:"normaluser",
-        email:"normal@example.com",
-        roles:[],
+        name: "Normal User",
+        username: "normaluser",
+        email: "normal@example.com",
+        roles: [],
       },
       {
-        name:"View-Secrets User",
-        username:"viewsecretsuser",
-        email:"view@example.com",
-        roles:['view-secrets'],
+        name: "View-Secrets User",
+        username: "viewsecretsuser",
+        email: "view@example.com",
+        roles: ['view-secrets'],
       },
       {
-        name:"Manage-Users User",
-        username:"manageusersuser",
-        email:"manage@example.com",
-        roles:['manage-users'],
+        name: "Manage-Users User",
+        username: "manageusersuser",
+        email: "manage@example.com",
+        roles: ['manage-users'],
       },
       {
-        name:"Admin User",
-        username:"adminuser",
-        email:"admin@example.com",
-        roles:['admin'],
+        name: "Admin User",
+        username: "adminuser",
+        email: "admin@example.com",
+        roles: ['admin'],
       },
     ];
 
