@@ -11,18 +11,18 @@ FlowRouter.route('/', {
   // subscriptions: function() {},
   action: function() {
     BlazeLayout.render('app', {header: "header", main: "home", footer: "footer"});
-  }
+  },
 });
 
 FlowRouter.notFound = {
   action: function() {
     BlazeLayout.render('app', {header: "header", main: "notFound", footer: "footer"});
-  }
+  },
 };
 
 var adminRoutes = FlowRouter.group({
   prefix: '/admin',
-  name: 'admin'
+  name: 'admin',
 });
 
 adminRoutes.route('/home', {
@@ -35,14 +35,14 @@ adminRoutes.route('/home', {
     } else {
       BlazeLayout.render('app', {header: "header", main: "adminHome", footer: "footer"});
     }
-  }
+  },
 });
 
 // Configure Accounts Templates default
 AccountsTemplates.configure({
   defaultLayoutRegions: {
-    header: 'header'
-  }
+    header: 'header',
+  },
 });
 
 AccountsTemplates.configureRoute('changePwd');

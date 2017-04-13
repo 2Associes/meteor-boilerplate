@@ -14,7 +14,7 @@ Template.loading.rendered = function () {
   this.loading = window.pleaseWait({
     logo: '/images/2associes-logo.png',
     backgroundColor: '#3366ff',
-    loadingHtml: message + spinner
+    loadingHtml: message + spinner,
   });
 
   // uncomment below to automatically remove loading

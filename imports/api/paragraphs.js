@@ -7,13 +7,13 @@ export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language :
 ParagraphSchema = new SimpleSchema({
   _id: {
     type: String,
-    regEx: SimpleSchema.RegEx.Id
+    regEx: SimpleSchema.RegEx.Id,
   },
   text: {
-    type: String
+    type: String,
   },
   createdAt: {
-    type: Date
+    type: Date,
   },
 });
 

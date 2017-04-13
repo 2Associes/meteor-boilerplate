@@ -5,7 +5,7 @@ import './footer.html';
 Template.footer.helpers({
   meteorRelease() {
     return Meteor.release;
-  }
+  },
 });
 
 Template.footer.events({});

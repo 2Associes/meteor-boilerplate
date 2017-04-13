@@ -16,16 +16,16 @@ Template.languageSwitcher.helpers({
             code: key,
             labels: {
               name: "FR",
-              en: "FR"
-            }
+              en: "FR",
+            },
           });
         } else {
           languages.push({
             code: key,
             labels: {
               name: "EN",
-              en: "EN"
-            }
+              en: "EN",
+            },
           });
         }
       }
@@ -39,7 +39,7 @@ Template.languageSwitcher.helpers({
       default: return languages[0];
     }
 
-  }
+  },
 
 });
 
@@ -50,6 +50,6 @@ Template.languageSwitcher.events({
     let lang = $(event.target).attr('data-language');
     TAPi18n.setLanguage(lang);
     $('html').attr('lang', lang);
-  }
+  },
 
 })

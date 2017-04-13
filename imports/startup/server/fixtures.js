@@ -20,10 +20,10 @@ Meteor.startup(() => {
         text: randomText,
         i18n: {
           en: {
-            text: randomI18nEnText
-          }
+            text: randomI18nEnText,
+          },
         },
-        createdAt: new Date(timestamp)
+        createdAt: new Date(timestamp),
       });
 
       timestamp += 1000; // ensure unique timestamp.
@@ -41,26 +41,26 @@ Meteor.startup(() => {
         name:"Normal User",
         username:"normaluser",
         email:"normal@example.com",
-        roles:[]
+        roles:[],
       },
       {
         name:"View-Secrets User",
         username:"viewsecretsuser",
         email:"view@example.com",
-        roles:['view-secrets']
+        roles:['view-secrets'],
       },
       {
         name:"Manage-Users User",
         username:"manageusersuser",
         email:"manage@example.com",
-        roles:['manage-users']
+        roles:['manage-users'],
       },
       {
         name:"Admin User",
         username:"adminuser",
         email:"admin@example.com",
-        roles:['admin']
-      }
+        roles:['admin'],
+      },
     ];
 
     _.each(users, function (user) {
@@ -72,8 +72,8 @@ Meteor.startup(() => {
         password: "123456",
         username: user.username,
         profile: {
-          name: user.name
-        }
+          name: user.name,
+        },
       });
 
       if (user.roles.length > 0) {

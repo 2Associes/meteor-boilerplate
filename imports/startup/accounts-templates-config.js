@@ -56,5 +56,5 @@ AccountsTemplates.addFields([
     required: true,
     displayName: "Login",
   },
-  pwd
+  pwd,
 ]);
