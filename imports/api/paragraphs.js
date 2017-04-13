@@ -1,6 +1,6 @@
-import { Mongo } from 'meteor/mongo';
+/*global Meteor, TAPi18n, $*/
+
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { Check } from 'meteor/check';
 
 export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language: "fr-CA" });
 

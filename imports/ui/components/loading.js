@@ -1,5 +1,3 @@
-import { Meteor } from 'meteor/meteor';
-
 import './loading.html';
 
 // Template.registerHelper('getBody', function () {

@@ -1,5 +1,3 @@
-import { Meteor } from 'meteor/meteor';
-
 import './language-switcher.html';
 
 Template.languageSwitcher.helpers({
@@ -43,7 +41,7 @@ Template.languageSwitcher.helpers({
 
 Template.languageSwitcher.events({
 
-  'click [data-action="change-language"]'(event, template) {
+  'click [data-action="change-language"]'(event) {
     event.preventDefault();
     let lang = $(event.target).attr('data-language');
     TAPi18n.setLanguage(lang);
