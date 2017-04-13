@@ -1,4 +1,4 @@
-/*global Meteor, TAPi18n, $*/
+// global Meteor, TAPi18n, $
 
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 

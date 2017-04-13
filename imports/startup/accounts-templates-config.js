@@ -10,16 +10,16 @@ AccountsTemplates.configure({
   overrideLoginErrors: true,
   enablePasswordChange: true,
 
-  //sendVerificationEmail: true,
-  //enforceEmailVerification: true,
-  //confirmPassword: true,
-  //continuousValidation: false,
-  //displayFormLabels: true,
-  //forbidClientAccountCreation: true,
-  //formValidationFeedback: true,
-  //homeRoutePath: '/',
-  //showAddRemoveServices: false,
-  //showPlaceholders: true,
+  // sendVerificationEmail: true,
+  // enforceEmailVerification: true,
+  // confirmPassword: true,
+  // continuousValidation: false,
+  // displayFormLabels: true,
+  // forbidClientAccountCreation: true,
+  // formValidationFeedback: true,
+  // homeRoutePath: '/',
+  // showAddRemoveServices: false,
+  // showPlaceholders: true,
 
   negativeValidation: true,
   positiveValidation: true,
@@ -27,8 +27,8 @@ AccountsTemplates.configure({
   positiveFeedback: true,
 
   // Privacy Policy and Terms of Use
-  //privacyUrl: 'privacy',
-  //termsUrl: 'terms-of-use',
+  // privacyUrl: 'privacy',
+  // termsUrl: 'terms-of-use',
 });
 
 var pwd = AccountsTemplates.removeField('password');
