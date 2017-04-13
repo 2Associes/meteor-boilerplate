@@ -10,8 +10,8 @@ Template.languageSwitcher.helpers({
     const languages = [];
 
     for (const key in obj) {
-      if(key !== "en") { // Exclude normal 'en' translation and keep 'en-CA'
-        if(key === "fr-CA"){
+      if (key !== "en") { // Exclude normal 'en' translation and keep 'en-CA'
+        if (key === "fr-CA"){
           languages.push({ // Manually add the information for the 'fr-CA' translation
             code: key,
             labels: {
@@ -31,7 +31,7 @@ Template.languageSwitcher.helpers({
       }
     }
 
-    switch(currentLanguageCode) {
+    switch (currentLanguageCode) {
       case "fr-CA": return languages[0];
         break;
       case "en-CA": return languages[1];
