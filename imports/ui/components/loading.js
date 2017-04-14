@@ -18,7 +18,6 @@ Template.loading.rendered = function () {
   // uncomment below to automatically remove loading
   var loading = this.loading;
   loading.finish();
-  Session.set('splashLoaded', true);
 
   // uncomment below to manually remove loading for demo after 3 seconds
   // var loading = this.loading;
