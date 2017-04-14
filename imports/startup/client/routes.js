@@ -20,7 +20,7 @@ FlowRouter.notFound = {
   },
 };
 
-var adminRoutes = FlowRouter.group({
+let adminRoutes = FlowRouter.group({
   prefix: '/admin',
   name: 'admin',
 });

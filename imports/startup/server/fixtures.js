@@ -30,7 +30,7 @@ Meteor.startup(() => {
   if (!Meteor.users.findOne()) {
     console.log('No user in the database... Create some sample users with roles...');
 
-    var users;
+    let users;
 
     users = [
       {
@@ -60,7 +60,7 @@ Meteor.startup(() => {
     ];
 
     _.each(users, function (user) {
-      var id;
+      let id;
 
       id = Accounts.createUser({
         email: user.email,
