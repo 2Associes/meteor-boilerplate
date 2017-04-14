@@ -1,5 +1,3 @@
-import { Meteor } from 'meteor/meteor';
-
 import './language-switcher.html';
 
 Template.languageSwitcher.helpers({
@@ -10,47 +8,42 @@ Template.languageSwitcher.helpers({
     const languages = [];
 
     for (const key in obj) {
-      if(key !== "en") { // Exclude normal 'en' translation and keep 'en-CA'
-        if(key === "fr-CA"){
+      if (key !== 'en') { // Exclude normal 'en' translation and keep 'en-CA'
+        if (key === 'fr-CA') {
           languages.push({ // Manually add the information for the 'fr-CA' translation
             code: key,
             labels: {
-              name: "FR",
-              en: "FR"
-            }
+              name: 'FR',
+              en: 'FR',
+            },
           });
-        }
-        else {
+        } else {
           languages.push({
             code: key,
             labels: {
-              name: "EN",
-              en: "EN"
-            }
+              name: 'EN',
+              en: 'EN',
+            },
           });
         }
       }
     }
 
-    switch(currentLanguageCode) {
-      case "fr-CA": return languages[0];
-        break;
-      case "en-CA": return languages[1];
-        break;
+    switch (currentLanguageCode) {
+      case 'fr-CA': return languages[0];
+      case 'en-CA': return languages[1];
       default: return languages[0];
     }
-
-  }
-
+  },
 });
 
 Template.languageSwitcher.events({
 
-  'click [data-action="change-language"]'(event, template) {
+  "click [data-action='change-language']"(event) {
     event.preventDefault();
-    let lang = $(event.target).attr('data-language');
+    const lang = $(event.target).attr('data-language');
     TAPi18n.setLanguage(lang);
     $('html').attr('lang', lang);
-  }
+  },
 
-})
+});

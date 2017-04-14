@@ -1,19 +1,19 @@
-import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
-import { Check } from 'meteor/check';
+// global Meteor, TAPi18n, $
 
-export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language : "fr-CA" });
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+
+export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language: 'fr-CA' });
 
 ParagraphSchema = new SimpleSchema({
   _id: {
     type: String,
-    regEx: SimpleSchema.RegEx.Id
+    regEx: SimpleSchema.RegEx.Id,
   },
   text: {
-    type: String
+    type: String,
   },
   createdAt: {
-    type: Date
+    type: Date,
   },
 });
 

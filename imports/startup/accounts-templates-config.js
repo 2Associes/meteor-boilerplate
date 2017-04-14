@@ -10,16 +10,16 @@ AccountsTemplates.configure({
   overrideLoginErrors: true,
   enablePasswordChange: true,
 
-  //sendVerificationEmail: true,
-  //enforceEmailVerification: true,
-  //confirmPassword: true,
-  //continuousValidation: false,
-  //displayFormLabels: true,
-  //forbidClientAccountCreation: true,
-  //formValidationFeedback: true,
-  //homeRoutePath: '/',
-  //showAddRemoveServices: false,
-  //showPlaceholders: true,
+  // sendVerificationEmail: true,
+  // enforceEmailVerification: true,
+  // confirmPassword: true,
+  // continuousValidation: false,
+  // displayFormLabels: true,
+  // forbidClientAccountCreation: true,
+  // formValidationFeedback: true,
+  // homeRoutePath: '/',
+  // showAddRemoveServices: false,
+  // showPlaceholders: true,
 
   negativeValidation: true,
   positiveValidation: true,
@@ -27,18 +27,18 @@ AccountsTemplates.configure({
   positiveFeedback: true,
 
   // Privacy Policy and Terms of Use
-  //privacyUrl: 'privacy',
-  //termsUrl: 'terms-of-use',
+  // privacyUrl: 'privacy',
+  // termsUrl: 'terms-of-use',
 });
 
-var pwd = AccountsTemplates.removeField('password');
+const pwd = AccountsTemplates.removeField('password');
 AccountsTemplates.removeField('email');
 
 AccountsTemplates.addFields([
   {
-    _id: "username",
-    type: "text",
-    displayName: "username",
+    _id: 'username',
+    type: 'text',
+    displayName: 'username',
     required: true,
     minLength: 5,
   },
@@ -46,7 +46,7 @@ AccountsTemplates.addFields([
     _id: 'email',
     type: 'email',
     required: true,
-    displayName: "email",
+    displayName: 'email',
     re: /.+@(.+){2,}\.(.+){2,}/,
     errStr: 'Invalid email',
   },
@@ -54,7 +54,7 @@ AccountsTemplates.addFields([
     _id: 'username_and_email',
     type: 'text',
     required: true,
-    displayName: "Login",
+    displayName: 'Login',
   },
-  pwd
+  pwd,
 ]);

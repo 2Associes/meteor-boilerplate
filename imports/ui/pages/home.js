@@ -1,14 +1,10 @@
-import { Meteor } from 'meteor/meteor';
-
-import { Paragraphs } from '../../api/paragraphs.js';
+import { Paragraphs } from '../../api/paragraphs';
 
 import './home.html';
 
-Template.home.onCreated(function(){
-
+Template.home.onCreated(() => {
   // Subscriptions
-  TAPi18n.subscribe("paragraphs");
-
+  TAPi18n.subscribe('paragraphs');
 });
 
 Template.home.helpers({
