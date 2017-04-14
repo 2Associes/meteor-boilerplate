@@ -10,13 +10,13 @@ FlowRouter.route('/', {
   // Subscriptions registered here don't have Fast Render support.
   // subscriptions: function() {},
   action: function () {
-    BlazeLayout.render('app', {header: 'header', main: 'home', footer: 'footer'});
+    BlazeLayout.render('app', { header: 'header', main: 'home', footer: 'footer' });
   },
 });
 
 FlowRouter.notFound = {
   action: function () {
-    BlazeLayout.render('app', {header: 'header', main: 'notFound', footer: 'footer'});
+    BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' });
   },
 };
 
@@ -31,9 +31,9 @@ adminRoutes.route('/home', {
     if (!Meteor.userId()) {
       Router.go('signIn');
     } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
-      BlazeLayout.render('app', {header: 'header', main: 'notFound', footer: 'footer'});
+      BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' });
     } else {
-      BlazeLayout.render('app', {header: 'header', main: 'adminHome', footer: 'footer'});
+      BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' });
     }
   },
 });
