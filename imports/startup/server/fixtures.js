@@ -10,8 +10,8 @@ Meteor.startup(() => {
     let timestamp = new Date().getTime();
 
     _.each(_.range(3), function () {
-      let randomText = faker.lorem.paragraph();
-      let randomI18nEnText = faker.lorem.paragraph();
+      const randomText = faker.lorem.paragraph();
+      const randomI18nEnText = faker.lorem.paragraph();
 
       Paragraphs.insert({
         text: randomText,
@@ -30,9 +30,7 @@ Meteor.startup(() => {
   if (!Meteor.users.findOne()) {
     console.log('No user in the database... Create some sample users with roles...');
 
-    let users;
-
-    users = [
+    const users = [
       {
         name: 'Normal User',
         username: 'normaluser',
@@ -60,9 +58,7 @@ Meteor.startup(() => {
     ];
 
     _.each(users, function (user) {
-      let id;
-
-      id = Accounts.createUser({
+      const id = Accounts.createUser({
         email: user.email,
         password: '123456',
         username: user.username,

@@ -31,7 +31,7 @@ AccountsTemplates.configure({
   // termsUrl: 'terms-of-use',
 });
 
-let pwd = AccountsTemplates.removeField('password');
+const pwd = AccountsTemplates.removeField('password');
 AccountsTemplates.removeField('email');
 
 AccountsTemplates.addFields([

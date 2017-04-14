@@ -7,7 +7,7 @@ module.exports = function () {
 
   this.Then(/^the "([^"]*)" tag has class "([^"]*)"$/, function (arg1, arg2) {
     browser.waitForExist(arg1);
-    let cssClass = browser.getAttribute(arg1, 'class');
+    const cssClass = browser.getAttribute(arg1, 'class');
     expect(cssClass).toContain(arg2);
   });
 };

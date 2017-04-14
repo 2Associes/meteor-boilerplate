@@ -4,8 +4,8 @@ import './loading.html';
 //   return Session.get('splashLoaded') ? 'homeIndex' : 'loading';
 // });
 
-let message = '<p class="loading-message"></p>';
-let spinner = '<div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div>';
+const message = '<p class="loading-message"></p>';
+const spinner = '<div class="sk-circle"><div class="sk-circle1 sk-child"></div><div class="sk-circle2 sk-child"></div><div class="sk-circle3 sk-child"></div><div class="sk-circle4 sk-child"></div><div class="sk-circle5 sk-child"></div><div class="sk-circle6 sk-child"></div><div class="sk-circle7 sk-child"></div><div class="sk-circle8 sk-child"></div><div class="sk-circle9 sk-child"></div><div class="sk-circle10 sk-child"></div><div class="sk-circle11 sk-child"></div><div class="sk-circle12 sk-child"></div></div>';
 
 Template.loading.rendered = function () {
   // launch splash
@@ -16,7 +16,7 @@ Template.loading.rendered = function () {
   });
 
   // uncomment below to automatically remove loading
-  let loading = this.loading;
+  const loading = this.loading;
   loading.finish();
 
   // uncomment below to manually remove loading for demo after 3 seconds

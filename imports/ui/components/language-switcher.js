@@ -41,7 +41,7 @@ Template.languageSwitcher.events({
 
   "click [data-action='change-language']"(event) {
     event.preventDefault();
-    let lang = $(event.target).attr('data-language');
+    const lang = $(event.target).attr('data-language');
     TAPi18n.setLanguage(lang);
     $('html').attr('lang', lang);
   },
