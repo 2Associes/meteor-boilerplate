@@ -1,5 +1,5 @@
 // Set up login services
-Meteor.startup(function () {
+Meteor.startup(() => {
   // Add Facebook configuration entry
 
   ServiceConfiguration.configurations.update(

@@ -2,7 +2,7 @@ import { Paragraphs } from '../../api/paragraphs';
 
 import './home.html';
 
-Template.home.onCreated(function () {
+Template.home.onCreated(() => {
   // Subscriptions
   TAPi18n.subscribe('paragraphs');
 });

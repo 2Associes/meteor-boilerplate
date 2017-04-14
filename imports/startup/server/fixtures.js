@@ -9,7 +9,7 @@ Meteor.startup(() => {
 
     let timestamp = new Date().getTime();
 
-    _.each(_.range(3), function () {
+    _.each(_.range(3), () => {
       const randomText = faker.lorem.paragraph();
       const randomI18nEnText = faker.lorem.paragraph();
 
@@ -57,7 +57,7 @@ Meteor.startup(() => {
       },
     ];
 
-    _.each(users, function (user) {
+    _.each(users, (user) => {
       const id = Accounts.createUser({
         email: user.email,
         password: '123456',
