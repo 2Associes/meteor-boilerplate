@@ -5,8 +5,7 @@ import { Paragraphs } from '../../api/paragraphs';
 // if the database is empty on server start, create some sample data.
 Meteor.startup(() => {
   if (!Paragraphs.findOne()) {
-    console.log('No paragraph in the database... Create some sample paragraphs...');
-
+    // No paragraph in the database... Create some sample paragraphs...
     let timestamp = new Date().getTime();
 
     _.each(_.range(3), () => {
@@ -28,8 +27,7 @@ Meteor.startup(() => {
   }
 
   if (!Meteor.users.findOne()) {
-    console.log('No user in the database... Create some sample users with roles...');
-
+    // No user in the database... Create some sample users with roles...
     const users = [
       {
         name: 'Normal User',
