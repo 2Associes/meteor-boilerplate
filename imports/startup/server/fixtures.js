@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-import { Paragraphs } from '../../api/paragraphs.js';
+import { Paragraphs } from '../../api/paragraphs';
 
 // if the database is empty on server start, create some sample data.
 Meteor.startup(() => {

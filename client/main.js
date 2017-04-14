@@ -1,14 +1,14 @@
 import '../imports/startup';
 import '../imports/startup/client';
 
-import '../imports/ui/layouts/app.js';
-import '../imports/ui/components/loading.js';
-import '../imports/ui/components/header.js';
-import '../imports/ui/components/language-switcher.js';
-import '../imports/ui/components/footer.js';
-import '../imports/ui/pages/not-found.js';
-import '../imports/ui/pages/home.js';
-import '../imports/ui/pages/admin/adminHome.js';
+import '../imports/ui/layouts/app';
+import '../imports/ui/components/loading';
+import '../imports/ui/components/header';
+import '../imports/ui/components/language-switcher';
+import '../imports/ui/components/footer';
+import '../imports/ui/pages/not-found';
+import '../imports/ui/pages/home';
+import '../imports/ui/pages/admin/adminHome';
 
 let getUserLanguage = function () {
   // Put here the logic for determining the user language

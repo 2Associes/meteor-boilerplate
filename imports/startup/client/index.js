@@ -1,5 +1,5 @@
 // Import Flow Router routes
-import './routes.js';
+import './routes';
 
 // Import helpers
 import './helpers.coffee';

@@ -1,4 +1,4 @@
-import { Paragraphs } from '../../api/paragraphs.js';
+import { Paragraphs } from '../../api/paragraphs';
 
 import './home.html';
 
