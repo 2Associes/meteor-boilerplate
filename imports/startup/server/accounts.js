@@ -6,8 +6,8 @@ Meteor.startup(() => {
     { service: 'facebook' },
     {
       $set: {
-        appId: 'XXXXXXXXXXXXXXX',
-        secret: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
+        appId: 'XXXXXXXXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXXXXXX',
       },
     },
     { upsert: true },
@@ -19,7 +19,7 @@ Meteor.startup(() => {
     { service: 'github' },
     { $set: {
         clientId: 'XXXXXXXXXXXXXXXXXXXX',
-        secret: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX'
+        secret: 'XXXXXXXXXXXXXXXXXXXX'
       }
     },
     { upsert: true }
@@ -30,9 +30,9 @@ Meteor.startup(() => {
   // ServiceConfiguration.configurations.update(
   //   { service: 'google' },
   //   { $set: {
-  //       clientId: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-  //       client_email: 'XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX',
-  //       secret: 'XXXXXXXXXXXXXXXXXXXXXXXX'
+  //       clientId: 'XXXXXXXXXXXXXXXXXXXX',
+  //       client_email: 'XXXXXXXXXXXXXXXXXXXX',
+  //       secret: 'XXXXXXXXXXXXXXXXXXXX'
   //     }
   //   },
   //   { upsert: true }
@@ -43,8 +43,8 @@ Meteor.startup(() => {
   ServiceConfiguration.configurations.update(
     { service: 'linkedin' },
     { $set: {
-        clientId: 'XXXXXXXXXXXXXX',
-        secret: 'XXXXXXXXXXXXXXXX'
+        clientId: 'XXXXXXXXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXXXXXX'
       }
     },
     { upsert: true }
