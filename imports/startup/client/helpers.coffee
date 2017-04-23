@@ -1,6 +1,6 @@
-boilerplateVersion = '1.4.2'
-Template.registerHelper 'boilerplateVersion', ->
-	boilerplateVersion
+boilerplateRelease = '1.5.0'
+Template.registerHelper 'boilerplateRelease', ->
+	boilerplateRelease
 
 # Format helper for dates using momentJS. Usage in template {{localizedDateAndTime createdAt}}
 Template.registerHelper 'localizedDateAndTime', (date) ->
