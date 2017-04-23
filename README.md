@@ -35,12 +35,13 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 
 # Prerequisites
 
-* [Node.js][2] >= 4.6.2
+* [Node.js][2] >= v6.10.2
 
 We recommand using [Node Version Manager][3]
 
 ```
-$ nvm install 4.6.2
+$ nvm install v6.10.2
+$ nvm use v6.10.2
 ```
 
 # Installation
