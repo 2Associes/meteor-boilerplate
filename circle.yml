@@ -26,7 +26,7 @@ deployment:
     commands:
       - echo $SETTINGS_STAGING > settings-staging.json
       - echo $DEPLOYMENT_TOKEN > deployment_token.json
-      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json --timeout 20
+      - METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json
   production:
     branch: master
     commands:
