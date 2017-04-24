@@ -17,5 +17,6 @@ const getUserLanguage = function () {
 
 Meteor.startup(() => {
   TAPi18n.setLanguage(getUserLanguage());
+  T9n.setLanguage(getUserLanguage());
   $('html').attr('lang', getUserLanguage());
 });
