@@ -1,6 +1,6 @@
 machine:
   node:
-    version: 4.6.2
+    version: 6.10.2
 dependencies:
   cache_directories:
     - "node_modules"
@@ -10,16 +10,16 @@ dependencies:
     # Cache Meteor
     - if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
     - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
-    - npm install -g chimp
-    - npm install -g selenium-standalone
-    - npm install
+    - meteor npm install -g chimp
+    - meteor npm install -g selenium-standalone
+    - meteor npm install
 test:
   override:
     - echo $SETTINGS_DEVELOPMENT > settings-development.json
-    - npm run dev:
+    - meteor npm run dev:
         background: true
-    - sleep 90
-    - npm run test
+    - sleep 30
+    - meteor npm run test
 deployment:
   staging:
     branch: develop

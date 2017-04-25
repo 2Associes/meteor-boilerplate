@@ -1,8 +1,8 @@
 // This defines a starting set of data to be loaded if the app is loaded with an empty db.
-import './fixtures.js';
+import './fixtures';
 
 // Defines accounts services
-import './accounts.js';
+import './accounts';
 
 // Defines email setup
-import './email.js';
+import './email';

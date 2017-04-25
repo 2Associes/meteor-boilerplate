@@ -1,24 +1,25 @@
 // Set up login services
-Meteor.startup(function() {
+Meteor.startup(() => {
   // Add Facebook configuration entry
-  
+
   ServiceConfiguration.configurations.update(
-    { service: "facebook" },
-    { $set: {
-        appId: "XXXXXXXXXXXXXXX",
-        secret: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
-      }
+    { service: 'facebook' },
+    {
+      $set: {
+        appId: 'XXXXXXXXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXXXXXX',
+      },
     },
-    { upsert: true }
+    { upsert: true },
   );
 
   // Add GitHub configuration entry
   /*
   ServiceConfiguration.configurations.update(
-    { service: "github" },
+    { service: 'github' },
     { $set: {
-        clientId: "XXXXXXXXXXXXXXXXXXXX",
-        secret: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        clientId: 'XXXXXXXXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXXXXXX'
       }
     },
     { upsert: true }
@@ -27,11 +28,11 @@ Meteor.startup(function() {
 
   // Add Google configuration entry
   // ServiceConfiguration.configurations.update(
-  //   { service: "google" },
+  //   { service: 'google' },
   //   { $set: {
-  //       clientId: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  //       client_email: "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX",
-  //       secret: "XXXXXXXXXXXXXXXXXXXXXXXX"
+  //       clientId: 'XXXXXXXXXXXXXXXXXXXX',
+  //       client_email: 'XXXXXXXXXXXXXXXXXXXX',
+  //       secret: 'XXXXXXXXXXXXXXXXXXXX'
   //     }
   //   },
   //   { upsert: true }
@@ -40,10 +41,10 @@ Meteor.startup(function() {
   // Add Linkedin configuration entry
   /*
   ServiceConfiguration.configurations.update(
-    { service: "linkedin" },
+    { service: 'linkedin' },
     { $set: {
-        clientId: "XXXXXXXXXXXXXX",
-        secret: "XXXXXXXXXXXXXXXX"
+        clientId: 'XXXXXXXXXXXXXXXXXXXX',
+        secret: 'XXXXXXXXXXXXXXXXXXXX'
       }
     },
     { upsert: true }

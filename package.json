@@ -5,12 +5,52 @@
     "start": "meteor run",
     "dev": "meteor run --settings settings-development.json",
     "test": "chimp --ddp=http://localhost:3000 --browser=chrome",
-    "test-watch": "chimp --watch --ddp=http://localhost:3000 --browser=chrome"
+    "test-watch": "chimp --watch --ddp=http://localhost:3000 --browser=chrome",
+    "lint": "eslint .",
+    "pretest": "npm run lint --silent"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ],
+    "settings": {
+      "import/resolver": "meteor"
+    },
+    "rules": {
+      "no-undef": "off",
+      "no-undef-init": "off",
+      "import/extensions":"off",
+      "import/no-extraneous-dependencies":"off",
+      "func-names":"off",
+      "meteor/no-template-lifecycle-assignments":"off",
+      "object-shorthand":"off",
+      "prefer-arrow-callback":"off",
+      "no-restricted-syntax":"off",
+      "import/prefer-default-export":"off"
+    }
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "bcrypt": "^0.8.7",
     "chimp": "^0.47.2",
     "meteor-node-stubs": "~0.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.1",
+    "eslint": "^3.18.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-import-resolver-meteor": "^0.3.4",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-meteor": "^4.0.1",
+    "eslint-plugin-react": "^6.10.3"
   }
 }
