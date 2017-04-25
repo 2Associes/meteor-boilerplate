@@ -2,7 +2,82 @@
 
 A boilerplate for Meteor projects using Less, Font Awesome and a modular, customizable Bootstrap 3.
 
-# Included Packages
+## Prerequisites
+
+* [Node.js][2] >= v6.10.2
+* [npm][4] >= 3.10.10
+
+```
+node -v && npm -v
+```
+
+We recommand using [Node Version Manager][3]
+
+```
+nvm install v6.10.2
+nvm use v6.10.2
+```
+
+## Installation
+
+1. Clone this repo to `<yourapp>` :  
+
+	```
+	git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>
+	```
+
+2. Change directory to `<yourapp>` and remove `.git` :  
+
+	```
+	cd <yourapp> && rm -rf .git
+	```
+3. Install npm packages :
+
+	```
+	meteor npm install
+	```
+4. Start `meteor` :  
+
+	```
+	meteor npm run dev
+	```
+5. Run [Chimp][1] acceptance tests once or in `@watch` mode :
+
+	```
+	meteor npm run test
+	```
+	```
+	meteor npm run test-watch
+	```
+
+## Directory Structure
+
+```
+├── meteor-boilerplate/
+│   ├── .meteor
+│   ├── client
+│   ├── features
+│   │   ├── step-definitions
+│   ├── i18n
+│   ├── imports
+│   │   ├── api
+│   │   ├── startup
+│   │   │   ├── client
+│   │   │   ├── server
+│   │   ├── ui
+│   │   │   ├── components
+│   │   │   ├── layouts
+│   │   │   ├── pages
+│   │   │   │   ├── admin
+│   │   │   ├── stylesheets
+│   │   │   │   ├── themes
+│   │   │   │   ├── utilities
+│   ├── public
+|   │   ├── images
+│   ├── server
+```
+
+## Included Packages
 
 - [accounts-facebook](https://atmospherejs.com/meteor/accounts-facebook) : Login service for Facebook accounts
 - [accounts-password](https://atmospherejs.com/meteor/accounts-password) : Password support for accounts
@@ -33,76 +108,7 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
 - [alanning:roles](https://atmospherejs.com/alanning/roles) : Authorization package for Meteor
 
-# Prerequisites
-
-* [Node.js][2] >= v6.10.2
-
-We recommand using [Node Version Manager][3]
-
-```
-$ nvm install v6.10.2
-$ nvm use v6.10.2
-```
-
-# Installation
-
-1. Clone this repo to `<yourapp>` :  
-
-	```
-	$ git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>
-	```
-
-2. Change directory to `<yourapp>` and remove `.git` :  
-
-	```
-	$ cd <yourapp> && rm -rf .git
-	```
-3. Install npm packages :
-
-	```
-	$ meteor npm install
-	```
-4. Start `meteor` :  
-
-	```
-	$ meteor npm run dev
-	```
-5. Run [Chimp][1] acceptance tests once or in `@watch` mode :
-
-	```
-	$ meteor npm run test
-	```
-	```
-	$ meteor npm run test-watch
-	```
-
-# Directory Structure
-
-```
-├── meteor-boilerplate/
-│   ├── .meteor
-│   ├── client
-│   ├── features
-│   │   ├── step-definitions
-│   ├── i18n
-│   ├── imports
-│   │   ├── api
-│   │   ├── startup
-│   │   │   ├── client
-│   │   │   ├── server
-│   │   ├── ui
-│   │   │   ├── components
-│   │   │   ├── layouts
-│   │   │   ├── pages
-│   │   │   │   ├── admin
-│   │   │   ├── stylesheets
-│   │   │   │   ├── themes
-│   │   │   │   ├── utilities
-│   ├── public
-|   │   ├── images
-│   ├── server
-```
-
 [1]:https://chimp.readme.io
 [2]:https://nodejs.org
 [3]:https://github.com/creationix/nvm
+[4]:https://www.npmjs.com
