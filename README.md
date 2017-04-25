@@ -107,6 +107,9 @@ nvm use v6.10.2
 - [useraccounts:flow-routing](https://atmospherejs.com/useraccounts/flow-routing) : UserAccounts package providing routes configuration capability via kadira:flow-router
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
 - [alanning:roles](https://atmospherejs.com/alanning/roles) : Authorization package for Meteor
+- [facebook-config-ui](https://atmospherejs.com/meteor/facebook-config-ui) : Blaze configuration templates for Facebook OAuth
+- [audit-argument-checks](https://atmospherejs.com/meteor/audit-argument-checks#audit-argument-checks) : Try to detect inadequate input sanitization
+- [mdg:validated-method](https://atmospherejs.com/mdg/validated-method) : A simple wrapper for Meteor.methods
 
 [1]:https://chimp.readme.io
 [2]:https://nodejs.org
