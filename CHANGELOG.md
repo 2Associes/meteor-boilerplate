@@ -1,3 +1,14 @@
+# 1.6.0 (2017-04-25)
+
+* Update Meteor to 1.4.3.2
+* Add facebook-config-ui package
+* Add audit-argument-checks package
+* Add mdg:validated-method package
+* Add translations
+* Add ESlint with config
+* ESlint codebase
+* Update CircleCI configuration
+
 # 1.5.0 (2017-02-25)
 
 * Update Meteor to 1.4.3.1
