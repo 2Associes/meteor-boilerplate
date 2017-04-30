@@ -39,7 +39,7 @@ zimme:active-route
 meteortoys:allthings
 useraccounts:bootstrap
 accounts-password@1.3.5
-accounts-facebook@1.1.1
+accounts-facebook@1.2.0
 useraccounts:flow-routing
 softwarerero:accounts-t9n
 service-configuration@1.0.11
