@@ -13,13 +13,13 @@ dependencies:
     - meteor npm install -g chimp
     - meteor npm install -g selenium-standalone
     - meteor npm install
-test:
-  override:
-    - echo $SETTINGS_DEVELOPMENT > settings-development.json
-    - meteor npm run dev:
-        background: true
-    - sleep 30
-    - meteor npm run test
+# test:
+  # override:
+    # - echo $SETTINGS_DEVELOPMENT > settings-development.json
+    # - meteor npm run dev:
+        # background: true
+    # - sleep 30
+    # - meteor npm run test
 deployment:
   staging:
     branch: develop
