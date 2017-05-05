@@ -1,6 +1,11 @@
 machine:
   node:
     version: 6.10.2
+  pre:
+   # download if meteor isn't already installed in the cache
+   - meteor || curl https://install.meteor.com | /bin/sh
+  post:
+   - meteor --version
 dependencies:
   cache_directories:
     - "node_modules"
