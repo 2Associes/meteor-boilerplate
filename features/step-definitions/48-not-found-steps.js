@@ -5,7 +5,7 @@ module.exports = function () {
     browser.url(arg1);
   });
 
-  this.Given(/^I have visited "([^"]*)"$/, (arg1) => {
+  this.Given(/^I have changed my mind and visited "([^"]*)"$/, (arg1) => {
     browser.url(arg1);
   });
 
