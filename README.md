@@ -1,5 +1,7 @@
 # Meteor Boilerplate
 
+[![CircleCI Status](https://circleci.com/gh/2Associes/meteor-boilerplate.svg?style=shield&circle-token= d1f1cfc9181d3bf9a8a408745dd56a617d36dafd)](https://circleci.com/gh/2Associes/meteor-boilerplate)
+
 A boilerplate for Meteor projects using Less, Font Awesome and a modular, customizable Bootstrap 3.
 
 ## Prerequisites
@@ -81,9 +83,6 @@ nvm use v6.10.2
 
 - [accounts-facebook](https://atmospherejs.com/meteor/accounts-facebook) : Login service for Facebook accounts
 - [accounts-password](https://atmospherejs.com/meteor/accounts-password) : Password support for accounts
-- [aldeed:autoform](https://atmospherejs.com/aldeed/autoform) : Easily create forms with automatic insert and update, and automatic reactive validation.
-- [aldeed:collection2](https://atmospherejs.com/aldeed/collection2) : Automatic validation of insert and update operations on the client and server.
-- [aldeed:simple-schema](https://atmospherejs.com/aldeed/simple-schema) : A simple schema validation object with reactivity. Used by collection2 and autoform.
 - [arillo:flow-router-helpers](https://atmospherejs.com/arillo/flow-router-helpers) : Template helpers for flow-router
 - [check](https://atmospherejs.com/meteor/check) : Check whether a value matches a pattern
 - [digilord:faker](https://atmospherejs.com/digilord/faker) : Faker.js packaged for Meteor. Generate massive amounts of fake data

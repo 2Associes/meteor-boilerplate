@@ -5,5 +5,5 @@ Feature: Not found
   So I can confirm being redirected to the not found page
 
   Scenario: Not found
-    Given I have visited "http://localhost:3000/12345"
-    Then the "h1" tag has class "not-found-heading"
+    Given I have visited http://localhost:3000/123456
+    Then the article tag has class not-found
