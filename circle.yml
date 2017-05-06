@@ -5,7 +5,6 @@ dependencies:
   cache_directories:
     - "node_modules"
     - "~/.npm"
-    - "~/.meteor"
   override:
     # Cache Meteor
     - if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
