@@ -1,6 +1,6 @@
 # Meteor Boilerplate
 
-[![CircleCI Status](https://circleci.com/gh/2Associes/meteor-boilerplate.svg?style=shield&circle-token= d1f1cfc9181d3bf9a8a408745dd56a617d36dafd)](https://circleci.com/gh/2Associes/meteor-boilerplate)
+[![CircleCI Build Status](https://circleci.com/gh/2Associes/meteor-boilerplate/tree/master.svg?style=shield&circle-token=d1f1cfc9181d3bf9a8a408745dd56a617d36dafd)](https://circleci.com/gh/2Associes/meteor-boilerplate)
 
 A boilerplate for Meteor projects using Less, Font Awesome and a modular, customizable Bootstrap 3.
 
