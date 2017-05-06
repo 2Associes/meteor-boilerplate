@@ -10,18 +10,18 @@ dependencies:
     # Cache Meteor
     - if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
     - if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
-    - meteor npm install -g chimp
-    - meteor npm install -g selenium-standalone
-    - meteor npm install
+    - npm install -g chimp
+    - npm install -g selenium-standalone
+    - npm install
   post:
    - meteor --version
 test:
   override:
     - echo $SETTINGS_DEVELOPMENT > settings-development.json
-    - meteor npm run dev:
+    - npm run dev:
         background: true
     - sleep 30
-    - meteor npm run test
+    - npm run test
 deployment:
   staging:
     branch: develop
