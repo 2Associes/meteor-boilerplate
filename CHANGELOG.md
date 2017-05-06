@@ -1,3 +1,15 @@
+# 1.7.0 (2017-05-06)
+
+* Update Meteor to 1.4.4.1
+* Update accounts-facebook package to 1.2.0
+* Update minimongo package to 1.0.22
+* Update CircleCI config file
+* Update not-found feature and steps
+* Update chimp to 0.48.0
+* Remove [aldeed:autoform](https://atmospherejs.com/aldeed/autoform)
+* Remove [aldeed:collection2](https://atmospherejs.com/aldeed/collection2)
+* Remove [aldeed:simple-schema](https://atmospherejs.com/aldeed/simple-schema)
+
 # 1.6.0 (2017-04-25)
 
 * Update Meteor to 1.4.3.2
