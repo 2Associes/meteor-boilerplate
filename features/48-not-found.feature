@@ -6,4 +6,4 @@ Feature: Not found
 
   Scenario: Not found
     Given I have visited "http://localhost:3000/12345"
-    Then the "h1" tag has class "not-found-heading"
+    Then the h1 tag has class not-found-heading

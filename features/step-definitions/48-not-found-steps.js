@@ -5,9 +5,9 @@ module.exports = function () {
     browser.url(arg1);
   });
 
-  this.Then(/^the "([^"]*)" tag has class "([^"]*)"$/, (arg1, arg2) => {
-    browser.waitForExist(arg1);
-    const cssClass = browser.getAttribute(arg1, 'class');
-    expect(cssClass).toContain(arg2);
+  this.Then(/^the h1 tag has class not-found-heading$/, () => {
+    browser.waitForExist('h1');
+    const cssClass = browser.getAttribute('h1', 'class');
+    expect(cssClass).toContain('not-found-heading');
   });
 };
