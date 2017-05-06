@@ -7,4 +7,3 @@ Feature: Not found
   Scenario: Not found
     Given I have visited "http://localhost:3000/123456"
     Given I have changed my mind and visited "http://localhost:3000/123"
-    Then the h1 tag has class not-found-heading
