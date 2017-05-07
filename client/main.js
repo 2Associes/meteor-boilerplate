@@ -20,3 +20,9 @@ Meteor.startup(() => {
   T9n.setLanguage(getUserLanguage());
   $('html').attr('lang', getUserLanguage());
 });
+
+// enable service worker
+if ('serviceWorker' in navigator) {
+  // register service worker
+  navigator.serviceWorker.register('/service-worker.js');
+}
