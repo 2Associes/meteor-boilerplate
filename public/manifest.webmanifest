@@ -2,7 +2,7 @@
   "name"              : "2 Associes Meteor Boilerplate",
   "short_name"        : "Meteor Boilerplate",
   "description"       : "A boilerplate for Meteor projects using Less, Font Awesome and a modular, customizable Bootstrap 3",
-  "start_url"         : "/",
+  "start_url"         : "/?utm_source=homescreen",
   "display"           : "standalone",
   "orientation"       : "any",
   "background_color"  : "#fff",
