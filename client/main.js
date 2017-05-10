@@ -24,5 +24,7 @@ Meteor.startup(() => {
 // enable service worker
 if ('serviceWorker' in navigator) {
   // register service worker
-  navigator.serviceWorker.register('/service-worker.js');
+  navigator.serviceWorker.register('/service-worker.js', {
+    scope: './',
+  });
 }
