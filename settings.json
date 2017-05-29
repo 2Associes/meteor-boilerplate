@@ -1,1 +1,10 @@
-{}
+{
+  "galaxy.meteor.com": {
+    "env": {
+      "ROOT_URL": "http://sondage2017.caaf-louiscyr.com",
+      "MONGO_URL": "mongodb://caafproductionuser:PyRVpDatTNxVPxRxybkLcqDU@ds155631.mlab.com:55631/caafsondage2017productiondb"
+    }
+  },
+  "public": {},
+  "private": {}
+}
