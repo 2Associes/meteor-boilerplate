@@ -10,7 +10,7 @@ const spinner = '<div class="sk-circle"><div class="sk-circle1 sk-child"></div><
 Template.loading.rendered = function () {
   // launch splash
   this.loading = window.pleaseWait({
-    logo: '/images/2associes-logo.png',
+    // logo: '/images/2associes-logo.png',
     backgroundColor: '#3366ff',
     loadingHtml: message + spinner,
   });
