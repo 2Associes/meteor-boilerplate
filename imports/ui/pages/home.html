@@ -1,34 +1,15 @@
 <template name="home">
   <article class="home">
-    <form>
-      <fieldset class="where">
-        <legend>
-          Provenance
-        </legend>
-        <button type="button" name="button">Napierville</button>
-        <button type="button" name="button">Saint-Cyprien</button>
-        <button type="button" name="button">Rive-Sud</button>
-        <button type="button" name="button">Rive-Nord</button>
-        <button type="button" name="button">Montréal</button>
-        <button type="button" name="button">Québec</button>
-        <button type="button" name="button">Trois-Rivières</button>
-        <button type="button" name="button">Sherbrooke</button>
-        <button type="button" name="button">Autre</button>
-      </fieldset>
-      <fieldset class="how">
-        <legend>
-          Marketing
-        </legend>
-        <button type="button" name="button">Bouche à oreille</button>
-        <button type="button" name="button">Facebook</button>
-        <button type="button" name="button">Journaux</button>
-        <button type="button" name="button">Affiches</button>
-        <button type="button" name="button">Autre</button>
-      </fieldset>
-      <fieldset>
-        <input type="submit" name="" value="Soumettre">
-      </fieldset>
-    </form>
+    <div class="home-header">
+      <h1 class="home-header-title">
+        {{{_ 'homeHeaderTitle'}}}
+      </h1>
+    </div>
+    <div class="home-content">
+      {{#each paragraphs}}
+        {{> paragraph}}
+      {{/each}}
+    </div>
   </article>
 </template>
 

@@ -3,40 +3,23 @@
 // Media Queries  : @media (min-width: @screen-sm-min) {}
 
 .home {
-  .container-fluid;
+  .container;
 }
 
-fieldset {
-  margin-bottom: 10px;
+.home-header {
+  .jumbotron;
+  padding: 30px 15px;
 
-  &:last-child {
-    margin-top: 30px;
+  @media (min-width: @screen-sm-min) {
+    padding: 48px 60px;
   }
 }
 
-legend {
-  font-size: 1.25rem;
-  text-align: center;
-  padding: 15px 0 0;
-  border-bottom: 0 none;
-  margin-bottom: 15px;
+.home-content {
+  &:extend(.text-center, .text-muted);
 }
 
-button {
-  // .make-xs-column(6);
-  &:extend(.btn, .btn-default);
-  width: calc(50% - 1px);
-  margin-bottom: 10px;
-  height: 40px;
-  font-weight: 700;
-
-  &:last-child {
-    width: calc(100% - 1px);
-    margin-bottom: 0;
-  }
-}
-
-input {
+.home-content-text {
   .make-xs-column(12);
-  height: 40px;
+  .make-sm-column(4);
 }
