@@ -1,7 +1,104 @@
 <template name="header">
-  <div class="header">
-    <h1>
-      CAAF Louis Cyr 2017
-    </h1>
-  </div>
+  <nav class="navbar navbar-default navigations-main">
+    <div class="container-fluid navigations-main-container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header navigations-main-header">
+        <button type="button" class="navbar-toggle collapsed navigations-main-header-menu-icon" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar navigations-main-header-menu-icon-bar"></span>
+          <span class="icon-bar navigations-main-header-menu-icon-bar"></span>
+          <span class="icon-bar navigations-main-header-menu-icon-bar"></span>
+        </button>
+        <a class="navbar-brand navigations-main-header-brand" href="{{pathFor '/'}}">Brand</a>
+      </div>
+
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse navigations-main-navbar" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navigations-main-navbar-list">
+          <li class="navigations-main-navbar-item {{isActiveRoute 'home'}}">
+            <a class="navigations-main-navbar-link" href="{{pathFor '/' }}">
+              <i class="fa fa-home"></i> Home <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="navigations-main-navbar-item dropdown navigations-main-navbar-dropdown">
+            <a href="#" class="dropdown-toggle navigations-main-navbar-link navigations-main-navbar-link-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+            <ul class="dropdown-menu navigations-main-navbar-link-dropdown-list">
+              <li class="navigations-main-navbar-link-dropdown-item">
+                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+                  Action
+                </a>
+              </li>
+              <li class="navigations-main-navbar-link-dropdown-item">
+                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+                  Another action
+                </a>
+              </li>
+              <li class="navigations-main-navbar-link-dropdown-item">
+                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+                  Something else here
+                </a>
+              </li>
+              <li role="separator" class="divider navigations-main-navbar-link-dropdown-divider"></li>
+              <li class="navigations-main-navbar-link-dropdown-item">
+                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+                  Separated link
+                </a>
+              </li>
+              <li role="separator" class="divider navigations-main-navbar-link-dropdown-divider"></li>
+              <li class="navigations-main-navbar-link-dropdown-item">
+                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+                  One more separated link
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <form class="navbar-form navbar-left navigations-main-navbar-form" role="search">
+          <div class="form-group navigations-main-navbar-form-group">
+            <input type="text" class="form-control navigations-main-navbar-form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default navigations-main-navbar-form-button">Submit</button>
+        </form>
+        <ul class="nav navbar-nav navbar-right navigations-main-navbar-list">
+          <li class="navigations-main-navbar-item">
+            <a class="navigations-main-navbar-link" href="https://github.com/2Associes/meteor-boilerplate">
+              GitHub
+            </a>
+          </li>
+          {{#if currentUser}}
+          <li class="navigations-main-navbar-item dropdown navigations-main-navbar-dropdown">
+            <a id="current-user-username" href="#" class="dropdown-toggle navigations-main-navbar-link navigations-main-navbar-link-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              Hello {{currentUser.username}} <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu navigations-main-navbar-link-dropdown-list">
+              <li class="navigations-main-navbar-link-dropdown-item">
+                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+                  Profile
+                </a>
+              </li>
+              <li class="navigations-main-navbar-link-dropdown-item">
+                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+                  Settings
+                </a>
+              </li>
+              {{#if isInRole 'admin' 'default-group'}}
+                <li class="navigations-main-navbar-link-dropdown-item">
+                  <a class="navigations-main-navbar-link-dropdown-link" href="{{pathFor 'adminHome'}}">
+                    Admin
+                  </a>
+                </li>
+              {{/if}}
+            </ul>
+          </li>
+          {{/if}}
+          <li class="navigations-main-navbar-item">
+            {{> atNavButton}}
+          </li>
+          <li class="navigations-main-navbar-item">
+            {{> languageSwitcher}}
+          </li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 </template>
