@@ -1,3 +1,10 @@
+# 1.8.0 (2017-06-02)
+
+* Move features into tests folder
+* Introduce Progressive Web App concept
+* Update ESlint rules
+* Add header strings to i18n
+
 # 1.7.0 (2017-05-06)
 
 * Update Meteor to 1.4.4.1
