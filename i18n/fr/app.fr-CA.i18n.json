@@ -3,6 +3,24 @@
     "title": "Boilerplate Meteor",
     "description": "Démarrez votre application Meteor."
   },
+  "header": {
+    "menuIcon": "Ouvrir la navigation",
+    "brand": "Marque",
+    "navbarLinkHome": "Accueil",
+    "navbarLinkCurrent": "actuel",
+    "navbarLinkDropdown": "Menu déroulant",
+    "navbarLinkDropdownOptionOne": "Action",
+    "navbarLinkDropdownOptionTwo": "Autre action",
+    "navbarLinkDropdownOptionThree": "Autre chose ici",
+    "navbarLinkDropdownOptionFour": "Lien séparé",
+    "navbarLinkDropdownOptionFive": "Autre lien séparé",
+    "navbarSearchPlaceholder": "Recherche",
+    "navbarSearchButton": "Soumettre",
+    "navbarGreetings": "Bonjour",
+    "navbarProfile": "Profil",
+    "navbarSettings": "Paramètres",
+    "navbarAdmin": "Administration"
+  },
   "homeHeaderTitle": "Boilerplate Meteor",
   "404notFoundHeading": "Erreur 404!",
   "footer": {
