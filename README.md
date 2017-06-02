@@ -58,8 +58,6 @@ nvm use v6.10.2
 ├── meteor-boilerplate/
 │   ├── .meteor
 │   ├── client
-│   ├── features
-│   │   ├── step-definitions
 │   ├── i18n
 │   ├── imports
 │   │   ├── api
@@ -77,6 +75,8 @@ nvm use v6.10.2
 │   ├── public
 |   │   ├── images
 │   ├── server
+│   ├── test
+│   │   ├── step-definitions
 ```
 
 ## Included Packages
