@@ -3,6 +3,24 @@
     "title": "Meteor Boilerplate",
     "description": "Build up your Meteor App."
   },
+  "header": {
+    "menuIcon": "Toggle navigation",
+    "brand": "Brand",
+    "navbarLinkHome": "Home",
+    "navbarLinkCurrent": "current",
+    "navbarLinkDropdown": "Dropdown",
+    "navbarLinkDropdownOptionOne": "Action",
+    "navbarLinkDropdownOptionTwo": "Another action",
+    "navbarLinkDropdownOptionThree": "Something else here",
+    "navbarLinkDropdownOptionFour": "Separated link",
+    "navbarLinkDropdownOptionFive": "One more separated link",
+    "navbarSearchPlaceholder": "Search",
+    "navbarSearchButton": "Submit",
+    "navbarGreetings": "Hello",
+    "navbarProfile": "Profile",
+    "navbarSettings": "Settings",
+    "navbarAdmin": "Admin"
+  },
   "homeHeaderTitle": "Meteor Boilerplate",
   "404notFoundHeading": "404 Not Found!",
   "footer": {
