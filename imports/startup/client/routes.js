@@ -12,12 +12,14 @@ FlowRouter.route('/', {
   action: function () {
     BlazeLayout.render('app', { header: 'header', main: 'home', footer: 'footer' });
   },
+  classname: 'home',
 });
 
 FlowRouter.notFound = {
   action: function () {
     BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' });
   },
+  classname: 'not-found',
 };
 
 const adminRoutes = FlowRouter.group({
@@ -36,6 +38,7 @@ adminRoutes.route('/home', {
       BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' });
     }
   },
+  classname: 'admin-home',
 });
 
 // Configure Accounts Templates default
