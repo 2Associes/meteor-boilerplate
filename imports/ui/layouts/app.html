@@ -1,5 +1,5 @@
 <template name="app">
-  <div class="app">
+  <div class="app {{ currentRouteOption 'classname' }}">
     {{> Template.dynamic template=header}}
     {{> Template.dynamic template=main}}
     {{> Template.dynamic template=footer}}
