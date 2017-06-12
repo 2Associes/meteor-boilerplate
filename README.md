@@ -76,7 +76,9 @@ nvm use v6.10.2
 │   │   │   │   ├── themes
 │   │   │   │   ├── utilities
 │   ├── public
+|   │   ├── favicons
 |   │   ├── images
+|   │   ├── offline
 │   ├── server
 │   ├── tests
 │   │   ├── step-definitions
