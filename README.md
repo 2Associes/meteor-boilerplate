@@ -59,8 +59,11 @@ nvm use v6.10.2
 │   ├── .meteor
 │   ├── client
 │   ├── i18n
+│   │   ├── en
+│   │   ├── fr
 │   ├── imports
 │   │   ├── api
+│   │   │   ├── server
 │   │   ├── startup
 │   │   │   ├── client
 │   │   │   ├── server
@@ -73,9 +76,11 @@ nvm use v6.10.2
 │   │   │   │   ├── themes
 │   │   │   │   ├── utilities
 │   ├── public
+|   │   ├── favicons
 |   │   ├── images
+|   │   ├── offline
 │   ├── server
-│   ├── test
+│   ├── tests
 │   │   ├── step-definitions
 ```
 
