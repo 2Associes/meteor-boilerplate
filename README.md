@@ -75,7 +75,7 @@ nvm use v6.10.2
 │   ├── public
 |   │   ├── images
 │   ├── server
-│   ├── test
+│   ├── tests
 │   │   ├── step-definitions
 ```
 
