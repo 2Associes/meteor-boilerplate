@@ -59,6 +59,8 @@ nvm use v6.10.2
 │   ├── .meteor
 │   ├── client
 │   ├── i18n
+│   │   ├── en
+│   │   ├── fr
 │   ├── imports
 │   │   ├── api
 │   │   ├── startup
