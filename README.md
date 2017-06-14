@@ -6,8 +6,8 @@ A boilerplate for Meteor projects using Less, Font Awesome and a modular, custom
 
 ## Prerequisites
 
-* [Node.js][2] >= v6.10.2
-* [npm][4] >= 3.10.10
+* [Node.js][2] >= v7.10.0
+* [npm][4] >= 4.2.0
 
 ```
 node -v && npm -v
