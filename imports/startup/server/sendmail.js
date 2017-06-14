@@ -36,8 +36,8 @@ Meteor.methods({
     this.unblock();
 
     Email.send({
-      to: 'hugues@2associes.com',
-      from: 'hugues@2associes.com',
+      to: 'to.email@example.com',
+      from: 'from.email@example.com',
       subject: 'Example Email',
       text: 'The contents of our email in plain text.',
     });
