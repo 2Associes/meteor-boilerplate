@@ -4,5 +4,5 @@ import './fixtures';
 // Defines accounts services
 import './accounts';
 
-// Defines email setup
-import './email';
+// Defines sendmail setup
+import './sendmail';
