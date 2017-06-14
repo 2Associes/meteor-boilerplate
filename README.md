@@ -116,6 +116,8 @@ nvm use v7.10.0
 - [facebook-config-ui](https://atmospherejs.com/meteor/facebook-config-ui) : Blaze configuration templates for Facebook OAuth
 - [audit-argument-checks](https://atmospherejs.com/meteor/audit-argument-checks#audit-argument-checks) : Try to detect inadequate input sanitization
 - [mdg:validated-method](https://atmospherejs.com/mdg/validated-method) : A simple wrapper for Meteor.methods
+- [email](https://atmospherejs.com/meteor/email) : Send email messages
+- [meteorhacks:ssr](https://atmospherejs.com/meteorhacks/ssr) : Server Side Rendering for Meteor with Blaze
 
 [1]:https://chimp.readme.io
 [2]:https://nodejs.org
