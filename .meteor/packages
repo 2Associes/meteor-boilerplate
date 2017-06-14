@@ -54,3 +54,5 @@ useraccounts:flow-routing
 zimme:active-route
 dynamic-import
 okgrow:analytics
+email
+meteorhacks:ssr
