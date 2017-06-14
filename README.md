@@ -16,8 +16,8 @@ node -v && npm -v
 We recommand using [Node Version Manager][3]
 
 ```
-nvm install v6.10.2
-nvm use v6.10.2
+nvm install v7.10.0
+nvm use v7.10.0
 ```
 
 ## Installation
