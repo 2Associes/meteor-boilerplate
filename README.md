@@ -75,6 +75,8 @@ nvm use v6.10.2
 │   │   │   ├── stylesheets
 │   │   │   │   ├── themes
 │   │   │   │   ├── utilities
+│   ├── private
+|   │   ├── emails
 │   ├── public
 |   │   ├── favicons
 |   │   ├── images
