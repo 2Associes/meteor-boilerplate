@@ -6,9 +6,11 @@
       </h1>
     </div>
     <div class="home-content">
-      {{#each paragraphs}}
-        {{> paragraph}}
-      {{/each}}
+      {{#if Template.subscriptionsReady}}
+        {{#each paragraphs}}
+          {{> paragraph}}
+        {{/each}}
+      {{/if}}
     </div>
   </main>
 </template>
