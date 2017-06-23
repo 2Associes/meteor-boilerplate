@@ -32,7 +32,6 @@ ejson@1.0.13
 facebook-config-ui@1.0.0
 fortawesome:fontawesome
 huttonr:bootstrap3
-insecure@1.0.7                # Allow all DB writes from clients (for prototyping)
 jabbslad:basic-auth
 kadira:blaze-layout
 kadira:flow-router
