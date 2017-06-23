@@ -23,7 +23,6 @@ alanning:roles
 aldeed:simple-schema
 arillo:flow-router-helpers
 audit-argument-checks@1.0.7
-autopublish@1.0.7             # Publish all data to the clients (for prototyping)
 babel-compiler@6.19.1
 check@1.2.5
 coffeescript@1.11.1_4
