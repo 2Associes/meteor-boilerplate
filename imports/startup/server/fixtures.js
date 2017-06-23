@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor';
 
-import { Paragraphs } from '../../api/paragraphs';
+import { Paragraphs } from '../../api/paragraphs/paragraphs';
 
 // if the database is empty on server start, create some sample data.
 Meteor.startup(() => {
@@ -15,7 +15,7 @@ Meteor.startup(() => {
       Paragraphs.insert({
         text: randomText,
         i18n: {
-          en: {
+          'en-CA': {
             text: randomI18nEnText,
           },
         },
