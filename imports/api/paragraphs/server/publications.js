@@ -2,10 +2,6 @@
 
 import { Paragraphs } from '../paragraphs';
 
-Meteor.publish('paragraphs', function paragraphsPublication() {
-  return Paragraphs.find({});
+TAPi18n.publish('paragraphs', function () {
+  return Paragraphs.i18nFind();
 });
-
-if (Meteor.isServer) {
-  console.log(Meteor.isServer);
-}
