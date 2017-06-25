@@ -17,7 +17,7 @@ Template.languageSwitcher.helpers({
               en: 'FR',
             },
           });
-        } else {
+        } else if (key === 'en-CA') {
           languages.push({
             code: key,
             labels: {
@@ -30,8 +30,8 @@ Template.languageSwitcher.helpers({
     }
 
     switch (currentLanguageCode) {
-      case 'fr-CA': return languages[0];
-      case 'en-CA': return languages[1];
+      case 'fr-CA': return languages[1];
+      case 'en-CA': return languages[0];
       default: return languages[0];
     }
   },
