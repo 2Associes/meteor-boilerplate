@@ -22,7 +22,6 @@ accounts-password@1.3.6
 alanning:roles
 aldeed:simple-schema
 arillo:flow-router-helpers
-audit-argument-checks@1.0.7
 babel-compiler@6.19.1
 check@1.2.5
 coffeescript@1.11.1_4
@@ -55,4 +54,3 @@ okgrow:analytics
 email
 meteorhacks:ssr
 webtempest:animate
-autopublish

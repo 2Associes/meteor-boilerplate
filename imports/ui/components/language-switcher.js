@@ -8,30 +8,28 @@ Template.languageSwitcher.helpers({
     const languages = [];
 
     for (const key in obj) {
-      if (key !== 'en') { // Exclude normal 'en' translation and keep 'en-CA'
-        if (key === 'fr-CA') {
-          languages.push({ // Manually add the information for the 'fr-CA' translation
-            code: key,
-            labels: {
-              name: 'FR',
-              en: 'FR',
-            },
-          });
-        } else {
-          languages.push({
-            code: key,
-            labels: {
-              name: 'EN',
-              en: 'EN',
-            },
-          });
-        }
+      if (key === 'fr-CA') {
+        languages.push({ // Manually add the information for the 'fr-CA' translation
+          code: key,
+          labels: {
+            name: 'FR',
+            en: 'FR',
+          },
+        });
+      } else if (key === 'en-CA') {
+        languages.push({
+          code: key,
+          labels: {
+            name: 'EN',
+            en: 'EN',
+          },
+        });
       }
     }
 
     switch (currentLanguageCode) {
-      case 'fr-CA': return languages[0];
-      case 'en-CA': return languages[1];
+      case 'fr-CA': return languages[1];
+      case 'en-CA': return languages[0];
       default: return languages[0];
     }
   },

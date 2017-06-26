@@ -1,11 +1,9 @@
-// import { TAPi18n } from 'meteor/tap:i18n';
-
 import { Paragraphs } from '../paragraphs';
 
-Meteor.publish('paragraphs', function paragraphsPublication() {
-  return Paragraphs.find({});
+TAPi18n.publish('paragraphs', function () {
+  const data = Paragraphs.i18nFind();
+  if (data) {
+    return data;
+  }
+  return this.ready();
 });
-
-if (Meteor.isServer) {
-  console.log(Meteor.isServer);
-}

@@ -6,3 +6,6 @@ import './accounts';
 
 // Defines sendmail setup
 import './sendmail';
+
+// Register apis
+import './register-api.js';
