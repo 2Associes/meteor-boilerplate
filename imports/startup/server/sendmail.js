@@ -1,5 +1,10 @@
 import { Accounts } from 'meteor/accounts-base';
 
+Meteor.startup(() => {
+  // Uncomment if you use MAIL_URL in settings
+  // process.env.MAIL_URL = Meteor.settings.private.MAIL_URL;
+});
+
 Accounts.emailTemplates.siteName = '2 Associés Meteor Boilerplate';
 Accounts.emailTemplates.from = '2 Associés Meteor Boilerplate Admin <accounts@example.com>';
 
@@ -23,10 +28,6 @@ Accounts.emailTemplates.verifyEmail = {
     });
   },
 };
-
-Meteor.startup(() => {
-  process.env.MAIL_URL = Meteor.settings.private.MAIL_URL;
-});
 
 Meteor.methods({
 
