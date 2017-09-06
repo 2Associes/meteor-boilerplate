@@ -1,3 +1,15 @@
+import { FlowRouter } from 'meteor/kadira:flow-router';
+import { BlazeLayout } from 'meteor/kadira:blaze-layout';
+
+import '../../ui/components/loading';
+import '../../ui/components/header';
+import '../../ui/components/footer';
+
+const app = () => import('../../ui/layouts/app');
+const home = () => import('../../ui/pages/home');
+const notFound = () => import('../../ui/pages/not-found');
+const adminHome = () => import('../../ui/pages/admin/adminHome');
+
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
 //     action: function(params, queryParams) {
@@ -9,14 +21,18 @@ FlowRouter.route('/', {
   name: 'home',
   // Subscriptions registered here don't have Fast Render support.
   // subscriptions: function() {},
-  action: function () {
+  async action() {
+    await app();
+    await home();
     BlazeLayout.render('app', { header: 'header', main: 'home', footer: 'footer' });
   },
   classname: 'home',
 });
 
 FlowRouter.notFound = {
-  action: function () {
+  async action() {
+    await app();
+    await notFound();
     BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' });
   },
   classname: 'not-found',
@@ -29,13 +45,19 @@ const adminRoutes = FlowRouter.group({
 
 adminRoutes.route('/home', {
   name: 'adminHome',
-  action: function () {
+  async action() {
     if (!Meteor.userId()) {
       Router.go('signIn');
-    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
-      BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' });
     } else {
-      BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' });
+      await app();
+
+      if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
+        await notFound();
+        BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' });
+      } else {
+        await adminHome();
+        BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' });
+      }
     }
   },
   classname: 'admin-home',

@@ -1,5 +1,7 @@
 import './header.html';
 
+import '../../ui/components/language-switcher';
+
 Template.header.helpers({
 
   currentUserIdentity() {
