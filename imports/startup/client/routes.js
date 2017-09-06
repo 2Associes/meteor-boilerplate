@@ -8,7 +8,7 @@ import '../../ui/components/footer';
 const app = () => import('../../ui/layouts/app');
 const home = () => import('../../ui/pages/home');
 const notFound = () => import('../../ui/pages/not-found');
-const adminHome = () => import('../../ui/pages/admin/adminHome');
+const adminHome = () => import('../../ui/pages/admin/admin-home');
 
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
