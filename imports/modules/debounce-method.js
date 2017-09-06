@@ -13,7 +13,7 @@ export default (methodName, debounceDelay = 1500) =>
 // Meteor.call('users.data.name.update', 'Firstname Lastname');
 //
 // Do this :
-// import debounceMethod from '../../modules/debounceMethod';
+// import debounceMethod from '../../modules/debounce-method';
 //
 // const updateUserName = debounceMethod('users.data.name.update'); // default 1500ms delay
 // or :
