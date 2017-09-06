@@ -1,3 +1,4 @@
+import { TAPi18n } from 'meteor/tap:i18n';
 import './language-switcher.html';
 
 Template.languageSwitcher.helpers({

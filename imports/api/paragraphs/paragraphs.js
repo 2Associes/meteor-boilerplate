@@ -1,5 +1,4 @@
-// global Meteor, TAPi18n, $
-
+import { TAPi18n } from 'meteor/tap:i18n';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
 export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language: 'fr-CA' });
