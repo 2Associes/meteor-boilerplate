@@ -28,11 +28,9 @@ digilord:faker
 ejson@1.0.13
 facebook-config-ui@1.0.0
 fortawesome:fontawesome
-huttonr:bootstrap3
 jabbslad:basic-auth
 kadira:blaze-layout
 kadira:flow-router
-less@2.7.9
 localstorage@1.1.0
 mdg:validated-method
 meteortoys:allthings
