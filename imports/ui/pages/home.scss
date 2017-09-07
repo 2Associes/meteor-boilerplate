@@ -3,23 +3,23 @@
 // Media Queries  : @media (min-width: @screen-sm-min) {}
 
 main.home {
-  .container;
+  @extend .container;
 }
 
 .home-header {
-  .jumbotron;
+  @extend .jumbotron;
   padding: 30px 15px;
 
-  @media (min-width: @screen-sm-min) {
+  @media (min-width: $screen-sm-min) {
     padding: 48px 60px;
   }
 }
 
 .home-content {
-  &:extend(.text-center, .text-muted);
+  @extend .text-center, .text-muted;
 }
 
 .home-content-text {
-  .make-xs-column(12);
-  .make-sm-column(4);
+  @include make-xs-column(12);
+  @include make-sm-column(4);
 }
