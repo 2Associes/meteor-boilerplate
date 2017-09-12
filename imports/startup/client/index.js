@@ -1,5 +1,5 @@
 // Import Flow Router routes
-import './routes';
+import './routes'
 
 // Import helpers
-import './helpers.coffee';
+import './helpers.coffee'

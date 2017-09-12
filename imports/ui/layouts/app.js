@@ -1,7 +1,7 @@
-import { Template } from 'meteor/templating';
+import { Template } from 'meteor/templating'
 
-import './app.html';
+import './app.html'
 
-Template.app.helpers({});
+Template.app.helpers({})
 
-Template.app.events({});
+Template.app.events({})
