@@ -9,6 +9,7 @@ main.home {
 .home-header {
   @extend .jumbotron;
   padding: 30px 15px;
+  margin-top: 30px;
 
   @include media-breakpoint-up(md) {
     padding: 48px 60px;
@@ -16,13 +17,9 @@ main.home {
 }
 
 .home-content {
-  @extend .text-center, .text-muted;
+  @extend .d-flex, .text-center, .text-muted;
 }
 
 .home-content-text {
-  @include make-col(12);
-
-  @include media-breakpoint-up(md) {
-    @include make-col(4);
-  }
+  @extend .col-12, .col-md-4;
 }
