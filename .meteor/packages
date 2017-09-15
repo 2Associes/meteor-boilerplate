@@ -20,7 +20,6 @@ ecmascript@0.8.0              # Enable ECMAScript2015+ syntax in app code
 accounts-facebook@1.2.0
 accounts-password@1.3.6
 alanning:roles
-aldeed:simple-schema
 arillo:flow-router-helpers
 babel-compiler@6.19.1
 check@1.2.5
@@ -54,4 +53,5 @@ okgrow:analytics
 email
 meteorhacks:ssr
 webtempest:animate
+aldeed:collection2-core
 aldeed:template-extension
