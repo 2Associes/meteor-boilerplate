@@ -1,3 +1,5 @@
+import { Meteor } from 'meteor/meteor';
+
 // Set up login services
 Meteor.startup(() => {
   // Add Facebook configuration entry
