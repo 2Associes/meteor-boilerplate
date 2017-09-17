@@ -1,3 +1,3 @@
 // Define reusable schemas here
 
-export {};
+export {}

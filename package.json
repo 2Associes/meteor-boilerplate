@@ -25,6 +25,9 @@
       "import/resolver": "meteor"
     },
     "rules": {
+      "semi": ["error", "never"],
+      "comma-dangle": ["error", "never"],
+      "max-len": "off",
       "no-undef": "off",
       "no-undef-init": "off",
       "import/extensions": "off",

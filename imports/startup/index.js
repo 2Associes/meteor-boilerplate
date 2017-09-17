@@ -1,1 +1,1 @@
-import './accounts-templates-config';
+import './accounts-templates-config'

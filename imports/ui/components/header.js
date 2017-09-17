@@ -1,18 +1,18 @@
-import { Meteor } from 'meteor/meteor';
-import './header.html';
+import { Meteor } from 'meteor/meteor'
+import './header.html'
 
-import '../../ui/components/language-switcher';
+import '../../ui/components/language-switcher'
 
 Template.header.helpers({
 
   currentUserIdentity() {
-    const profile = Meteor.user().profile;
-    const username = Meteor.user().username;
+    const profile = Meteor.user().profile
+    const username = Meteor.user().username
     if (profile !== undefined) {
-      return profile.name;
+      return profile.name
     }
-    return username;
-  },
-});
+    return username
+  }
+})
 
-Template.header.events({});
+Template.header.events({})
