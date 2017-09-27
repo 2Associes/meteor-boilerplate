@@ -5,53 +5,49 @@
 </template>
 
 <template name="navigationMain">
-  <nav class="navbar navbar-default navigations-main">
+  <nav class="navbar navbar-expand-xl navbar-light bg-light navigations-main">
     <div class="container-fluid navigations-main-container">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header navigations-main-header">
-        <button type="button" class="navbar-toggle collapsed navigations-main-header-menu-icon" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-          <span class="sr-only">{{_ 'header.menuIcon' }}</span>
-          <span class="icon-bar navigations-main-header-menu-icon-bar"></span>
-          <span class="icon-bar navigations-main-header-menu-icon-bar"></span>
-          <span class="icon-bar navigations-main-header-menu-icon-bar"></span>
-        </button>
-        <a class="navbar-brand navigations-main-header-brand" href="{{pathFor '/'}}">{{_ 'header.brand' }}</a>
-      </div>
+      <a class="navbar-brand navigations-main-header-brand" href="{{pathFor '/'}}">{{_ 'header.brand' }}</a>
+      <button type="button" class="navbar-toggler navbar-toggler-right navigations-main-header-menu-icon" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
+        <span class="sr-only">{{_ 'header.menuIcon' }}</span>
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navigations-main-navbar" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navigations-main-navbar-list">
-          <li class="navigations-main-navbar-item {{isActiveRoute 'home'}}">
-            <a class="navigations-main-navbar-link" href="{{pathFor '/' }}">
+      <div class="collapse navbar-collapse navigations-main-navbar" id="navbarSupportedContent">
+        <ul class="navbar-nav navigations-main-navbar-list">
+          <li class="navbar-item navigations-main-navbar-item {{isActiveRoute 'home'}}">
+            <a class="nav-link navigations-main-navbar-link" href="{{pathFor '/' }}">
               <i class="fa fa-home"></i> {{_ 'header.navbarLinkHome' }} <span class="sr-only">({{_ 'header.navbarLinkCurrent' }})</span>
             </a>
           </li>
-          <li class="navigations-main-navbar-item dropdown navigations-main-navbar-dropdown">
-            <a href="#" class="dropdown-toggle navigations-main-navbar-link navigations-main-navbar-link-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{_ 'header.navbarLinkDropdown' }} <span class="caret"></span></a>
-            <ul class="dropdown-menu navigations-main-navbar-link-dropdown-list">
-              <li class="navigations-main-navbar-link-dropdown-item">
+          <li class="navbar-item navigations-main-navbar-item dropdown navigations-main-navbar-dropdown">
+            <a href="#" class="nav-link dropdown-toggle navigations-main-navbar-link navigations-main-navbar-link-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{_ 'header.navbarLinkDropdown' }} <span class="caret"></span></a>
+            <ul class="dropdown-menu mb-3 mb-xl-0 navigations-main-navbar-link-dropdown-list">
+              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                 <a class="navigations-main-navbar-link-dropdown-link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionOne' }}
                 </a>
               </li>
-              <li class="navigations-main-navbar-link-dropdown-item">
+              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                 <a class="navigations-main-navbar-link-dropdown-link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionTwo' }}
                 </a>
               </li>
-              <li class="navigations-main-navbar-link-dropdown-item">
+              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                 <a class="navigations-main-navbar-link-dropdown-link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionThree' }}
                 </a>
               </li>
-              <li role="separator" class="divider navigations-main-navbar-link-dropdown-divider"></li>
-              <li class="navigations-main-navbar-link-dropdown-item">
+              <li role="separator" class="dropdown-divider navigations-main-navbar-link-dropdown-divider"></li>
+              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                 <a class="navigations-main-navbar-link-dropdown-link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionFour' }}
                 </a>
               </li>
-              <li role="separator" class="divider navigations-main-navbar-link-dropdown-divider"></li>
-              <li class="navigations-main-navbar-link-dropdown-item">
+              <li role="separator" class="dropdown-divider navigations-main-navbar-link-dropdown-divider"></li>
+              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                 <a class="navigations-main-navbar-link-dropdown-link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionFive' }}
                 </a>
@@ -59,36 +55,34 @@
             </ul>
           </li>
         </ul>
-        <form class="navbar-form navbar-left navigations-main-navbar-form" role="search">
-          <div class="form-group navigations-main-navbar-form-group">
-            <input type="text" class="form-control navigations-main-navbar-form-control" placeholder="{{_ 'header.navbarSearchPlaceholder' }}">
-          </div>
-          <button type="submit" class="btn btn-default navigations-main-navbar-form-button">{{_ 'header.navbarSearchButton' }}</button>
+        <form class="form-inline navigations-main-navbar-form" role="search">
+          <input type="text" class="form-control ml-xl-4 navigations-main-navbar-form-control" placeholder="{{_ 'header.navbarSearchPlaceholder' }}">
+          <button type="submit" class="btn btn-outline-success ml-xl-1 navigations-main-navbar-form-button">{{_ 'header.navbarSearchButton' }}</button>
         </form>
-        <ul class="nav navbar-nav navbar-right navigations-main-navbar-list">
-          <li class="navigations-main-navbar-item">
-            <a class="navigations-main-navbar-link" href="https://github.com/2Associes/meteor-boilerplate">
+        <ul class="navbar-nav ml-auto navigations-main-navbar-list">
+          <li class="navbar-item navigations-main-navbar-item">
+            <a class="nav-link navigations-main-navbar-link" href="https://github.com/2Associes/meteor-boilerplate">
               GitHub
             </a>
           </li>
           {{#if currentUser}}
-          <li class="navigations-main-navbar-item dropdown navigations-main-navbar-dropdown">
-            <a id="current-user-username" href="#" class="dropdown-toggle navigations-main-navbar-link navigations-main-navbar-link-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <li class="navbar-item navigations-main-navbar-item dropdown navigations-main-navbar-dropdown">
+            <a id="current-user-username" href="#" class="nav-link dropdown-toggle navigations-main-navbar-link navigations-main-navbar-link-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               {{_ 'header.navbarGreetings' }} {{currentUserIdentity}} <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu navigations-main-navbar-link-dropdown-list">
-              <li class="navigations-main-navbar-link-dropdown-item">
+            <ul class="dropdown-menu mb-3 mb-xl-0 navigations-main-navbar-link-dropdown-list">
+              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                 <a class="navigations-main-navbar-link-dropdown-link" href="#">
                   {{_ 'header.navbarProfile' }}
                 </a>
               </li>
-              <li class="navigations-main-navbar-link-dropdown-item">
+              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                 <a class="navigations-main-navbar-link-dropdown-link" href="#">
                   {{_ 'header.navbarSettings' }}
                 </a>
               </li>
               {{#if isInRole 'admin' 'default-group'}}
-                <li class="navigations-main-navbar-link-dropdown-item">
+                <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                   <a class="navigations-main-navbar-link-dropdown-link" href="{{pathFor 'adminHome'}}">
                     {{_ 'header.navbarAdmin' }}
                   </a>
@@ -97,10 +91,10 @@
             </ul>
           </li>
           {{/if}}
-          <li class="navigations-main-navbar-item">
+          <li class="navbar-item navigations-main-navbar-item">
             {{> atNavButton}}
           </li>
-          <li class="navigations-main-navbar-item">
+          <li class="navbar-item navigations-main-navbar-item">
             {{> languageSwitcher}}
           </li>
         </ul>

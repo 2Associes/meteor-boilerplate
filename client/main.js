@@ -1,5 +1,6 @@
-import '../imports/startup'
-import '../imports/startup/client'
+import 'bootstrap';
+import '../imports/startup';
+import '../imports/startup/client';
 
 const getUserLanguage = function () {
   // Put here the logic for determining the user language
