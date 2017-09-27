@@ -1,1 +1,1 @@
-import './admin-home.html';
+import './admin-home.html'

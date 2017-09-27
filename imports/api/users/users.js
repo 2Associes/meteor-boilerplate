@@ -1,45 +1,45 @@
-import SimpleSchema from 'simpl-schema';
-import Schemas from '../schemas';
+import SimpleSchema from 'simpl-schema'
+import Schemas from '../schemas'
 
 // See example: https://github.com/aldeed/meteor-collection2-core#attach-a-schema-to-meteorusers
 Schemas.User = new SimpleSchema({
   _id: {
     type: String,
-    regEx: SimpleSchema.RegEx.Id,
+    regEx: SimpleSchema.RegEx.Id
   },
   emails: {
     type: Array,
-    optional: true,
+    optional: true
   },
   'emails.$': {
-    type: Object,
+    type: Object
   },
   'emails.$.address': {
     type: String,
-    regEx: SimpleSchema.RegEx.Email,
+    regEx: SimpleSchema.RegEx.Email
   },
   'emails.$.verified': {
-    type: Boolean,
+    type: Boolean
   },
   createdAt: {
-    type: Date,
+    type: Date
   },
   profile: {
     type: Object,
     optional: true,
-    blackbox: true,
+    blackbox: true
   },
   services: {
     type: Object,
     optional: true,
-    blackbox: true,
+    blackbox: true
   },
   roles: {
     type: Object,
     optional: true,
-    blackbox: true,
-  },
-});
+    blackbox: true
+  }
+})
 
 // Automatically validates documents when created or updated (aldeed:collection2-core)
-Meteor.users.attachSchema(Schemas.User);
+Meteor.users.attachSchema(Schemas.User)

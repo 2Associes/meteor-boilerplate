@@ -24,15 +24,15 @@ AccountsTemplates.configure({
   negativeValidation: true,
   positiveValidation: true,
   negativeFeedback: false,
-  positiveFeedback: true,
+  positiveFeedback: true
 
   // Privacy Policy and Terms of Use
   // privacyUrl: 'privacy',
-  // termsUrl: 'terms-of-use',
-});
+  // termsUrl: 'terms-of-use'
+})
 
-const pwd = AccountsTemplates.removeField('password');
-AccountsTemplates.removeField('email');
+const pwd = AccountsTemplates.removeField('password')
+AccountsTemplates.removeField('email')
 
 AccountsTemplates.addFields([
   {
@@ -40,7 +40,7 @@ AccountsTemplates.addFields([
     type: 'text',
     displayName: 'username',
     required: true,
-    minLength: 5,
+    minLength: 5
   },
   {
     _id: 'email',
@@ -48,13 +48,13 @@ AccountsTemplates.addFields([
     required: true,
     displayName: 'email',
     re: /.+@(.+){2,}\.(.+){2,}/,
-    errStr: 'Invalid email',
+    errStr: 'Invalid email'
   },
   {
     _id: 'username_and_email',
     type: 'text',
     required: true,
-    displayName: 'Login',
+    displayName: 'Login'
   },
-  pwd,
-]);
+  pwd
+])

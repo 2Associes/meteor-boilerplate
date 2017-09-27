@@ -1,9 +1,9 @@
-import { Paragraphs } from '../paragraphs';
+import { Paragraphs } from '../paragraphs'
 
 TAPi18n.publish('paragraphs', function () {
-  const data = Paragraphs.i18nFind();
+  const data = Paragraphs.i18nFind()
   if (data) {
-    return data;
+    return data
   }
-  return this.ready();
-});
+  return this.ready()
+})

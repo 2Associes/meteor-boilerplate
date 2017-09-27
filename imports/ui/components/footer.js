@@ -1,11 +1,11 @@
-import { Meteor } from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor'
 
-import './footer.html';
+import './footer.html'
 
 Template.footer.helpers({
   meteorRelease() {
-    return Meteor.release;
-  },
-});
+    return Meteor.release
+  }
+})
 
-Template.footer.events({});
+Template.footer.events({})

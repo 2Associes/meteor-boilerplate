@@ -1,4 +1,4 @@
-import { Meteor } from 'meteor/meteor';
+import { Meteor } from 'meteor/meteor'
 
 // Set up login services
 Meteor.startup(() => {
@@ -9,11 +9,11 @@ Meteor.startup(() => {
     {
       $set: {
         appId: 'XXXXXXXXXXXXXXXXXXXX',
-        secret: 'XXXXXXXXXXXXXXXXXXXX',
-      },
+        secret: 'XXXXXXXXXXXXXXXXXXXX'
+      }
     },
-    { upsert: true },
-  );
+    { upsert: true }
+  )
 
   // Add GitHub configuration entry
   /*
@@ -25,7 +25,7 @@ Meteor.startup(() => {
       }
     },
     { upsert: true }
-  );
+  )
   */
 
   // Add Google configuration entry
@@ -38,7 +38,7 @@ Meteor.startup(() => {
   //     }
   //   },
   //   { upsert: true }
-  // );
+  // )
 
   // Add Linkedin configuration entry
   /*
@@ -50,6 +50,6 @@ Meteor.startup(() => {
       }
     },
     { upsert: true }
-  );
+  )
   */
-});
+})
