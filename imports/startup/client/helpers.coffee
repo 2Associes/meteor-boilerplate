@@ -1,4 +1,4 @@
-boilerplateRelease = '1.6.0'
+boilerplateRelease = '1.9.0'
 Template.registerHelper 'boilerplateRelease', ->
 	boilerplateRelease
 
@@ -12,3 +12,8 @@ Template.registerHelper 'localizedDateAndTime', (date) ->
 Template.registerHelper 'formatDate', (date) ->
   if date
     moment(date).format 'LL'
+
+# Get current route classename
+Template.registerHelper 'currentRouteClassname', ->
+  FlowRouter.watchPathChange()
+  FlowRouter.current().route.options.classname

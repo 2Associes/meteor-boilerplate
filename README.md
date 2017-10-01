@@ -2,12 +2,12 @@
 
 [![CircleCI Build Status](https://circleci.com/gh/2Associes/meteor-boilerplate/tree/master.svg?style=shield&circle-token=d1f1cfc9181d3bf9a8a408745dd56a617d36dafd)](https://circleci.com/gh/2Associes/meteor-boilerplate)
 
-A boilerplate for Meteor projects using Less, Font Awesome and a modular, customizable Bootstrap 3.
+A boilerplate for Meteor 1.5.2.1 projects using Sass, Font Awesome and Bootstrap 4.
 
 ## Prerequisites
 
-* [Node.js][2] >= v6.10.2
-* [npm][4] >= 3.10.10
+* [Node.js][2] >= v8.1.0
+* [npm][4] >= 5.4.2
 
 ```
 node -v && npm -v
@@ -16,8 +16,8 @@ node -v && npm -v
 We recommand using [Node Version Manager][3]
 
 ```
-nvm install v6.10.2
-nvm use v6.10.2
+nvm install v8.1.0
+nvm use v8.1.0
 ```
 
 ## Installation
@@ -58,9 +58,18 @@ nvm use v6.10.2
 ├── meteor-boilerplate/
 │   ├── .meteor
 │   ├── client
+│   │   ├── compatibility
+│   │   ├── stylesheets
+│   │   │   ├── themes
+│   │   │   ├── utilities
 │   ├── i18n
+│   │   ├── en
+│   │   ├── fr
 │   ├── imports
 │   │   ├── api
+│   │   │   ├── paragraphs
+│   │   │   ├── users
+│   │   ├── modules
 │   │   ├── startup
 │   │   │   ├── client
 │   │   │   ├── server
@@ -69,13 +78,14 @@ nvm use v6.10.2
 │   │   │   ├── layouts
 │   │   │   ├── pages
 │   │   │   │   ├── admin
-│   │   │   ├── stylesheets
-│   │   │   │   ├── themes
-│   │   │   │   ├── utilities
+│   ├── private
+|   │   ├── emails
 │   ├── public
+|   │   ├── favicons
 |   │   ├── images
+|   │   ├── offline
 │   ├── server
-│   ├── test
+│   ├── tests
 │   │   ├── step-definitions
 ```
 
@@ -83,16 +93,22 @@ nvm use v6.10.2
 
 - [accounts-facebook](https://atmospherejs.com/meteor/accounts-facebook) : Login service for Facebook accounts
 - [accounts-password](https://atmospherejs.com/meteor/accounts-password) : Password support for accounts
+- [alanning:roles](https://atmospherejs.com/alanning/roles) : Authorization package for Meteor
+- [aldeed:collection2-core](https://atmospherejs.com/aldeed/collection2-core) : Core package for aldeed:collection2
+- [aldeed:template-extension](https://atmospherejs.com/aldeed/template-extension) : Adds template features currently missing from the templating package
 - [arillo:flow-router-helpers](https://atmospherejs.com/arillo/flow-router-helpers) : Template helpers for flow-router
 - [check](https://atmospherejs.com/meteor/check) : Check whether a value matches a pattern
 - [digilord:faker](https://atmospherejs.com/digilord/faker) : Faker.js packaged for Meteor. Generate massive amounts of fake data
 - [ejson](https://atmospherejs.com/meteor/ejson) : Extended and Extensible JSON library
+- [email](https://atmospherejs.com/meteor/email) : Send email messages
+- [facebook-config-ui](https://atmospherejs.com/meteor/facebook-config-ui) : Blaze configuration templates for Facebook OAuth
 - [fortawesome:fontawesome](https://atmospherejs.com/fortawesome/fontawesome) : Font Awesome (official): 500+ scalable vector icons, customizable via CSS, Retina friendly
-- [huttonr:bootstrap3](https://atmospherejs.com/huttonr/bootstrap3) : Modular, customizable Bootstrap 3.
+- [fourseven:scss](https://atmospherejs.com/fourseven/scss) : Style with attitude. Sass and SCSS support for Meteor.js.
 - [jabbslad:basic-auth](https://atmospherejs.com/meteor/jabbslad:basic-auth) : Add HTTP Basic Auth support to your application
 - [kadira:blaze-layout](https://atmospherejs.com/kadira/blaze-layout) : Layout Manager for Blaze (works well with FlowRouter)
 - [kadira:flow-router](https://atmospherejs.com/kadira/flow-router) : Carefully Designed Client Side Router for Meteor
-- [less](https://atmospherejs.com/meteor/less) : Leaner CSS language
+- [mdg:validated-method](https://atmospherejs.com/mdg/validated-method) : A simple wrapper for Meteor.methods
+- [meteorhacks:ssr](https://atmospherejs.com/meteorhacks/ssr) : Server Side Rendering for Meteor with Blaze
 - [meteortoys:allthings](https://atmospherejs.com/meteortoys/allthings) : Insanely Handy Development Tools
 - [okgrow:analytics](https://atmospherejs.com/okgrow/analytics) : Complete Google Analytics, Mixpanel, KISSmetrics (and more) integration for Meteor
 - [pcel:loading](https://atmospherejs.com/meteor/pcel:loading) : A beautiful loading splash screen (please-wait + spinkit bundle)
@@ -104,11 +120,8 @@ nvm use v6.10.2
 - [tap:i18n-db](https://atmospherejs.com/tap/i18n-db) : Internationalization for Meteor Collections
 - [useraccounts:bootstrap](https://atmospherejs.com/useraccounts/bootstrap) : Accounts Templates styled for Twitter Bootstrap
 - [useraccounts:flow-routing](https://atmospherejs.com/useraccounts/flow-routing) : UserAccounts package providing routes configuration capability via kadira:flow-router
+- [webtempest:animate](https://atmospherejs.com/webtempest/animate) : Easily perform CSS animations and transitions in Meteo
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
-- [alanning:roles](https://atmospherejs.com/alanning/roles) : Authorization package for Meteor
-- [facebook-config-ui](https://atmospherejs.com/meteor/facebook-config-ui) : Blaze configuration templates for Facebook OAuth
-- [audit-argument-checks](https://atmospherejs.com/meteor/audit-argument-checks#audit-argument-checks) : Try to detect inadequate input sanitization
-- [mdg:validated-method](https://atmospherejs.com/mdg/validated-method) : A simple wrapper for Meteor.methods
 
 [1]:https://chimp.readme.io
 [2]:https://nodejs.org

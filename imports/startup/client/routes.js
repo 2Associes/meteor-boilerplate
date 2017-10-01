@@ -1,53 +1,79 @@
+import { Meteor } from 'meteor/meteor'
+import { FlowRouter } from 'meteor/kadira:flow-router'
+import { BlazeLayout } from 'meteor/kadira:blaze-layout'
+
+import '../../ui/components/loading'
+import '../../ui/components/header'
+import '../../ui/components/footer'
+
+const app = () => import('../../ui/layouts/app')
+const home = () => import('../../ui/pages/home')
+const notFound = () => import('../../ui/pages/not-found')
+const adminHome = () => import('../../ui/pages/admin/admin-home')
+
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
 //     action: function(params, queryParams) {
-//         console.log('Yeah! We are on the post:', params.postId);
+//         console.log('Yeah! We are on the post:', params.postId)
 //     }
-// });
+// })
 
 FlowRouter.route('/', {
   name: 'home',
   // Subscriptions registered here don't have Fast Render support.
   // subscriptions: function() {},
-  action: function () {
-    BlazeLayout.render('app', { header: 'header', main: 'home', footer: 'footer' });
+  async action() {
+    await app()
+    await home()
+    BlazeLayout.render('app', { header: 'header', main: 'home', footer: 'footer' })
   },
-});
+  classname: 'home'
+})
 
 FlowRouter.notFound = {
-  action: function () {
-    BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' });
+  async action() {
+    await app()
+    await notFound()
+    BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
   },
-};
+  classname: 'not-found'
+}
 
 const adminRoutes = FlowRouter.group({
   prefix: '/admin',
-  name: 'admin',
-});
+  name: 'admin'
+})
 
 adminRoutes.route('/home', {
   name: 'adminHome',
-  action: function () {
+  async action() {
     if (!Meteor.userId()) {
-      Router.go('signIn');
-    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
-      BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' });
+      Router.go('signIn')
     } else {
-      BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' });
+      await app()
+
+      if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
+        await notFound()
+        BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
+      } else {
+        await adminHome()
+        BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' })
+      }
     }
   },
-});
+  classname: 'admin-home'
+})
 
 // Configure Accounts Templates default
 AccountsTemplates.configure({
   defaultLayoutRegions: {
-    header: 'header',
-  },
-});
+    header: 'header'
+  }
+})
 
-AccountsTemplates.configureRoute('changePwd');
-AccountsTemplates.configureRoute('forgotPwd');
-AccountsTemplates.configureRoute('resetPwd');
-AccountsTemplates.configureRoute('signIn');
-AccountsTemplates.configureRoute('signUp');
-AccountsTemplates.configureRoute('verifyEmail');
+AccountsTemplates.configureRoute('changePwd')
+AccountsTemplates.configureRoute('forgotPwd')
+AccountsTemplates.configureRoute('resetPwd')
+AccountsTemplates.configureRoute('signIn')
+AccountsTemplates.configureRoute('signUp')
+AccountsTemplates.configureRoute('verifyEmail')

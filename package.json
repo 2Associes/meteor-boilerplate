@@ -25,24 +25,36 @@
       "import/resolver": "meteor"
     },
     "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "max-len": "off",
       "no-undef": "off",
       "no-undef-init": "off",
-      "import/extensions":"off",
-      "import/no-extraneous-dependencies":"off",
-      "func-names":"off",
-      "meteor/no-template-lifecycle-assignments":"off",
-      "object-shorthand":"off",
-      "prefer-arrow-callback":"off",
-      "no-restricted-syntax":"off",
-      "import/prefer-default-export":"off",
-      "linebreak-style":"off"
+      "import/extensions": "off",
+      "import/no-extraneous-dependencies": "off",
+      "func-names": "off",
+      "meteor/no-template-lifecycle-assignments": "off",
+      "object-shorthand": "off",
+      "prefer-arrow-callback": "off",
+      "no-restricted-syntax": "off",
+      "import/prefer-default-export": "off",
+      "linebreak-style": "off"
     }
   },
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "bcrypt": "^0.8.7",
+    "bootstrap": "^4.0.0-beta",
     "chimp": "^0.47.2",
-    "meteor-node-stubs": "~0.2.0"
+    "meteor-node-stubs": "~0.2.0",
+    "simpl-schema": "^0.3.2",
+    "popper.js": "^1.12.5"
   },
   "devDependencies": {
     "babel-eslint": "^7.2.1",

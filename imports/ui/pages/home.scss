@@ -2,24 +2,24 @@
 // Extends        : &:extend(.img-responsive);
 // Media Queries  : @media (min-width: @screen-sm-min) {}
 
-.home {
-  .container;
+main.home {
+  @extend .container;
 }
 
 .home-header {
-  .jumbotron;
+  @extend .jumbotron;
   padding: 30px 15px;
+  margin-top: 30px;
 
-  @media (min-width: @screen-sm-min) {
+  @include media-breakpoint-up(md) {
     padding: 48px 60px;
   }
 }
 
 .home-content {
-  &:extend(.text-center, .text-muted);
+  @extend .d-flex, .text-center, .text-muted;
 }
 
 .home-content-text {
-  .make-xs-column(12);
-  .make-sm-column(4);
+  @extend .col-12, .col-md-4;
 }
