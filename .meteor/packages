@@ -39,7 +39,6 @@ pcel:loading
 service-configuration@1.0.11
 session@1.1.7
 shell-server@0.2.4
-softwarerero:accounts-t9n
 spiderable@1.0.14-release-testing.0
 tap:i18n
 tap:i18n-db
@@ -54,3 +53,4 @@ webtempest:animate
 aldeed:collection2-core
 aldeed:template-extension
 fourseven:scss
+softwarerero:accounts-t9n
