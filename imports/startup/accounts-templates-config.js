@@ -54,7 +54,7 @@ AccountsTemplates.addFields([
     _id: 'username_and_email',
     type: 'text',
     required: true,
-    displayName: 'Login'
+    displayName: 'usernameOrEmail'
   },
   pwd
 ])
