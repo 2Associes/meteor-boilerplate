@@ -66,6 +66,7 @@ adminRoutes.route('/home', {
 
 // Configure Accounts Templates default
 AccountsTemplates.configure({
+  defaultTemplate: 'atForm',
   defaultLayoutRegions: {
     header: 'header'
   }
