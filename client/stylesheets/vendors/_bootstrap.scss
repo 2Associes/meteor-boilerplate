@@ -1,0 +1,7 @@
+// '_variable.scss' is dependent upon '_functions.scss' so import it before to avoid errors
+@import '{}/node_modules/bootstrap/scss/functions';
+
+// Copy the content of '/node_modules/bootstrap/scss/_variables.scss' here to configure bootstrap
+
+// Style generation reads variables when bootstrap is imported so we need to import it after our configuration
+@import '{}/node_modules/bootstrap/scss/bootstrap';
