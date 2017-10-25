@@ -1,12 +1,5 @@
 // https://sass-guidelin.es/#architecture
 
-// Abstracts
-@import
-  'abstracts/variables',
-  'abstracts/functions',
-  'abstracts/mixins',
-  'abstracts/helpers';
-
 // Vendors
 @import
   'vendors/bootstrap';
@@ -15,14 +8,22 @@
 @import
   'vendors-extensions/bootstrap';
 
+// Abstracts
+@import
+  'abstracts/functions',
+  'abstracts/variables',
+  'abstracts/mixins',
+  'abstracts/placeholders';
+
 // Base
 @import
+  'base/animations',
   'base/reset',
-  'base/animations';
+  'base/typography';
 
-// Placeholders
+// Extends
 @import
-  'placeholders/button';
+  'extends/button';
 
 // Layouts
 @import
