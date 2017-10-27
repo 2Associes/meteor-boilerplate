@@ -9,6 +9,7 @@ import '../../ui/components/footer'
 const app = () => import('../../ui/layouts/app')
 const home = () => import('../../ui/pages/home')
 const notFound = () => import('../../ui/pages/not-found')
+const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
 
 // FlowRouter sample route
@@ -42,6 +43,26 @@ FlowRouter.notFound = {
 const adminRoutes = FlowRouter.group({
   prefix: '/admin',
   name: 'admin'
+})
+
+adminRoutes.route('/style-guide', {
+  name: 'adminStyleGuide',
+  async action() {
+    if (!Meteor.userId()) {
+      Router.go('signIn')
+    } else {
+      await app()
+
+      if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
+        await notFound()
+        BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
+      } else {
+        await adminStyleGuide()
+        BlazeLayout.render('app', { header: 'header', main: 'adminStyleGuide', footer: 'footer' })
+      }
+    }
+  },
+  classname: 'admin-style-guide'
 })
 
 adminRoutes.route('/home', {
