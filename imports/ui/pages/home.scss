@@ -17,7 +17,7 @@ main.home {
 }
 
 .home-content {
-  @extend .d-flex, .text-center, .text-muted;
+  @extend .row, .text-center, .text-muted;
 }
 
 .home-content-text {
