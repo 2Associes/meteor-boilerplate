@@ -50,7 +50,9 @@
   "postcss": {
     "plugins": {
       "autoprefixer": {
-        "browsers": ["last 2 versions"]
+        "browsers": [
+          "last 2 versions"
+        ]
       }
     }
   },
@@ -59,9 +61,10 @@
     "bcrypt": "^0.8.7",
     "bootstrap": "^4.0.0-beta",
     "chimp": "^0.47.2",
+    "font-awesome": "^4.7.0",
     "meteor-node-stubs": "~0.2.0",
-    "simpl-schema": "^0.3.2",
-    "popper.js": "^1.12.5"
+    "popper.js": "^1.12.5",
+    "simpl-schema": "^0.3.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.4",
