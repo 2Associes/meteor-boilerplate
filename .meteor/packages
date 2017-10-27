@@ -26,7 +26,6 @@ coffeescript@1.11.1_4
 digilord:faker
 ejson@1.0.14
 facebook-config-ui@1.0.0
-fortawesome:fontawesome
 jabbslad:basic-auth
 kadira:blaze-layout
 kadira:flow-router
