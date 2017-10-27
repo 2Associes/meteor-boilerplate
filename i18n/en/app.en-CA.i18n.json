@@ -19,11 +19,16 @@
     "navbarGreetings": "Hello",
     "navbarProfile": "Profile",
     "navbarSettings": "Settings",
+    "navbarStyleGuide": "Style Guide",
     "navbarAdmin": "Admin"
   },
   "homeHeaderTitle": "Meteor Boilerplate",
   "404notFoundHeading": "404 Not Found!",
   "footer": {
     "copyright": "Built with 2 Associés' METEOR BOILERPLATE@__boilerplateRelease__ and __meteorRelease__"
+  },
+  "pages": {
+    "adminHomeTitle": "Administration",
+    "adminStyleGuideTitle": "Style Guide"
   }
 }

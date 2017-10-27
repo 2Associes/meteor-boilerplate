@@ -19,11 +19,16 @@
     "navbarGreetings": "Bonjour",
     "navbarProfile": "Profil",
     "navbarSettings": "Paramètres",
+    "navbarStyleGuide": "Guide de style",
     "navbarAdmin": "Administration"
   },
   "homeHeaderTitle": "Boilerplate Meteor",
   "404notFoundHeading": "Erreur 404!",
   "footer": {
     "copyright": "Conçu avec METEOR BOILERPLATE@__boilerplateRelease__ par 2 Associés et __meteorRelease__"
+  },
+  "pages": {
+    "adminHomeTitle": "Administration",
+    "adminStyleGuideTitle": "Guide de style"
   }
 }
