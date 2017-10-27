@@ -19,6 +19,7 @@
     "navbarGreetings": "Bonjour",
     "navbarProfile": "Profil",
     "navbarSettings": "Paramètres",
+    "navbarStyleGuide": "Guide de style",
     "navbarAdmin": "Administration"
   },
   "homeHeaderTitle": "Boilerplate Meteor",

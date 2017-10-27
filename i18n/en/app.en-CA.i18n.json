@@ -19,6 +19,7 @@
     "navbarGreetings": "Hello",
     "navbarProfile": "Profile",
     "navbarSettings": "Settings",
+    "navbarStyleGuide": "Style Guide",
     "navbarAdmin": "Admin"
   },
   "homeHeaderTitle": "Meteor Boilerplate",
