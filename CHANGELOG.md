@@ -5,6 +5,7 @@
 * Update Node to 8.1.0
 * Update directory structure
 * Update included packages 
+* Add fourseven:scss package
 
 # 1.8.0 (2017-06-02)
 
