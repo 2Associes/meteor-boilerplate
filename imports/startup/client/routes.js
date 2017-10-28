@@ -2,13 +2,14 @@ import { Meteor } from 'meteor/meteor'
 import { FlowRouter } from 'meteor/kadira:flow-router'
 import { BlazeLayout } from 'meteor/kadira:blaze-layout'
 
+import '../../ui/layouts/app'
 import '../../ui/components/loading'
 import '../../ui/components/header'
 import '../../ui/components/footer'
 
-const app = () => import('../../ui/layouts/app')
 const home = () => import('../../ui/pages/home')
 const notFound = () => import('../../ui/pages/not-found')
+const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
 
 // FlowRouter sample route
@@ -23,7 +24,6 @@ FlowRouter.route('/', {
   // Subscriptions registered here don't have Fast Render support.
   // subscriptions: function() {},
   async action() {
-    await app()
     await home()
     BlazeLayout.render('app', { header: 'header', main: 'home', footer: 'footer' })
   },
@@ -32,7 +32,6 @@ FlowRouter.route('/', {
 
 FlowRouter.notFound = {
   async action() {
-    await app()
     await notFound()
     BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
   },
@@ -44,21 +43,33 @@ const adminRoutes = FlowRouter.group({
   name: 'admin'
 })
 
+adminRoutes.route('/style-guide', {
+  name: 'adminStyleGuide',
+  async action() {
+    if (!Meteor.userId()) {
+      FlowRouter.go('/sign-in')
+    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
+      await notFound()
+      BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
+    } else {
+      await adminStyleGuide()
+      BlazeLayout.render('app', { header: 'header', main: 'adminStyleGuide', footer: 'footer' })
+    }
+  },
+  classname: 'admin-style-guide'
+})
+
 adminRoutes.route('/home', {
   name: 'adminHome',
   async action() {
     if (!Meteor.userId()) {
-      Router.go('signIn')
+      FlowRouter.go('/sign-in')
+    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
+      await notFound()
+      BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
     } else {
-      await app()
-
-      if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
-        await notFound()
-        BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
-      } else {
-        await adminHome()
-        BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' })
-      }
+      await adminHome()
+      BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' })
     }
   },
   classname: 'admin-home'
@@ -66,6 +77,7 @@ adminRoutes.route('/home', {
 
 // Configure Accounts Templates default
 AccountsTemplates.configure({
+  defaultTemplate: 'atForm',
   defaultLayoutRegions: {
     header: 'header'
   }

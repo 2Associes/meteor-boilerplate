@@ -39,6 +39,7 @@ AccountsTemplates.addFields([
     _id: 'username',
     type: 'text',
     displayName: 'username',
+    placeholder: 'username',
     required: true,
     minLength: 5
   },
@@ -47,6 +48,7 @@ AccountsTemplates.addFields([
     type: 'email',
     required: true,
     displayName: 'email',
+    placeholder: 'email',
     re: /.+@(.+){2,}\.(.+){2,}/,
     errStr: 'Invalid email'
   },
@@ -54,7 +56,8 @@ AccountsTemplates.addFields([
     _id: 'username_and_email',
     type: 'text',
     required: true,
-    displayName: 'Login'
+    displayName: 'usernameOrEmail',
+    placeholder: 'usernameOrEmail'
   },
   pwd
 ])

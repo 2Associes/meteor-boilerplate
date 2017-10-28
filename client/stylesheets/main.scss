@@ -1,0 +1,42 @@
+// https://sass-guidelin.es/#architecture
+
+// Vendors
+@import
+  'vendors/bootstrap';
+
+// Vendors Extensions
+@import
+  'vendors-extensions/bootstrap';
+
+// Abstracts
+@import
+  'abstracts/functions',
+  'abstracts/variables',
+  'abstracts/mixins',
+  'abstracts/placeholders';
+
+// Base
+@import
+  'base/animations',
+  'base/reset',
+  'base/typography';
+
+// Extends
+@import
+  'extends/button';
+
+// Layouts
+@import
+  '{}/imports/ui/layouts/app';
+
+// Components
+@import
+  '{}/imports/ui/components/loading',
+  '{}/imports/ui/components/accounts-templates',
+  '{}/imports/ui/components/header',
+  '{}/imports/ui/components/footer';
+
+// Pages
+@import
+  '{}/imports/ui/pages/not-found',
+  '{}/imports/ui/pages/home';

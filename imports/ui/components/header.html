@@ -82,6 +82,12 @@
                 </a>
               </li>
               {{#if isInRole 'admin' 'default-group'}}
+                <li role="separator" class="dropdown-divider navigations-main-navbar-link-dropdown-divider"></li>
+                <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
+                  <a class="navigations-main-navbar-link-dropdown-link" href="{{pathFor 'adminStyleGuide'}}">
+                    {{_ 'header.navbarStyleGuide' }}
+                  </a>
+                </li>
                 <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
                   <a class="navigations-main-navbar-link-dropdown-link" href="{{pathFor 'adminHome'}}">
                     {{_ 'header.navbarAdmin' }}
