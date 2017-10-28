@@ -1,10 +1,23 @@
+# 1.10.0 (2017-10-27)
+
+* Update packages
+* Add juliancwirko:postcss package
+* Add npm autoprefixer (remove autoprefixes from styling)
+* Add reywood:publish-composite package
+* Update accounts-templates-config
+* Update stylesheets directory structure
+* Add npm font-awesome (remove atmosphere font-awesome)
+* Update Meteor to 1.5.2.2
+* Add i18n keys
+* Add protected Style Guide (Admin role only)
+
 # 1.9.0 (2017-10-01)
 
 * Update Meteor to 1.5.2.1
 * Update to Bootstrap 4
 * Update Node to 8.1.0
 * Update directory structure
-* Update included packages 
+* Update included packages
 * Add fourseven:scss package
 
 # 1.8.0 (2017-06-02)
