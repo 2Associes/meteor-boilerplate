@@ -1,3 +1,11 @@
+# 1.9.0 (2017-10-01)
+
+* Update Meteor to 1.5.2.1
+* Update to Bootstrap 4
+* Update Node to 8.1.0
+* Update directory structure
+* Update included packages 
+
 # 1.8.0 (2017-06-02)
 
 * Move features into tests folder
