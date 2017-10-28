@@ -23,11 +23,7 @@ let CURRENT_CACHES = {
 };
 
 // A list of local resources we always want to be cached.
-const PRECACHE_URLS = [
-  '/offline/index.html',
-  '/offline/styles.css',
-  '/images/2associes-logo.png'
-];
+const OFFLINE_URL = '/offline/index.html';
 
 function createCacheBustedRequest(url) {
   let request = new Request(url, {cache: 'reload'});
@@ -46,11 +42,11 @@ function createCacheBustedRequest(url) {
 
 self.addEventListener('install', event => {
   event.waitUntil(
-    // We can't use cache.add() here, since we want PRECACHE_URLS to be the cache key, but
+    // We can't use cache.add() here, since we want OFFLINE_URL to be the cache key, but
     // the actual URL we end up requesting might include a cache-busting parameter.
-    fetch(createCacheBustedRequest(PRECACHE_URLS)).then(function(response) {
+    fetch(createCacheBustedRequest(OFFLINE_URL)).then(function(response) {
       return caches.open(CURRENT_CACHES.offline).then(function(cache) {
-        return cache.put(PRECACHE_URLS, response);
+        return cache.put(OFFLINE_URL, response);
       });
     })
   );
