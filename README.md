@@ -2,7 +2,7 @@
 
 [![CircleCI Build Status](https://circleci.com/gh/2Associes/meteor-boilerplate/tree/master.svg?style=shield&circle-token=d1f1cfc9181d3bf9a8a408745dd56a617d36dafd)](https://circleci.com/gh/2Associes/meteor-boilerplate)
 
-A boilerplate for Meteor 1.5.2.1 projects using Sass, Font Awesome and Bootstrap 4.
+A boilerplate for Meteor 1.5.2.2 projects using Sass, Font Awesome and Bootstrap 4.
 
 ## Prerequisites
 
@@ -105,6 +105,7 @@ nvm use v8.1.0
 - [fortawesome:fontawesome](https://atmospherejs.com/fortawesome/fontawesome) : Font Awesome (official): 500+ scalable vector icons, customizable via CSS, Retina friendly
 - [fourseven:scss](https://atmospherejs.com/fourseven/scss) : Style with attitude. Sass and SCSS support for Meteor.js.
 - [jabbslad:basic-auth](https://atmospherejs.com/meteor/jabbslad:basic-auth) : Add HTTP Basic Auth support to your application
+- [juliancwirko:postcss](https://atmospherejs.com/juliancwirko/postcss) : Minifier for Meteor with PostCSS processing - use Autoprefixer and others with ease
 - [kadira:blaze-layout](https://atmospherejs.com/kadira/blaze-layout) : Layout Manager for Blaze (works well with FlowRouter)
 - [kadira:flow-router](https://atmospherejs.com/kadira/flow-router) : Carefully Designed Client Side Router for Meteor
 - [mdg:validated-method](https://atmospherejs.com/mdg/validated-method) : A simple wrapper for Meteor.methods
@@ -112,6 +113,7 @@ nvm use v8.1.0
 - [meteortoys:allthings](https://atmospherejs.com/meteortoys/allthings) : Insanely Handy Development Tools
 - [okgrow:analytics](https://atmospherejs.com/okgrow/analytics) : Complete Google Analytics, Mixpanel, KISSmetrics (and more) integration for Meteor
 - [pcel:loading](https://atmospherejs.com/meteor/pcel:loading) : A beautiful loading splash screen (please-wait + spinkit bundle)
+- [reywood:publish-composite](https://atmospherejs.com/reywood/publish-composite) : Publish a set of related documents from multiple collections with a reactive join
 - [service-configuration](https://atmospherejs.com/meteor/service-configuration) : Manage the configuration for third-party services
 - [session](https://atmospherejs.com/meteor/session) : Session variable
 - [softwarerero:accounts-t9n](https://atmospherejs.com/softwarerero/accounts-t9n) : Almost i18n, with standard translations for basic meteor packages
