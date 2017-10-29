@@ -19,6 +19,12 @@ const adminHome = () => import('../../ui/pages/admin/admin-home')
 //     }
 // })
 
+FlowRouter.notFound = {
+  action() {
+    FlowRouter.redirect('/not-found')
+  }
+}
+
 FlowRouter.route('/', {
   name: 'home',
   // Subscriptions registered here don't have Fast Render support.
@@ -30,31 +36,31 @@ FlowRouter.route('/', {
   classname: 'home'
 })
 
-FlowRouter.notFound = {
+FlowRouter.route('/not-found', {
   async action() {
     await notFound()
     BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
   },
   classname: 'not-found'
-}
+})
 
 const adminRoutes = FlowRouter.group({
   prefix: '/admin',
-  name: 'admin'
+  name: 'admin',
+  triggersEnter: [function (context, redirect) {
+    if (!Meteor.userId()) {
+      redirect('/sign-in')
+    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
+      redirect('/not-found')
+    }
+  }]
 })
 
 adminRoutes.route('/style-guide', {
   name: 'adminStyleGuide',
   async action() {
-    if (!Meteor.userId()) {
-      FlowRouter.go('/sign-in')
-    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
-      await notFound()
-      BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
-    } else {
-      await adminStyleGuide()
-      BlazeLayout.render('app', { header: 'header', main: 'adminStyleGuide', footer: 'footer' })
-    }
+    await adminStyleGuide()
+    BlazeLayout.render('app', { header: 'header', main: 'adminStyleGuide', footer: 'footer' })
   },
   classname: 'admin-style-guide'
 })
@@ -62,15 +68,8 @@ adminRoutes.route('/style-guide', {
 adminRoutes.route('/home', {
   name: 'adminHome',
   async action() {
-    if (!Meteor.userId()) {
-      FlowRouter.go('/sign-in')
-    } else if (!Roles.userIsInRole(Meteor.userId(), ['admin'], 'default-group')) {
-      await notFound()
-      BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
-    } else {
-      await adminHome()
-      BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' })
-    }
+    await adminHome()
+    BlazeLayout.render('app', { header: 'header', main: 'adminHome', footer: 'footer' })
   },
   classname: 'admin-home'
 })
