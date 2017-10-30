@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor'
+import { Tracker } from 'meteor/tracker'
 import { FlowRouter } from 'meteor/kadira:flow-router'
 import { BlazeLayout } from 'meteor/kadira:blaze-layout'
 
@@ -18,6 +19,24 @@ const adminHome = () => import('../../ui/pages/admin/admin-home')
 //         console.log('Yeah! We are on the post:', params.postId)
 //     }
 // })
+
+function checkLoggedout() {
+  if (!Meteor.userId()) {
+    FlowRouter.go('/')
+  }
+}
+
+Tracker.autorun(function () {
+  FlowRouter.watchPathChange()
+
+  const router = FlowRouter.current()
+
+  if (router.route) {
+    if (router.route.group) {
+      if (router.route.group.name === 'admin') checkLoggedout()
+    }
+  }
+})
 
 FlowRouter.route('/', {
   name: 'home',
