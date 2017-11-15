@@ -7,13 +7,14 @@ export default class FormInput {
       this.name = input
       this.events = {}
     } else {
-      const { name, key, liveValidation = true, defaultValue = '', events = {} } = input
+      const { name, key, liveValidation = true, defaultValue = '', events = {}, subscriptionsReady } = input
 
       this.name = name
       this.key = key
       this.liveValidation = liveValidation
       this.defaultValue = defaultValue
       this.events = events
+      this.subscriptionsReady = subscriptionsReady
     }
 
     this.reactiveValue = new ReactiveVar(this.defaultValue)
@@ -22,6 +23,33 @@ export default class FormInput {
     this.initiated = new ReactiveVar(false)
 
     if (typeof callback === 'function') callback(this)
+  }
+
+  initValue(value) {
+    if (!this.initiated.get()) {
+      this.reactiveValue.set(value)
+      this.initiated.set(true)
+      this.initialValue = value
+    }
+  }
+
+  getValue() {
+    return this.reactiveValue.get()
+  }
+
+  setValue(value, payload = this.getPayload()) {
+    this.reactiveValue.set(value)
+    this.setEdited(true)
+    if (!this.initiated.get()) this.initiated.set(true)
+    if (this.liveValidation) this.validate(payload)
+  }
+
+  revertValue() {
+    this.reactiveValue.set(this.initialValue)
+  }
+
+  setToDefault() {
+    this.reactiveValue.set(this.defaultValue)
   }
 
   validate(payload = this.getPayload()) {
@@ -45,8 +73,32 @@ export default class FormInput {
     this.validate(payload)
   }
 
+  getError() {
+    return this.error.get()
+  }
+
+  setError(error) {
+    this.error.set(error)
+  }
+
+  clearError() {
+    this.error.set(null)
+  }
+
   callEvent(eventKey, context, event, templateInstance) {
     if (typeof this.events[eventKey] === 'function') this.events[eventKey].call(context, event, templateInstance, this.getError())
+  }
+
+  getEdited() {
+    return this.edited.get()
+  }
+
+  setEdited(edited) {
+    this.edited.set(edited)
+  }
+
+  clearEdited() {
+    this.edited.set(false)
   }
 
   readySubscriptions() {
@@ -57,59 +109,8 @@ export default class FormInput {
     return this.initiated.get()
   }
 
-  initValue(value) {
-    if (!this.initiated.get()) {
-      this.reactiveValue.set(value)
-      this.initiated.set(true)
-      this.initialValue = value
-    }
-  }
-
-  setValue(value, payload = this.getPayload()) {
-    this.reactiveValue.set(value)
-    this.setEdited(true)
-    if (!this.initiated.get()) this.initiated.set(true)
-    if (this.liveValidation) this.validate(payload)
-  }
-
-  getValue() {
-    return this.reactiveValue.get()
-  }
-
-  revertValue() {
-    this.reactiveValue.set(this.initialValue)
-  }
-
   getPayload() {
     if (typeof this.payload === 'function') return this.payload()
     return undefined
-  }
-
-  setError(error) {
-    this.error.set(error)
-  }
-
-  getError() {
-    return this.error.get()
-  }
-
-  clearError() {
-    this.error.set(null)
-  }
-
-  setEdited(edited) {
-    this.edited.set(edited)
-  }
-
-  getEdited() {
-    return this.edited.get()
-  }
-
-  clearEdited() {
-    this.edited.set(false)
-  }
-
-  setToDefault() {
-    this.reactiveValue.set(this.defaultValue)
   }
 }

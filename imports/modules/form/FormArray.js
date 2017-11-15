@@ -7,13 +7,19 @@ export default class FormArray {
     this.array = new ReactiveVar([])
   }
 
-  createForm(index = this.array.get().length) {
-    const form = new Form()
+  addForm(form, index = this.array.get().length) {
+    const newForm = form
     const array = this.array.get()
 
-    form.parentForm = this.parentForm
-    array.splice(index, 0, form)
+    newForm.parentForm = this.parentForm
+    array.splice(index, 0, newForm)
     this.array.set(array)
+  }
+
+  createForm(index) {
+    const form = new Form()
+
+    this.addForm(form, index)
 
     return form
   }

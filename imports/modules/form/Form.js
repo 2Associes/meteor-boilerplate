@@ -9,6 +9,14 @@ export default class Form {
     this.arrays = {}
   }
 
+  addInput(input, name) {
+    const newInput = input
+
+    if (name) newInput.name = name
+    newInput.parentForm = this
+    this.inputs[newInput.name] = newInput
+  }
+
   createInput(inputProps) {
     let input
 
@@ -27,24 +35,40 @@ export default class Form {
     return input
   }
 
-  addInput(input, name) {
-    const newInput = input
+  addArray(array, name) {
+    const newArray = array
 
-    if (name) newInput.name = name
-    newInput.parentForm = this
-    this.inputs[newInput.name] = input
+    if (name) newArray.name = name
+    newArray.parentForm = this
+    this.arrays[newArray.name] = newArray
   }
 
-  createArray(name) {
-    const array = new FormArray(name)
+  createArray(names) {
+    let array
 
-    array.parentForm = this
-    this.arrays[name] = array
+    if (Array.isArray(names)) {
+      names.forEach((name) => {
+        this.createArray(name)
+      })
+
+      array = this.arrays
+    } else {
+      array = new FormArray(name)
+
+      this.addArray(array)
+    }
+
+    return array
   }
 
   clearValues() {
     this.getInputs().forEach((input) => {
       input.setToDefault()
+    })
+    this.getArrays().forEach((array) => {
+      array.forEach((form) => {
+        form.clearValues()
+      })
     })
   }
 
@@ -69,19 +93,6 @@ export default class Form {
     this.submited.set(false)
   }
 
-  revertInputs() {
-    this.resetInputs(false)
-    this.getInputs().forEach((input) => {
-      input.revertValue()
-    })
-  }
-
-  resetInputs(clear = true) {
-    this.clearSubmited()
-    if (clear) this.clearValues()
-    this.clearErrors()
-  }
-
   getInputs() {
     const inputs = []
 
@@ -92,6 +103,24 @@ export default class Form {
     return inputs
   }
 
+  revertInputs() {
+    this.resetInputs(false)
+    this.getInputs().forEach((input) => {
+      input.revertValue()
+    })
+    this.getArrays().forEach((array) => {
+      array.forEach((form) => {
+        form.revertInputs()
+      })
+    })
+  }
+
+  resetInputs(clear = true) {
+    this.clearSubmited()
+    if (clear) this.clearValues()
+    this.clearErrors()
+  }
+
   getArrays() {
     const arrays = []
 
@@ -100,12 +129,6 @@ export default class Form {
     })
 
     return arrays
-  }
-
-  setData(data) {
-    this.data = data
-
-    return this
   }
 
   getData() {
@@ -122,6 +145,12 @@ export default class Form {
     })
 
     return data
+  }
+
+  setInitData(data) {
+    this.initData = data
+
+    return this
   }
 
   validateData(...args) {
