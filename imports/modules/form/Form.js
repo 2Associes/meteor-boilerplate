@@ -98,7 +98,7 @@ export default class Form {
       input.setToDefault()
     })
     this.getArrays().forEach((array) => {
-      array.forEach((form) => {
+      array.getArray().forEach((form) => {
         form.clearValues()
       })
     })
@@ -108,9 +108,17 @@ export default class Form {
    * Get errors
    * Returns previously generated errors.
    * To generate errors use {@link Form.validateData} or {@link FormInput.validate}.
+   * @param {boolean} includeArrays - Whether to include arrays errors or not
    */
-  getErrors() {
-    const errors = this.getInputs().map(input => input.error.get()).filter(error => error)
+  getErrors(includeArrays = true) {
+    const errors = this.getInputs().map(input => input.getError()).filter(error => error)
+    if (includeArrays) {
+      this.getArrays().forEach((array) => {
+        array.getArray().forEach((form) => {
+          errors.concat(form.getErrors())
+        })
+      })
+    }
     if (errors.length) return errors
     return null
   }
@@ -118,12 +126,28 @@ export default class Form {
   /**
    * Clear errors
    * Clear errors on all inputs.
+   * @param {boolean} includeArrays - Whether to include arrays errors or not
    */
-  clearErrors() {
+  clearErrors(includeArrays = true) {
     this.getInputs().forEach((input) => {
       input.clearError()
       input.clearEdited()
     })
+    if (includeArrays) {
+      this.getArrays().forEach((array) => {
+        array.getArray().forEach((form) => {
+          form.clearErrors()
+        })
+      })
+    }
+  }
+
+  /**
+   * Get submited
+   * Get submited property.
+   */
+  getSubmited() {
+    return this.submited.get()
   }
 
   /**
@@ -168,7 +192,7 @@ export default class Form {
       input.revertValue()
     })
     this.getArrays().forEach((array) => {
-      array.forEach((form) => {
+      array.getArray().forEach((form) => {
         form.revertInputs()
       })
     })
