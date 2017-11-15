@@ -4,6 +4,7 @@ import validation from '../../api/validation.js'
 /**
  * FormInput class
  * Instanciates an input object that manages its reactive errors, events and value.
+ * Typically used within a form. See {@link Form.createInput}.
  * @param {string|object} input - The input name or a properties object.
  * @param {string} input.name - The input name.
  * @param {key} [input.key] - The key used to validate the value.
