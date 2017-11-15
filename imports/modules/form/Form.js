@@ -2,6 +2,10 @@ import { ReactiveVar } from 'meteor/reactive-var'
 import FormInput from './FormInput.js'
 import FormArray from './FormArray.js'
 
+/**
+ * Form class
+ * Instanciates a form object that manages multiple FormInput objects and FormArray objects.
+ */
 export default class Form {
   constructor() {
     this.submited = new ReactiveVar(false)
@@ -9,6 +13,12 @@ export default class Form {
     this.arrays = {}
   }
 
+  /**
+   * Add input
+   * Pairs the provided FormInput object with the Form.
+   * @param {FormInput} input - The input that will be paired.
+   * @param {string} [name] - If provided will rename the input.
+   */
   addInput(input, name) {
     const newInput = input
 
@@ -17,6 +27,12 @@ export default class Form {
     this.inputs[newInput.name] = newInput
   }
 
+  /**
+   * Create input(s)
+   * Create new FormInput objects and pair them with the form.
+   * @param {string|object|array} inputProps - The name or properties in an object of the new input.
+   * Can create multiple inputs when using an array. See {@link FormInput} to read about the properties.
+   */
   createInput(inputProps) {
     let input
 
@@ -35,6 +51,12 @@ export default class Form {
     return input
   }
 
+  /**
+   * Add array
+   * Pairs the provided FormArray object with the Form.
+   * @param {FormArray} input - The FormArray that will be paired.
+   * @param {string} [name] - If provided will rename the FormArray.
+   */
   addArray(array, name) {
     const newArray = array
 
@@ -43,6 +65,11 @@ export default class Form {
     this.arrays[newArray.name] = newArray
   }
 
+  /**
+   * Create array(s)
+   * Create new FormArray objects and pair them with the form.
+   * @param {string|object|array} names - The name ({string}) or names ({[string]}) of the new input.
+   */
   createArray(names) {
     let array
 
@@ -61,6 +88,11 @@ export default class Form {
     return array
   }
 
+  /**
+   * Clear values
+   * Sets all input values in the form to their default values.
+   * See {@link FormInput.setToDefault}.
+   */
   clearValues() {
     this.getInputs().forEach((input) => {
       input.setToDefault()
@@ -72,12 +104,21 @@ export default class Form {
     })
   }
 
+  /**
+   * Get errors
+   * Returns previously generated errors.
+   * To generate errors use {@link Form.validateData} or {@link FormInput.validate}.
+   */
   getErrors() {
     const errors = this.getInputs().map(input => input.error.get()).filter(error => error)
     if (errors.length) return errors
     return null
   }
 
+  /**
+   * Clear errors
+   * Clear errors on all inputs.
+   */
   clearErrors() {
     this.getInputs().forEach((input) => {
       input.clearError()
@@ -85,14 +126,27 @@ export default class Form {
     })
   }
 
+  /**
+   * Set submited
+   * Set submited property.
+   * @param {boolean} submited - The value.
+   */
   setSubmited(submited) {
     this.submited.set(submited)
   }
 
+  /**
+   * Clear submited
+   * Clears submited property.
+   */
   clearSubmited() {
     this.submited.set(false)
   }
 
+  /**
+   * Get inputs
+   * Returns all FormInput objects in an array.
+   */
   getInputs() {
     const inputs = []
 
@@ -103,6 +157,11 @@ export default class Form {
     return inputs
   }
 
+  /**
+   * Revert inputs
+   * Reverts all inputs to the value they had when they were initiated.
+   * See {@link FormInput.initValue}.
+   */
   revertInputs() {
     this.resetInputs(false)
     this.getInputs().forEach((input) => {
@@ -115,12 +174,21 @@ export default class Form {
     })
   }
 
+  /**
+   * Reset inputs
+   * Clears submited, errors and values of the form.
+   * @param {boolean} [clear=true] - Whether to clear values or not.
+   */
   resetInputs(clear = true) {
     this.clearSubmited()
     if (clear) this.clearValues()
     this.clearErrors()
   }
 
+  /**
+   * Get arrays
+   * Returns all FormArrays objects in an array.
+   */
   getArrays() {
     const arrays = []
 
@@ -131,6 +199,10 @@ export default class Form {
     return arrays
   }
 
+  /**
+   * Get data
+   * Returns all form values in an object.
+   */
   getData() {
     const inputs = this.getInputs()
     const arrays = this.getArrays()
@@ -147,12 +219,24 @@ export default class Form {
     return data
   }
 
+  /**
+   * Set init data
+   * Sets temporary data to access it on init.
+   * Useful when used with FormArray objects.
+   * @param {*} data - The data.
+   */
   setInitData(data) {
     this.initData = data
 
     return this
   }
 
+  /**
+   * Validate data
+   * Validates all form input values. See {@link FormInput.validate} and {@link FormInput.forceValidate}
+   * @param {*} [args] - Parameters will be sent to validation as a payload
+   * @param {function} [args] - The last parameter is a callback to which the errors are passed
+   */
   validateData(...args) {
     let payload
     const callback = args[args.length - 1]
