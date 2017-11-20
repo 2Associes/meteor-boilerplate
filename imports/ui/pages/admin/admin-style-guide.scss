@@ -25,7 +25,7 @@
   &.grays {
 
     .admin-style-guide-section-item {
-      width: calc((100% - 38px) / 10);
+      width: calc((100% - 41px) / 10);
       margin-bottom: $spacer / 3;
 
       &:nth-child(1) {
@@ -79,7 +79,7 @@
   &.colors {
 
     .admin-style-guide-section-item {
-      width: calc((100% - 38px) / 10);
+      width: calc((100% - 41px) / 10);
 
       &:nth-child(1) {
         background-color: $blue;
@@ -126,7 +126,7 @@
   &.theme {
 
     .admin-style-guide-section-item {
-      width: calc((100% - 30px) / 8);
+      width: calc((100% - 32px) / 8);
 
       &:nth-child(1) {
         background-color: theme-color(primary);
