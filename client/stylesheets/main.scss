@@ -2,11 +2,10 @@
 
 // Vendors
 @import
-  'vendors/bootstrap';
-
-// Vendors Extensions
-@import
-  'vendors-extensions/bootstrap';
+  // BUG: 'vendors/font-awesome' import crashes Scss compiler
+  // 'vendors/font-awesome',
+  'vendors/bootstrap',
+  'vendors/google-fonts';
 
 // Abstracts
 @import
@@ -14,6 +13,10 @@
   'abstracts/variables',
   'abstracts/mixins',
   'abstracts/placeholders';
+
+// Vendors Extensions
+@import
+  'vendors-extensions/bootstrap';
 
 // Base
 @import
@@ -39,4 +42,5 @@
 // Pages
 @import
   '{}/imports/ui/pages/not-found',
-  '{}/imports/ui/pages/home';
+  '{}/imports/ui/pages/home',
+  '{}/imports/ui/pages/admin/admin-style-guide';
