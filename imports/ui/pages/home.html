@@ -10,6 +10,14 @@
         {{> paragraph}}
       {{/each}}
     </div>
+    <div>
+      <p>
+        {{> inputText input=inputs.foo id="foo" label="Foo" value="Bar"}}
+      </p>
+      <p>
+        The value: <code>{{inputs.foo.getValue}}</code>
+      </p>
+    </div>
   </main>
 </template>
 

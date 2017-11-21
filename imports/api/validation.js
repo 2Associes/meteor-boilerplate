@@ -5,6 +5,11 @@ const keys = {
     if (!value) {
       throw new Meteor.Error('empty', 'Name is empty')
     }
+  },
+  'foo'(value) {
+    if (!value) {
+      throw new Meteor.Error('empty', 'Name is empty')
+    }
   }
 }
 
