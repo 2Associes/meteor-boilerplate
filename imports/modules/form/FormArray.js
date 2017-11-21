@@ -63,7 +63,7 @@ export default class FormArray {
   /**
    * Get form
    * Returns the form at the provided index in the array.
-   * @param {number} index 
+   * @param {number} index - The index
    */
   getForm(index) {
     return this.array.get()[index]
