@@ -1,0 +1,76 @@
+<template name="featuresReactiveForm">
+  <div class="features-reactive-form-container">
+    <article>
+      <h1 class="features-reactive-form-main-title">
+        Reactive Form
+      </h1>
+  
+      <nav class="features-reactive-form-nav">
+        <ul class="features-reactive-form-nav-list">
+          <li class="features-reactive-form-nav-item">
+            <a href="#instantiating-a-form" class="features-reactive-form-nav-link">Instantiating a form</a>
+          </li>
+          <li class="features-reactive-form-nav-item">
+            <a href="#example" class="features-reactive-form-nav-link">Example</a>
+          </li>
+        </ul>
+      </nav>
+  
+      <h2 class="features-reactive-form-title" id="instantiating-a-form">
+        Instantiating a form
+      </h2>
+  
+      <p class="features-reactive-form-paragraph">
+        In order to use the reactive form module, create a new Form instance in the onCreated method of the template where the form will be rendered.
+      </p>
+  
+      <pre class="features-reactive-form-code"><code>import Form from '../../modules/form/Form.js'
+
+Template.page.onCreated(function () {
+  this.form = new Form()
+})</code></pre>
+  
+      <p class="features-reactive-form-paragraph">
+        You can then instantiate inputs that will be linked to this form.
+      </p>
+  
+      <pre class="features-reactive-form-code"><code>import Form from '../../modules/form/Form.js'
+
+Template.page.onCreated(function () {
+  this.form = new Form()
+
+  this.form.createInput([{
+    name: 'foo'
+  }])
+})</code></pre>
+  
+      <p class="features-reactive-form-paragraph">
+        This will create input objects that will be located under the <code>inputs</code> property of your form instance. Use helpers to make them accessible in your template.
+      </p>
+  
+      <pre class="features-reactive-form-code"><code>Template.home.helpers({
+  inputs: () => Template.instance().form.inputs
+})</code></pre>
+  
+      <p class="features-reactive-form-paragraph">
+        Pass these inputs to your input template when invoking it.
+      </p>
+  
+      <pre class="features-reactive-form-code"><code>{{|> examplesReactiveInput input=inputs.foo}}</code></pre>
+
+      <h2 class="features-reactive-form-title" id="example">Example</h2>
+
+      <p class="features-reactive-form-paragraph">
+        Here is an input created using this module.
+      </p>
+
+      <p class="features-reactive-form-paragraph">
+        {{> examplesReactiveInput input=inputs.foo id="foo" label="Foo" value="Bar"}}
+      </p>
+
+      <p>
+        Value:&nbsp;<code>{{inputs.foo.getValue}}</code>
+      </p>
+    </article>
+  </div>
+</template>
