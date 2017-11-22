@@ -51,6 +51,11 @@ nvm use v8.1.0
 	```
 	meteor npm run test-watch
 	```
+6. When you're ready to start, you should clean up the Database, otherwise you're going to have the project collections and data within you're project :
+
+		```
+		meteor reset
+		```
 
 ## Directory Structure
 
