@@ -2,8 +2,7 @@
 
 // Vendors
 @import
-  // BUG: 'vendors/font-awesome' import crashes Scss compiler
-  // 'vendors/font-awesome',
+  'vendors/font-awesome',
   'vendors/bootstrap',
   'vendors/google-fonts';
 
