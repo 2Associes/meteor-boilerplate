@@ -44,7 +44,8 @@
       "prefer-arrow-callback": "off",
       "no-restricted-syntax": "off",
       "import/prefer-default-export": "off",
-      "linebreak-style": "off"
+      "linebreak-style": "off",
+      "no-underscore-dangle": "off"
     }
   },
   "postcss": {
