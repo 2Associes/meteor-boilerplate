@@ -1,3 +1,12 @@
+# 1.11.0 (2017-11-24)
+
+* Add protected Style Guide
+* Update vendors stylesheets
+* Add generic operator helpers
+* Add form module with reactive form demo (hidden under url `/features/reactive-form`)
+* Update Linter rules
+* Update Meteor to 1.5.4
+
 # 1.10.0 (2017-10-27)
 
 * Update packages
