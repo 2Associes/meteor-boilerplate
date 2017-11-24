@@ -3,7 +3,7 @@ import { Paragraphs } from '../../api/paragraphs/paragraphs.js'
 
 import './home.html'
 
-Template.home.onCreated(() => {
+Template.home.onCreated(function () {
   // Subscriptions
   TAPi18n.subscribe('paragraphs')
 })

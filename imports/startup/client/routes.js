@@ -12,6 +12,7 @@ const home = () => import('../../ui/pages/home')
 const notFound = () => import('../../ui/pages/not-found')
 const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
+const featuresReactiveForm = () => import('../../ui/pages/features/features-reactive-form')
 
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
@@ -92,6 +93,20 @@ adminRoutes.route('/home', {
     }
   },
   classname: 'admin-home'
+})
+
+const features = FlowRouter.group({
+  prefix: '/features',
+  name: 'features'
+})
+
+features.route('/reactive-form', {
+  name: 'features-reactive-form',
+  async action() {
+    await featuresReactiveForm()
+    BlazeLayout.render('app', { header: 'header', main: 'featuresReactiveForm', footer: 'footer' })
+  },
+  classname: 'features features-reactive-form'
 })
 
 // Configure Accounts Templates default
