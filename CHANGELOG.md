@@ -1,3 +1,7 @@
+# 1.11.1 (2017-11-30)
+
+* Remove Meteor version in README
+
 # 1.11.0 (2017-11-24)
 
 * Add protected Style Guide
