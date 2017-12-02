@@ -65,8 +65,11 @@ nvm use v8.1.0
 │   ├── client
 │   │   ├── compatibility
 │   │   ├── stylesheets
-│   │   │   ├── themes
-│   │   │   ├── utilities
+│   │   │   ├── abstracts
+│   │   │   ├── base
+│   │   │   ├── extends
+│   │   │   ├── vendors
+│   │   │   ├── vendors-extensions
 │   ├── i18n
 │   │   ├── en
 │   │   ├── fr
@@ -75,6 +78,7 @@ nvm use v8.1.0
 │   │   │   ├── paragraphs
 │   │   │   ├── users
 │   │   ├── modules
+│   │   │   ├── form
 │   │   ├── startup
 │   │   │   ├── client
 │   │   │   ├── server
@@ -83,6 +87,8 @@ nvm use v8.1.0
 │   │   │   ├── layouts
 │   │   │   ├── pages
 │   │   │   │   ├── admin
+│   │   │   │   ├── features
+│   │   │   │   │   ├── examples
 │   ├── private
 |   │   ├── emails
 │   ├── public

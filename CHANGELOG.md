@@ -1,3 +1,8 @@
+# 1.12.0 (2017-12-02)
+
+* Update typography Scss partial
+* Update style guide markup and styles
+
 # 1.11.1 (2017-11-30)
 
 * Remove Meteor version in README
