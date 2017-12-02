@@ -1,7 +1,3 @@
-// Mixins         : .make-md-column(3);
-// Extends        : &:extend(.img-responsive);
-// Media Queries  : @media (min-width: @screen-sm-min) {}
-
 main.home {
   @extend .container;
 }
