@@ -1,1 +1,29 @@
 // Add Google fonts and text styling below
+
+.large {
+  font-size: $font-size-lg;
+}
+
+.text-is-small {
+  @extend .small;
+}
+
+.text-is-large {
+  @extend .large;
+}
+
+.text-is-light {
+  color: $white;
+}
+
+.text-is-dark {
+  color: $gray-800;
+}
+
+.text-is-light > a {
+  @extend .text-is-light;
+
+  &:hover {
+    color: darken($white, 15%);
+  }
+}

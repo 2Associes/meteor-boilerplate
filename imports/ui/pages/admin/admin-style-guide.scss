@@ -166,10 +166,18 @@
 
   border: $border-width solid $gray-100;
   padding: $spacer * 2;
+
+  &.is-dark {
+    background-color: $gray-800;
+  }
 }
 
 .admin-style-guide-section-item {
   margin-bottom: $spacer;
+
+  &.is-dark {
+    background-color: $gray-800;
+  }
 
   &:last-child {
     margin-bottom: 0;
