@@ -4,12 +4,12 @@ import { FlowRouter } from 'meteor/kadira:flow-router'
 import { BlazeLayout } from 'meteor/kadira:blaze-layout'
 
 import '../../ui/layouts/app'
+import '../../ui/pages/not-found'
 import '../../ui/components/loading'
 import '../../ui/components/header'
 import '../../ui/components/footer'
 
 const home = () => import('../../ui/pages/home')
-const notFound = () => import('../../ui/pages/not-found')
 const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
 const featuresReactiveForm = () => import('../../ui/pages/features/features-reactive-form')
