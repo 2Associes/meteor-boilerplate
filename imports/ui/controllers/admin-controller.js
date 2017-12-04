@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating'
 
-import './user-controller.js'
+import './admin-controller.html'
 
 Template.adminController.helpers({
   target() {
