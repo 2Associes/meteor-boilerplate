@@ -9,6 +9,9 @@ import '../../ui/components/loading'
 import '../../ui/components/header'
 import '../../ui/components/footer'
 
+import '../../ui/controllers/user-controller'
+import '../../ui/controllers/admin-controller'
+
 const home = () => import('../../ui/pages/home')
 const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
