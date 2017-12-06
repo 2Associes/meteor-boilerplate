@@ -1,3 +1,10 @@
+# 1.13.0 (2017-12-06)
+
+* Move Google Fonts partial into typography
+* Add Glossary section in i18n files
+* Add UI Controllers
+* Add .editorconfig
+
 # 1.12.0 (2017-12-02)
 
 * Update typography Scss partial
