@@ -1,4 +1,4 @@
-boilerplateRelease = '1.12.0'
+boilerplateRelease = '1.13.0'
 Template.registerHelper 'boilerplateRelease', ->
 	boilerplateRelease
 
