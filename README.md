@@ -16,8 +16,8 @@ node -v && npm -v
 We recommand using [Node Version Manager][3] but [Yarn][5] can also be used.
 
 ```
-nvm install v8.1.0
-nvm use v8.1.0
+nvm install v8.8.1
+nvm use v8.8.1
 ```
 
 ## Installation
