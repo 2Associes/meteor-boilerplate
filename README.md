@@ -2,7 +2,7 @@
 
 [![CircleCI Build Status](https://circleci.com/gh/2Associes/meteor-boilerplate/tree/master.svg?style=shield&circle-token=d1f1cfc9181d3bf9a8a408745dd56a617d36dafd)](https://circleci.com/gh/2Associes/meteor-boilerplate)
 
-A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4 (Beta 3).
+A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 
 ## Prerequisites
 
@@ -119,6 +119,7 @@ nvm use v8.8.1
 - [juliancwirko:postcss](https://atmospherejs.com/juliancwirko/postcss) : Minifier for Meteor with PostCSS processing - use Autoprefixer and others with ease
 - [kadira:blaze-layout](https://atmospherejs.com/kadira/blaze-layout) : Layout Manager for Blaze (works well with FlowRouter)
 - [kadira:flow-router](https://atmospherejs.com/kadira/flow-router) : Carefully Designed Client Side Router for Meteor
+- [mdg:seo](https://atmospherejs.com/mdg/seo) : Provide SEO support for enabled apps
 - [mdg:validated-method](https://atmospherejs.com/mdg/validated-method) : A simple wrapper for Meteor.methods
 - [meteorhacks:ssr](https://atmospherejs.com/meteorhacks/ssr) : Server Side Rendering for Meteor with Blaze
 - [meteortoys:allthings](https://atmospherejs.com/meteortoys/allthings) : Insanely Handy Development Tools
