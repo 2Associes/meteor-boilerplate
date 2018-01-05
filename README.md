@@ -143,6 +143,10 @@ nvm use v8.1.0
 * **Nicolas Harnois** - *Internationalization and localization* - [2 Associés](https://github.com/2Associes)
 * **Simon Martineau** - *Front-end Developer* - [marsimeau](https://github.com/marsimeau)
 
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 [1]:https://chimp.readme.io
 [2]:https://nodejs.org
 [3]:https://github.com/creationix/nvm
