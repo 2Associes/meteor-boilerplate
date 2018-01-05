@@ -8,6 +8,6 @@ module.exports = function () {
   this.Then(/^I am redirected to "([^"]*)"$/, function (arg2) {
     browser.waitUntil(function () {
       return browser.getUrl() === arg2
-    }, 5000)
+    }, 6000)
   })
 }
