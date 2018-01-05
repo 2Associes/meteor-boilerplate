@@ -13,7 +13,7 @@ A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4 (Beta
 node -v && npm -v
 ```
 
-We recommand using [Node Version Manager][3]
+We recommand using [Node Version Manager][3] but [Yarn][5] can also be used.
 
 ```
 nvm install v8.1.0
