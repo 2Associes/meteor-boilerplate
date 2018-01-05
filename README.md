@@ -2,7 +2,7 @@
 
 [![CircleCI Build Status](https://circleci.com/gh/2Associes/meteor-boilerplate/tree/master.svg?style=shield&circle-token=d1f1cfc9181d3bf9a8a408745dd56a617d36dafd)](https://circleci.com/gh/2Associes/meteor-boilerplate)
 
-A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
+A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4 (Beta 3).
 
 ## Prerequisites
 
