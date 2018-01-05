@@ -1,3 +1,12 @@
+# 1.14.0 (2018-01-05)
+
+* Update Meteor to 1.6.0.1
+* Update Node to 8.8.1
+* Add mdg:seo package
+* Add jQuery dependency
+* Update Bootstrap dependency to Beta 3
+* Fix Bootstrap variable bug
+
 # 1.13.0 (2017-12-06)
 
 * Move Google Fonts partial into typography
