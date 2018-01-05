@@ -6,18 +6,18 @@ A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 
 ## Prerequisites
 
-* [Node.js][2] >= v8.1.0
+* [Node.js][2] >= v8.8.1
 * [npm][4] >= 5.4.2
 
 ```
 node -v && npm -v
 ```
 
-We recommand using [Node Version Manager][3]
+We recommand using [Node Version Manager][3] but [Yarn][5] can also be used.
 
 ```
-nvm install v8.1.0
-nvm use v8.1.0
+nvm install v8.8.1
+nvm use v8.8.1
 ```
 
 ## Installation
@@ -119,6 +119,7 @@ nvm use v8.1.0
 - [juliancwirko:postcss](https://atmospherejs.com/juliancwirko/postcss) : Minifier for Meteor with PostCSS processing - use Autoprefixer and others with ease
 - [kadira:blaze-layout](https://atmospherejs.com/kadira/blaze-layout) : Layout Manager for Blaze (works well with FlowRouter)
 - [kadira:flow-router](https://atmospherejs.com/kadira/flow-router) : Carefully Designed Client Side Router for Meteor
+- [mdg:seo](https://atmospherejs.com/mdg/seo) : Provide SEO support for enabled apps
 - [mdg:validated-method](https://atmospherejs.com/mdg/validated-method) : A simple wrapper for Meteor.methods
 - [meteorhacks:ssr](https://atmospherejs.com/meteorhacks/ssr) : Server Side Rendering for Meteor with Blaze
 - [meteortoys:allthings](https://atmospherejs.com/meteortoys/allthings) : Insanely Handy Development Tools
@@ -136,7 +137,19 @@ nvm use v8.1.0
 - [webtempest:animate](https://atmospherejs.com/webtempest/animate) : Easily perform CSS animations and transitions in Meteo
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
 
+## Authors
+
+* **Hugues Brunelle** - *Lead Front-end Developer* - [2 Associés](https://github.com/2Associes)
+* **Andrés Flores** - *Front-end Developer* - [PerfectNull](https://github.com/PerfectNull)
+* **Nicolas Harnois** - *Internationalization and localization* - [2 Associés](https://github.com/2Associes)
+* **Simon Martineau** - *Front-end Developer* - [marsimeau](https://github.com/marsimeau)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 [1]:https://chimp.readme.io
 [2]:https://nodejs.org
 [3]:https://github.com/creationix/nvm
 [4]:https://www.npmjs.com
+[5]:https://yarnpkg.com/en/
