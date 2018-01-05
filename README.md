@@ -2,7 +2,7 @@
 
 [![CircleCI Build Status](https://circleci.com/gh/2Associes/meteor-boilerplate/tree/master.svg?style=shield&circle-token=d1f1cfc9181d3bf9a8a408745dd56a617d36dafd)](https://circleci.com/gh/2Associes/meteor-boilerplate)
 
-A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
+A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4 (Beta 3).
 
 ## Prerequisites
 
@@ -13,7 +13,7 @@ A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 node -v && npm -v
 ```
 
-We recommand using [Node Version Manager][3]
+We recommand using [Node Version Manager][3] but [Yarn][5] can also be used.
 
 ```
 nvm install v8.1.0
@@ -136,7 +136,19 @@ nvm use v8.1.0
 - [webtempest:animate](https://atmospherejs.com/webtempest/animate) : Easily perform CSS animations and transitions in Meteo
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
 
+## Authors
+
+* **Hugues Brunelle** - *Lead Front-end Developer* - [2 Associés](https://github.com/2Associes)
+* **Andrés Flores** - *Front-end Developer* - [PerfectNull](https://github.com/PerfectNull)
+* **Nicolas Harnois** - *Internationalization and localization* - [2 Associés](https://github.com/2Associes)
+* **Simon Martineau** - *Front-end Developer* - [marsimeau](https://github.com/marsimeau)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
 [1]:https://chimp.readme.io
 [2]:https://nodejs.org
 [3]:https://github.com/creationix/nvm
 [4]:https://www.npmjs.com
+[5]:https://yarnpkg.com/en/
