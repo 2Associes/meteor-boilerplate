@@ -136,6 +136,13 @@ nvm use v8.1.0
 - [webtempest:animate](https://atmospherejs.com/webtempest/animate) : Easily perform CSS animations and transitions in Meteo
 - [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
 
+## Authors
+
+* **Hugues Brunelle** - *Lead Front-end Developer* - [2 Associés](https://github.com/2Associes)
+* **Andrés Flores** - *Front-end Developer* - [PerfectNull](https://github.com/PerfectNull)
+* **Nicolas Harnois** - *Internationalization and localization* - [2 Associés](https://github.com/2Associes)
+* **Simon Martineau** - *Front-end Developer* - [marsimeau](https://github.com/marsimeau)
+
 [1]:https://chimp.readme.io
 [2]:https://nodejs.org
 [3]:https://github.com/creationix/nvm
