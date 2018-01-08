@@ -66,7 +66,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "meteor-node-stubs": "~0.2.0",
-    "popper.js": "^1.12.5",
+    "popper.js": "^1.13.0",
     "simpl-schema": "^0.3.2"
   },
   "devDependencies": {
