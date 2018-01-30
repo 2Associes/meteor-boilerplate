@@ -1,3 +1,10 @@
+# 1.15.0 (2018-01-29)
+
+* Update Meteor to 1.6.1
+* Update npm dependencies
+* Add users.isDummy attribute in fixtures
+* Update webmanifest and service worker
+
 # 1.14.0 (2018-01-05)
 
 * Update Meteor to 1.6.0.1
