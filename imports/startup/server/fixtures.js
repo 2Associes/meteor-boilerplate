@@ -61,7 +61,8 @@ Meteor.startup(() => {
         password: '123456',
         username: user.username,
         profile: {
-          name: user.name
+          name: user.name,
+          isDummy: true
         }
       })
 
