@@ -14,6 +14,27 @@ const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
 const featuresReactiveForm = () => import('../../ui/pages/features/features-reactive-form')
 
+async function renderAdmin(uiData) {
+  BlazeLayout.render('uiController', {
+    default: {
+      template: 'app',
+      header: 'header',
+      main: 'atForm',
+      state: 'signIn',
+      footer: 'footer'
+    },
+    loggedIn: {
+      main: 'notFound'
+    },
+    isInRole: [
+      {
+        roles: ['admin'],
+        ...uiData
+      }
+    ]
+  })
+}
+
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
 //     action: function(params, queryParams) {
@@ -62,23 +83,8 @@ adminRoutes.route('/style-guide', {
   name: 'adminStyleGuide',
   async action() {
     await adminStyleGuide()
-    BlazeLayout.render('uiController', {
-      default: {
-        template: 'app',
-        header: 'header',
-        main: 'atForm',
-        state: 'signIn',
-        footer: 'footer'
-      },
-      loggedIn: {
-        main: 'notFound'
-      },
-      isInRole: [
-        {
-          roles: ['admin'],
-          main: 'adminStyleGuide'
-        }
-      ]
+    renderAdmin({
+      main: 'adminStyleGuide'
     })
   },
   classname: 'admin-style-guide'
@@ -88,23 +94,8 @@ adminRoutes.route('/home', {
   name: 'adminHome',
   async action() {
     await adminHome()
-    BlazeLayout.render('uiController', {
-      default: {
-        template: 'app',
-        header: 'header',
-        main: 'atForm',
-        state: 'signIn',
-        footer: 'footer'
-      },
-      loggedIn: {
-        main: 'notFound'
-      },
-      isInRole: [
-        {
-          roles: ['admin'],
-          main: 'adminHome'
-        }
-      ]
+    renderAdmin({
+      main: 'adminHome'
     })
   },
   classname: 'admin-home'
@@ -119,23 +110,8 @@ features.route('/reactive-form', {
   name: 'features-reactive-form',
   async action() {
     await featuresReactiveForm()
-    BlazeLayout.render('uiController', {
-      default: {
-        template: 'app',
-        header: 'header',
-        main: 'atForm',
-        state: 'signIn',
-        footer: 'footer'
-      },
-      loggedIn: {
-        main: 'notFound'
-      },
-      isInRole: [
-        {
-          roles: ['admin'],
-          main: 'featuresReactiveForm'
-        }
-      ]
+    renderAdmin({
+      main: 'featuresReactiveForm'
     })
   },
   classname: 'features features-reactive-form'
