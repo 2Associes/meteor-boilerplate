@@ -1,11 +1,11 @@
 import { Tracker } from 'meteor/tracker'
 import { TAPi18n } from 'meteor/tap:i18n'
 import { T9n } from 'meteor/softwarerero:accounts-t9n'
-// import moment from 'moment'
+import moment from 'moment'
 
 // Import needed moment locales
-// import 'moment/locale/en-ca'
-// import 'moment/locale/fr-ca'
+import 'moment/locale/en-ca'
+import 'moment/locale/fr-ca'
 
 const getUserLanguage = function () {
   // Put here the logic for determining the user language
@@ -24,6 +24,6 @@ Meteor.startup(() => {
     $('html').attr('lang', language)
 
     // Change moment.js locale
-    // moment.locale(language)
+    moment.locale(language)
   })
 })
