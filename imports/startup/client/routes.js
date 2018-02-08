@@ -8,8 +8,6 @@ import '../../ui/components/header'
 import '../../ui/components/footer'
 
 import '../../ui/components/ui-controller'
-import '../../ui/controllers/user-controller'
-import '../../ui/controllers/admin-controller'
 
 const home = () => import('../../ui/pages/home')
 const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
