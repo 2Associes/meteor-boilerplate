@@ -7,6 +7,7 @@ import '../../ui/components/loading'
 import '../../ui/components/header'
 import '../../ui/components/footer'
 
+import '../../ui/components/ui-controller'
 import '../../ui/controllers/user-controller'
 import '../../ui/controllers/admin-controller'
 
@@ -28,14 +29,28 @@ FlowRouter.route('/', {
   // subscriptions: function() {},
   async action() {
     await home()
-    BlazeLayout.render('app', { header: 'header', main: 'home', footer: 'footer' })
+    BlazeLayout.render('uiController', {
+      default: {
+        template: 'app',
+        header: 'header',
+        main: 'home',
+        footer: 'footer'
+      }
+    })
   },
   classname: 'home'
 })
 
 FlowRouter.notFound = {
   action() {
-    BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
+    BlazeLayout.render('uiController', {
+      default: {
+        template: 'app',
+        header: 'header',
+        main: 'notFound',
+        footer: 'footer'
+      }
+    })
   },
   classname: 'not-found'
 }
@@ -49,7 +64,24 @@ adminRoutes.route('/style-guide', {
   name: 'adminStyleGuide',
   async action() {
     await adminStyleGuide()
-    BlazeLayout.render('app', { header: 'header', main: 'userController', userTargetTemplate: 'adminController', adminTargetTemplate: 'adminStyleGuide', footer: 'footer' })
+    BlazeLayout.render('uiController', {
+      default: {
+        template: 'app',
+        header: 'header',
+        main: 'atForm',
+        state: 'signIn',
+        footer: 'footer'
+      },
+      loggedIn: {
+        main: 'notFound'
+      },
+      isInRole: [
+        {
+          roles: ['admin'],
+          main: 'adminStyleGuide'
+        }
+      ]
+    })
   },
   classname: 'admin-style-guide'
 })
@@ -58,7 +90,24 @@ adminRoutes.route('/home', {
   name: 'adminHome',
   async action() {
     await adminHome()
-    BlazeLayout.render('app', { header: 'header', main: 'userController', userTargetTemplate: 'adminController', adminTargetTemplate: 'adminHome', footer: 'footer' })
+    BlazeLayout.render('uiController', {
+      default: {
+        template: 'app',
+        header: 'header',
+        main: 'atForm',
+        state: 'signIn',
+        footer: 'footer'
+      },
+      loggedIn: {
+        main: 'notFound'
+      },
+      isInRole: [
+        {
+          roles: ['admin'],
+          main: 'adminHome'
+        }
+      ]
+    })
   },
   classname: 'admin-home'
 })
@@ -72,7 +121,24 @@ features.route('/reactive-form', {
   name: 'features-reactive-form',
   async action() {
     await featuresReactiveForm()
-    BlazeLayout.render('app', { header: 'header', main: 'userController', userTargetTemplate: 'adminController', adminTargetTemplate: 'featuresReactiveForm', footer: 'footer' })
+    BlazeLayout.render('uiController', {
+      default: {
+        template: 'app',
+        header: 'header',
+        main: 'atForm',
+        state: 'signIn',
+        footer: 'footer'
+      },
+      loggedIn: {
+        main: 'notFound'
+      },
+      isInRole: [
+        {
+          roles: ['admin'],
+          main: 'featuresReactiveForm'
+        }
+      ]
+    })
   },
   classname: 'features features-reactive-form'
 })
