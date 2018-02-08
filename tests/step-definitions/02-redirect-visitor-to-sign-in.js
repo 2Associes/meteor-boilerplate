@@ -5,9 +5,7 @@ module.exports = function () {
     browser.url(arg1)
   })
 
-  this.Then(/^I am redirected to "([^"]*)"$/, function (arg2) {
-    browser.waitUntil(function () {
-      return browser.getUrl() === arg2
-    }, 5000)
+  this.Then(/^I see the form with id "([^"]*)"$/, function (arg2) {
+    browser.waitForVisible(arg2, 3000)
   })
 }
