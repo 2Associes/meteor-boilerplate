@@ -1,3 +1,9 @@
+# 1.16.0 (2018-02-25)
+
+* Improve UI Controllers
+* Improve Startup structure
+* Update README to include infos about Collections and Fakers
+
 # 1.15.0 (2018-01-29)
 
 * Update Meteor to 1.6.1
