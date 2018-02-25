@@ -4,7 +4,9 @@
 
 A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 
-## Prerequisites
+## Getting started
+
+### Prerequisites
 
 * [Node.js][2] >= v8.8.1
 * [npm][4] >= 5.4.2
@@ -20,7 +22,7 @@ nvm install v8.8.1
 nvm use v8.8.1
 ```
 
-## Installation
+### Installation
 
 1. Clone this repo to `<yourapp>` :  
 
@@ -53,9 +55,10 @@ nvm use v8.8.1
 	```
 6. When you're ready to start, you should clean up the Database, otherwise you're going to have the project collections and data within you're project :
 
-		```
-		meteor reset
-		```
+	```
+	meteor reset
+	```
+
 
 ## Directory Structure
 
