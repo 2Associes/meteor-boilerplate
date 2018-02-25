@@ -60,6 +60,10 @@ nvm use v8.8.1
 	```
 
 
+### Collections
+
+This project make uses of [digilord:faker][6] to generate data to Paragraphs Collection (the 3 lorem ipsum paragraphs you see on the demo app). You can change this behavious by editing `/imports/startup/server/fixtures.js`
+
 ## Directory Structure
 
 ```
@@ -156,3 +160,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [3]:https://github.com/creationix/nvm
 [4]:https://www.npmjs.com
 [5]:https://yarnpkg.com/en/
+[6]:https://atmospherejs.com/digilord/faker
