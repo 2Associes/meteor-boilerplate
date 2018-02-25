@@ -55,9 +55,10 @@ nvm use v8.8.1
 	```
 6. When you're ready to start, you should clean up the Database, otherwise you're going to have the project collections and data within you're project :
 
-		```
-		meteor reset
-		```
+	```
+	meteor reset
+	```
+
 
 ## Directory Structure
 
