@@ -7,13 +7,33 @@ import '../../ui/components/loading'
 import '../../ui/components/header'
 import '../../ui/components/footer'
 
-import '../../ui/controllers/user-controller'
-import '../../ui/controllers/admin-controller'
+import '../../ui/components/ui-controller'
 
 const home = () => import('../../ui/pages/home')
 const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
 const featuresReactiveForm = () => import('../../ui/pages/features/features-reactive-form')
+
+async function renderAdmin(uiData) {
+  BlazeLayout.render('uiController', {
+    default: {
+      template: 'app',
+      header: 'header',
+      main: 'atForm',
+      state: 'signIn',
+      footer: 'footer'
+    },
+    loggedIn: {
+      main: 'notFound'
+    },
+    isInRole: [
+      {
+        roles: ['admin'],
+        ...uiData
+      }
+    ]
+  })
+}
 
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
@@ -28,14 +48,28 @@ FlowRouter.route('/', {
   // subscriptions: function() {},
   async action() {
     await home()
-    BlazeLayout.render('app', { header: 'header', main: 'home', footer: 'footer' })
+    BlazeLayout.render('uiController', {
+      default: {
+        template: 'app',
+        header: 'header',
+        main: 'home',
+        footer: 'footer'
+      }
+    })
   },
   classname: 'home'
 })
 
 FlowRouter.notFound = {
   action() {
-    BlazeLayout.render('app', { header: 'header', main: 'notFound', footer: 'footer' })
+    BlazeLayout.render('uiController', {
+      default: {
+        template: 'app',
+        header: 'header',
+        main: 'notFound',
+        footer: 'footer'
+      }
+    })
   },
   classname: 'not-found'
 }
@@ -49,7 +83,9 @@ adminRoutes.route('/style-guide', {
   name: 'adminStyleGuide',
   async action() {
     await adminStyleGuide()
-    BlazeLayout.render('app', { header: 'header', main: 'userController', userTargetTemplate: 'adminController', adminTargetTemplate: 'adminStyleGuide', footer: 'footer' })
+    renderAdmin({
+      main: 'adminStyleGuide'
+    })
   },
   classname: 'admin-style-guide'
 })
@@ -58,7 +94,9 @@ adminRoutes.route('/home', {
   name: 'adminHome',
   async action() {
     await adminHome()
-    BlazeLayout.render('app', { header: 'header', main: 'userController', userTargetTemplate: 'adminController', adminTargetTemplate: 'adminHome', footer: 'footer' })
+    renderAdmin({
+      main: 'adminHome'
+    })
   },
   classname: 'admin-home'
 })
@@ -72,7 +110,9 @@ features.route('/reactive-form', {
   name: 'features-reactive-form',
   async action() {
     await featuresReactiveForm()
-    BlazeLayout.render('app', { header: 'header', main: 'userController', userTargetTemplate: 'adminController', adminTargetTemplate: 'featuresReactiveForm', footer: 'footer' })
+    renderAdmin({
+      main: 'featuresReactiveForm'
+    })
   },
   classname: 'features features-reactive-form'
 })

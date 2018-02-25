@@ -6,4 +6,4 @@ Feature: Redirect visitor to sign in
 
   Scenario: Redirect visitor to sign in
     Given I have visited "http://localhost:3000/admin/home"
-    Then I am redirected to "http://localhost:3000/sign-in"
+    Then I see the form with id "#at-pwd-form"
