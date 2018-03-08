@@ -6,9 +6,11 @@ Template.a2h.onRendered(() => {
 
 Template.a2h.helpers({
   bodyText() {
-    return this.bodyText
+    if (this.bodyText) return this.bodyText
+    return 'Install this web app on your device: tap the "Share" icon and then "Add to Home Screen"'
   },
   closeText() {
-    return this.closeText
+    if (this.closeText) return this.closeText
+    return 'Close'
   }
 })
