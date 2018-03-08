@@ -14,3 +14,7 @@ Template.a2h.helpers({
     return 'Close'
   }
 })
+
+Template.a2h.events({
+  'click .a2h-close': () => $('.a2h').fadeOut(200)
+})
