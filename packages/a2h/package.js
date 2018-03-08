@@ -14,8 +14,8 @@ Package.onUse((api) => {
   api.use(['templating'], 'client')
   api.versionsFrom('1.6.1')
   api.use('ecmascript')
-  api.add_files('a2h.html', 'client')
-  api.add_files('a2h-client.js', 'client')
+  api.add_files('client/a2h.html', 'client')
+  api.add_files('client/a2h.js', 'client')
   api.mainModule('a2h.js')
 })
 
