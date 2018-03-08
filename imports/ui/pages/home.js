@@ -19,7 +19,9 @@ Template.home.helpers({
   // Mongo Collection
   paragraphs() {
     return Paragraphs.find()
-  }
+  },
+  addToHomeScreenBodyText: () => TAPi18n.__('addToHomeScreen.bodyText'),
+  addToHomeScreenCloseText: () => TAPi18n.__('addToHomeScreen.closeText')
 })
 
 Template.home.events({})
