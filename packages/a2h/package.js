@@ -1,27 +1,39 @@
 Package.describe({
   name: 'a2h',
   version: '0.0.1',
-  // Brief, one-line summary of the package.
-  summary: '',
-  // URL to the Git repository containing the source code for this package.
+  summary: 'A basic, client side "Add to Home Screen" solution for iOS devices.',
   git: '',
-  // By default, Meteor will default to using README.md for documentation.
-  // To avoid submitting documentation, set this field to null.
   documentation: 'README.md'
 })
 
 Package.onUse((api) => {
-  api.use(['templating'], 'client')
   api.versionsFrom('1.6.1')
-  api.use('ecmascript')
-  api.add_files('client/a2h.html', 'client')
-  api.add_files('client/a2h.js', 'client')
-  api.mainModule('a2h.js')
+
+  api.use([
+    'ecmascript',
+    'templating',
+    'session',
+    'jquery',
+    'fourseven:scss@4.5.4'
+  ], 'client')
+
+  api.addFiles([
+    'client/a2h.html',
+    'client/a2h.scss',
+    'client/a2h.js',
+    'client/body.html',
+    'a2h.js'
+  ], 'client')
+
+  api.export('AddToHomeScreen')
 })
 
 Package.onTest((api) => {
-  api.use('ecmascript')
-  api.use('tinytest')
-  api.use('a2h')
+  api.use([
+    'ecmascript',
+    'tinytest',
+    'a2h'
+  ])
+
   api.mainModule('a2h-tests.js')
 })
