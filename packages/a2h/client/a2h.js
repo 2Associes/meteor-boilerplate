@@ -1,20 +1,19 @@
+import { Session } from 'meteor/session'
 import './a2h.html'
 
-Template.a2h.onRendered(() => {
-  console.log('Hello world!')
-})
-
-Template.a2h.helpers({
-  bodyText() {
-    if (this.bodyText) return this.bodyText
-    return 'Install this web app on your device: tap the "Share" icon and then "Add to Home Screen"'
-  },
-  closeText() {
-    if (this.closeText) return this.closeText
-    return 'Close'
+Template.a2h.onRendered(function () {
+  if (Session.get('a2h-conditions')) {
+    $('.a2h').addClass('show')
   }
 })
 
+Template.a2h.helpers({
+  a2h: () => Session.get('a2h'),
+  conditionsPassed: () => Session.get('a2h-conditions')
+})
+
 Template.a2h.events({
-  'click .a2h-close': () => $('.a2h').fadeOut(200)
+  'click .a2h-close'() {
+    $('.a2h').removeClass('show')
+  }
 })

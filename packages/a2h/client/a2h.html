@@ -1,13 +1,15 @@
 <template name="a2h">
+  {{#if conditionsPassed}}
   <div class="a2h">
     <figure class="a2h-figure">
-      <img class="a2h-image" src="/favicons/apple-touch-icon.png" alt="Application icon">
+      <img class="a2h-image" src="{{ a2h.image }}" alt="Application icon">
     </figure>
     <p class="a2h-text">
-      {{{ bodyText }}}
+      {{{ a2h.text }}}
     </p>
     <button class="a2h-close">
-      {{{ closeText }}}
+      {{{ a2h.close }}}
     </button>
   </div>
+  {{/if}}
 </template>
