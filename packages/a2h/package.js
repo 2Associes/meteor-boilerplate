@@ -12,7 +12,6 @@ Package.onUse((api) => {
   api.use([
     'ecmascript',
     'templating',
-    'session',
     'jquery',
     'fourseven:scss@4.5.4'
   ], 'client')

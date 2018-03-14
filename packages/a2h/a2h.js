@@ -1,4 +1,4 @@
-import { Session } from 'meteor/session'
+import { ReactiveVar } from 'meteor/reactive-var'
 
 class A2H {
   constructor() {
@@ -9,33 +9,32 @@ class A2H {
       recurrences: 3
     }
 
-    this.settings = {
-      ...this.defaults
-    }
+    this.settings = new ReactiveVar()
+    this.checkConditionsPassed = new ReactiveVar(false)
   }
 
   init(...args) {
     this.setSettings(args[0])
-    this.conditions()
+    this.checkConditions()
   }
 
-  deviceCheck = () => {
-    // const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
-    // const isStandalone = (window.navigator.standalone === false)
+  checkDevice = () => {
+    const iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform)
+    const isStandalone = (window.navigator.standalone === false)
 
-    const iOS = true
-    const isStandalone = true
+    // iOS = true
+    // isStandalone = true
 
     if (iOS && isStandalone) return true
 
     return false
   }
 
-  conditions() {
-    if (this.deviceCheck() && !Session.get('a2h-conditions')) {
-      if (localStorage.addToHomeScreenCount && Number(localStorage.addToHomeScreenCount) < this.settings.recurrences) {
+  checkConditions() {
+    if (this.checkDevice() && !this.checkConditionsPassed.get()) {
+      if (localStorage.addToHomeScreenCount && Number(localStorage.addToHomeScreenCount) < this.getSettings().recurrences) {
         localStorage.addToHomeScreenCount = Number(localStorage.addToHomeScreenCount) + 1
-        Session.set('a2h-conditions', true)
+        this.checkConditionsPassed.set(true)
       } else if (!localStorage.addToHomeScreenCount) {
         localStorage.addToHomeScreenCount = 0
       }
@@ -43,12 +42,13 @@ class A2H {
   }
 
   setSettings(settings) {
-    this.settings = {
-      ...this.settings,
+    this.settings.set({
+      ...this.defaults,
       ...settings
-    }
-    Session.set('a2h', this.settings)
+    })
   }
+
+  getSettings = () => this.settings.get()
 }
 
 AddToHomeScreen = new A2H()
