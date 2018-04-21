@@ -9,7 +9,7 @@ aldeed:template-extension@4.1.0
 allow-deny@1.1.0
 arillo:flow-router-helpers@0.5.2
 autoupdate@1.4.0
-babel-compiler@7.0.5
+babel-compiler@7.0.6
 babel-runtime@1.2.2
 base64@1.0.11
 binary-heap@1.0.10
@@ -33,7 +33,7 @@ dferber:prerender@2.2.2_3
 diff-sequence@1.1.0
 digilord:faker@1.0.7
 dynamic-import@0.3.0
-ecmascript@0.10.5
+ecmascript@0.10.6
 ecmascript-runtime@0.5.0
 ecmascript-runtime-client@0.6.2
 ecmascript-runtime-server@0.5.0
