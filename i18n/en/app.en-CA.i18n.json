@@ -31,5 +31,9 @@
   "pages": {
     "adminHomeTitle": "Administration",
     "adminStyleGuideTitle": "Style Guide"
+  },
+  "addToHomeScreen": {
+    "bodyText": "Install this web app on your device: tap <img src=\"/images/icons/ios-share.svg\" class=\"add-to-home-screen-share-icon\"> and then <strong>Add to Home Screen.</strong>",
+    "closeText": "<span class=\"a2h-close-icon fa fa-fw fa-times\"></span>"
   }
 }

@@ -31,5 +31,9 @@
   "pages": {
     "adminHomeTitle": "Administration",
     "adminStyleGuideTitle": "Guide de style"
+  },
+  "addToHomeScreen": {
+    "bodyText": "Pour ajouter cette application sur l'écran d'accueil: Appuyez sur l'icône <img src=\"/images/icons/ios-share.svg\" class=\"add-to-home-screen-share-icon\"> et sélectionnez <strong>Ajouter sur l'écran d'accueil.</strong>",
+    "closeText": "<span class=\"a2h-close-icon fa fa-fw fa-times\"></span>"
   }
 }
