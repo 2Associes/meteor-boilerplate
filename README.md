@@ -147,7 +147,7 @@ This project make uses of [digilord:faker][6] to generate data to Paragraphs Col
 ## Authors
 
 * **Hugues Brunelle** - *Lead Front-end Developer* - [2 Associés](https://github.com/2Associes)
-* **Andrés Flores** - *Front-end Developer* - [PerfectNull](https://github.com/PerfectNull)
+* **Andrés Flores** - *Front-end Developer* - [andresfloresdev](https://github.com/andresfloresdev)
 * **Nicolas Harnois** - *Internationalization and localization* - [2 Associés](https://github.com/2Associes)
 * **Simon Martineau** - *Front-end Developer* - [marsimeau](https://github.com/marsimeau)
 
