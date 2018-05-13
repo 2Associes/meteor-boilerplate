@@ -4,6 +4,8 @@
 
 A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 
+![](screenshot.png)
+
 ## Getting started
 
 ### Prerequisites
