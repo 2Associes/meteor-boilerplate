@@ -11,7 +11,7 @@ import './addToHomeScreen'
 import './routes'
 
 // Import helpers
-import './helpers.coffee'
+import './helpers'
 
 // Import Progressive Web App service worker
 import './pwa'
