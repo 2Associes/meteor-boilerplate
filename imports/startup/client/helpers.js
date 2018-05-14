@@ -68,6 +68,6 @@ Template.registerHelper('isLessOrEqual', function (value1, value2) {
   return value1 <= value2
 })
 
-Template.registerHelper('concat', function (args) {
+Template.registerHelper('concat', function (...args) {
   return Array.prototype.slice.call(args, 0, -1).join('')
 })
