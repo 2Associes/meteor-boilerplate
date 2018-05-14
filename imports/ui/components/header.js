@@ -3,6 +3,35 @@ import './header.html'
 
 import '../../ui/components/language-switcher'
 
+const navbarHeight = 56 // value taken from $header-height in the file header.scss
+const delta = 5
+let didScroll = false
+let lastScrollTop = 0
+
+function hasScrolled() {
+  const st = $(this).scrollTop()
+  if (Math.abs(lastScrollTop - st) <= delta) return
+
+  if (st > lastScrollTop && st > navbarHeight) {
+    $('.main-header').removeClass('main-header-down').addClass('main-header-up')
+  } else if (st + $(window).height() < $(document).height()) {
+    $('.main-header').removeClass('main-header-up').addClass('main-header-down')
+  }
+
+  lastScrollTop = st
+}
+
+setInterval(() => {
+  if (didScroll) {
+    hasScrolled()
+    didScroll = false
+  }
+}, 250)
+
+$(window).scroll(() => {
+  didScroll = true
+})
+
 Template.header.helpers({
 
   currentUserIdentity() {
