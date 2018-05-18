@@ -1,3 +1,14 @@
+# 1.17.0 (2018-05-17)
+
+* Add 2associes:a2h package
+* Add project screenshot in README.md
+* Update packages
+* Update Meteor to 1.6.1.1
+* Update authors username
+* Update helpers.coffee to helpers.js
+* Update header behaviour
+* Remove CoffeeScript package
+
 # 1.16.0 (2018-02-25)
 
 * Improve UI Controllers

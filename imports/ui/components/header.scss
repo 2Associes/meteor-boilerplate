@@ -1,4 +1,23 @@
 // Header styles below
+$header-height: 56px;
+
 #current-user-username {
   display: inline-block;
+}
+
+body {
+  padding-top: $header-height;
+}
+
+.main-header {
+  width: 100%;
+  height: $header-height;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  transition: top 200ms ease-out;
+}
+
+.main-header-up {
+  top: -$header-height;
 }
