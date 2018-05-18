@@ -12,7 +12,7 @@ Template.registerHelper('localizedDateAndTime', function (date) {
   if (date) {
     return moment(date).fromNow()
   }
-  return false
+  return undefined
 })
 
 
@@ -21,7 +21,7 @@ Template.registerHelper('formatDate', function (date) {
   if (date) {
     return moment(date).format('LL')
   }
-  return false
+  return undefined
 })
 
 // Get current route classename
@@ -34,14 +34,14 @@ Template.registerHelper('returnIf', function (condition, value) {
   if (condition) {
     return value
   }
-  return false
+  return undefined
 })
 
 Template.registerHelper('returnUnless', function (condition, value) {
   if (!condition) {
     return value
   }
-  return false
+  return undefined
 })
 
 Template.registerHelper('isEqual', function (value1, value2) {
@@ -68,6 +68,6 @@ Template.registerHelper('isLessOrEqual', function (value1, value2) {
   return value1 <= value2
 })
 
-Template.registerHelper('concat', function (args) {
+Template.registerHelper('concat', function (...args) {
   return Array.prototype.slice.call(args, 0, -1).join('')
 })
