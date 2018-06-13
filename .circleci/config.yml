@@ -114,14 +114,3 @@ workflows:
   build_and_test:
     jobs:
       - build
-workflows:
-  version: 2
-  build_and_deploy_on_staging:
-    jobs:
-      - build
-      - deploy_on_staging:
-        requires:
-          - build
-        filters:
-          branches:
-            only: feature/#208_update_circle_ci
