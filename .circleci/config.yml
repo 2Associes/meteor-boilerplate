@@ -104,9 +104,6 @@ jobs:
     - store_artifacts:
         path: /tmp/circleci-test-results
   deploy_on_staging:
-    filters:
-      branches:
-        only: develop
     steps:
       - run: echo $SETTINGS_STAGING > settings-staging.json
       - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
