@@ -103,19 +103,19 @@ jobs:
         path: /tmp/circleci-artifacts
     - store_artifacts:
         path: /tmp/circleci-test-results
-  deploy_on_staging:
-    machine: true
+  deploy-on-staging:
     steps:
       - run: echo $SETTINGS_STAGING > settings-staging.json
       - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
       - run: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json
-
 workflows:
   version: 2
-    staging:
-      filters:
-        branches:
-          only: develop
-      jobs:
-        - build
-        - deploy_on_staging
+  build-and-deploy-on-staging:
+    jobs:
+      - build
+      - deploy-on-staging:
+        requires:
+          - build
+        filters:
+          branches:
+            only: develop
