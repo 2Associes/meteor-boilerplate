@@ -95,18 +95,6 @@ jobs:
     # See the documentation for more information https://circleci.com/docs/2.0/workflows/
     # Teardown
     #   If you break your build into multiple jobs with workflows, you will probably want to do the parts of this that are relevant in each
-    workflows:
-      version: 2
-        staging:
-          jobs:
-            - deploy:
-              filters:
-                branches:
-                  only: develop
-              steps:
-                - run: echo $SETTINGS_STAGING > settings-staging.json
-                - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
-                - run: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json
     # Save test results
     - store_test_results:
         path: /tmp/circleci-test-results
@@ -115,3 +103,15 @@ jobs:
         path: /tmp/circleci-artifacts
     - store_artifacts:
         path: /tmp/circleci-test-results
+workflows:
+  version: 2
+    staging:
+      jobs:
+        - deploy:
+          filters:
+            branches:
+              only: develop
+          steps:
+            - run: echo $SETTINGS_STAGING > settings-staging.json
+            - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
+            - run: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json
