@@ -114,6 +114,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - deploy_on_staging:
+      - deploy_on_staging
         requires:
           - build
