@@ -110,6 +110,7 @@ jobs:
       - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
         command: /sbin/init
     steps:
+      - checkout
       - restore_cache:
           keys:
           # This branch if available
