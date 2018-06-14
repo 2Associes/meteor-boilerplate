@@ -105,10 +105,10 @@ jobs:
         path: /tmp/circleci-test-results
   deploy_on_staging:
     working_directory: ~/2Associes/meteor-boilerplate
-    # shell: /bin/bash --login
-    # docker:
-    #   - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
-    #     command: /sbin/init
+    shell: /bin/bash --login
+    docker:
+      - image: circleci/node:latest-browsers
+        command: /sbin/init
     steps:
       - checkout
       - restore_cache:
