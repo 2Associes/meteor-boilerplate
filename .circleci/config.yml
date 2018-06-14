@@ -106,6 +106,8 @@ jobs:
   deploy_on_staging:
     machine: true
     steps:
+      - run: if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
+      - run: if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
       - run: echo $SETTINGS_STAGING > settings-staging.json
       - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
       - run: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json
