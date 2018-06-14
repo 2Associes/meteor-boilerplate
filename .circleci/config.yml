@@ -133,5 +133,5 @@ workflows:
     jobs:
       - build
       - deploy_on_staging:
-        requires:
-          - build
+          requires:
+            - build
