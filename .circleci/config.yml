@@ -123,12 +123,13 @@ jobs:
       - run: meteor --version
       - run: echo $SETTINGS_STAGING > settings-staging.json
       - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
+      - run:
+          working_directory: ~/2Associes/meteor-boilerplate
       - run: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json
 workflows:
   version: 2
   build_and_test:
     jobs:
-      - build
       - deploy_on_staging:
           requires:
             - build
