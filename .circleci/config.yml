@@ -27,7 +27,7 @@ jobs:
     # To see the list of pre-built images that CircleCI provides for most common languages see
     # https://circleci.com/docs/2.0/circleci-images/
     docker:
-    - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+    - image: circleci/build-image:ubuntu-14.04-XXL-1325-0ccc9ce
       command: /sbin/init
     steps:
     # Machine Setup
@@ -107,7 +107,7 @@ jobs:
     working_directory: ~/2Associes/meteor-boilerplate
     shell: /bin/bash --login
     docker:
-    - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
+    - image: circleci/build-image:ubuntu-14.04-XXL-1325-0ccc9ce
       command: /sbin/init
     steps:
       - checkout
@@ -135,3 +135,6 @@ workflows:
       - deploy_on_staging:
           requires:
             - build
+          filters:
+            branches:
+              only: develop
