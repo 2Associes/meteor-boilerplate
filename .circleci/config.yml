@@ -126,7 +126,31 @@ jobs:
       - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
       - run:
           working_directory: ~/2Associes/meteor-boilerplate
-          command: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json
+          command: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json --owner 2associes
+  deploy_on_production:
+    working_directory: ~/2Associes/meteor-boilerplate
+    shell: /bin/bash --login
+    docker:
+    - image: circleci/build-image:ubuntu-14.04-XXL-1325-0ccc9ce
+      command: /sbin/init
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+          # This branch if available
+          - v1-dep-{{ .Branch }}-
+          # Default branch if not
+          - v1-dep-master-
+          # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
+          - v1-dep-
+      - run: if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
+      - run: if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
+      - run: meteor --version
+      - run: echo $SETTINGS_PRODUCTION > settings.json
+      - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
+      - run:
+          working_directory: ~/2Associes/meteor-boilerplate
+          command: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_PRODUCTION --settings settings.json --owner 2associes
 workflows:
   version: 2
   build_and_test:
@@ -138,3 +162,9 @@ workflows:
           filters:
             branches:
               only: develop
+      - deploy_on_production:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
