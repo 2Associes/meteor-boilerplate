@@ -146,7 +146,7 @@ jobs:
       - run: if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
       - run: if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
       - run: meteor --version
-      - run: echo $SETTINGS_PRODUCTION > settings.json
+      - run: echo $SETTINGS > settings.json
       - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
       - run:
           working_directory: ~/2Associes/meteor-boilerplate
