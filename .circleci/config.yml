@@ -41,7 +41,7 @@ jobs:
     # This is based on your 1.0 configuration file or project settings
     - run:
         working_directory: ~/2Associes/meteor-boilerplate
-        command: nvm install 8.9.4 && nvm alias default 8.9.4
+        command: nvm install 8.12.0 && nvm alias default 8.12.0
     # Dependencies
     #   This would typically go in either a build or a build-and-test job when using workflows
     # Restore the dependency cache
@@ -87,6 +87,14 @@ jobs:
         command: npm run dev
         background: true
     - run: sleep 30
+    # Install Chrome
+    - run:
+        name: Install Chrome
+        command: |
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+          sudo apt-get update
+          sudo apt-get -y install google-chrome-stable
     - run: npm run test
     # Deployment
     # Your existing circle.yml file contains deployment steps.

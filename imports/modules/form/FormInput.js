@@ -20,7 +20,9 @@ export default class FormInput {
       this.name = input
       this.events = {}
     } else {
-      const { name, key, liveValidation = true, defaultValue = '', events = {}, subscriptionsReady, payload } = input
+      const {
+        name, key, liveValidation = true, defaultValue = '', events = {}, subscriptionsReady, payload
+      } = input
 
       this.name = name
       this.key = key
