@@ -1,3 +1,8 @@
+# 1.18.0 (2018-11-14)
+
+* Update packages
+* Update Meteor to 1.8
+
 # 1.17.0 (2018-05-17)
 
 * Add 2associes:a2h package
