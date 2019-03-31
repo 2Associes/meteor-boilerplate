@@ -111,40 +111,7 @@ This project make uses of [digilord:faker][6] to generate data to Paragraphs Col
 
 ## Included Packages
 
-- [accounts-facebook](https://atmospherejs.com/meteor/accounts-facebook) : Login service for Facebook accounts
-- [accounts-password](https://atmospherejs.com/meteor/accounts-password) : Password support for accounts
-- [alanning:roles](https://atmospherejs.com/alanning/roles) : Authorization package for Meteor
-- [aldeed:collection2-core](https://atmospherejs.com/aldeed/collection2-core) : Core package for aldeed:collection2
-- [aldeed:template-extension](https://atmospherejs.com/aldeed/template-extension) : Adds template features currently missing from the templating package
-- [arillo:flow-router-helpers](https://atmospherejs.com/arillo/flow-router-helpers) : Template helpers for flow-router
-- [check](https://atmospherejs.com/meteor/check) : Check whether a value matches a pattern
-- [digilord:faker](https://atmospherejs.com/digilord/faker) : Faker.js packaged for Meteor. Generate massive amounts of fake data
-- [ejson](https://atmospherejs.com/meteor/ejson) : Extended and Extensible JSON library
-- [email](https://atmospherejs.com/meteor/email) : Send email messages
-- [facebook-config-ui](https://atmospherejs.com/meteor/facebook-config-ui) : Blaze configuration templates for Facebook OAuth
-- [fortawesome:fontawesome](https://atmospherejs.com/fortawesome/fontawesome) : Font Awesome (official): 500+ scalable vector icons, customizable via CSS, Retina friendly
-- [fourseven:scss](https://atmospherejs.com/fourseven/scss) : Style with attitude. Sass and SCSS support for Meteor.js.
-- [jabbslad:basic-auth](https://atmospherejs.com/meteor/jabbslad:basic-auth) : Add HTTP Basic Auth support to your application
-- [juliancwirko:postcss](https://atmospherejs.com/juliancwirko/postcss) : Minifier for Meteor with PostCSS processing - use Autoprefixer and others with ease
-- [kadira:blaze-layout](https://atmospherejs.com/kadira/blaze-layout) : Layout Manager for Blaze (works well with FlowRouter)
-- [kadira:flow-router](https://atmospherejs.com/kadira/flow-router) : Carefully Designed Client Side Router for Meteor
-- [mdg:seo](https://atmospherejs.com/mdg/seo) : Provide SEO support for enabled apps
-- [mdg:validated-method](https://atmospherejs.com/mdg/validated-method) : A simple wrapper for Meteor.methods
-- [meteorhacks:ssr](https://atmospherejs.com/meteorhacks/ssr) : Server Side Rendering for Meteor with Blaze
-- [meteortoys:allthings](https://atmospherejs.com/meteortoys/allthings) : Insanely Handy Development Tools
-- [okgrow:analytics](https://atmospherejs.com/okgrow/analytics) : Complete Google Analytics, Mixpanel, KISSmetrics (and more) integration for Meteor
-- [pcel:loading](https://atmospherejs.com/meteor/pcel:loading) : A beautiful loading splash screen (please-wait + spinkit bundle)
-- [reywood:publish-composite](https://atmospherejs.com/reywood/publish-composite) : Publish a set of related documents from multiple collections with a reactive join
-- [service-configuration](https://atmospherejs.com/meteor/service-configuration) : Manage the configuration for third-party services
-- [session](https://atmospherejs.com/meteor/session) : Session variable
-- [softwarerero:accounts-t9n](https://atmospherejs.com/softwarerero/accounts-t9n) : Almost i18n, with standard translations for basic meteor packages
-- [spiderable](https://atmospherejs.com/meteor/spiderable) : Makes the application crawlable to web spiders
-- [tap:i18n](https://atmospherejs.com/meteor/tap:i18n) : A comprehensive internationalization solution for Meteor
-- [tap:i18n-db](https://atmospherejs.com/tap/i18n-db) : Internationalization for Meteor Collections
-- [useraccounts:bootstrap](https://atmospherejs.com/useraccounts/bootstrap) : Accounts Templates styled for Twitter Bootstrap
-- [useraccounts:flow-routing](https://atmospherejs.com/useraccounts/flow-routing) : UserAccounts package providing routes configuration capability via kadira:flow-router
-- [webtempest:animate](https://atmospherejs.com/webtempest/animate) : Easily perform CSS animations and transitions in Meteo
-- [zimme:active-route](https://atmospherejs.com/zimme/active-route) : Active route helpers
+This project uses many packages. In order to see the entire list of packages, you can run `meteor list` in your terminal.
 
 ## Authors
 
