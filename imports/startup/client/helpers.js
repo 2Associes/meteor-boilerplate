@@ -1,7 +1,7 @@
 import { FlowRouter } from 'meteor/kadira:flow-router'
 import moment from 'moment'
 
-const boilerplateRelease = '1.19.0'
+const boilerplateRelease = '1.20.0'
 
 Template.registerHelper('boilerplateRelease', function () {
   return boilerplateRelease
