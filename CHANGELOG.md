@@ -1,7 +1,22 @@
-# 1.18.0 (2018-11-14)
+# 1.20.0 (2019-03-31)
 
-* Update packages
+* Update Meteor to 1.8.0.1
+* Update 2associes:a2h package
+* Update NPM packages (also packages with vulnerabilities)
+* Update README Packages section
+* Remove Spiderable package
+
+# 1.19.0 (2018-11-14)
+
+* Update default NodeJS version
 * Update Meteor to 1.8
+* Update boilerplate modules, helpers and ui
+
+# 1.18.0 (2018-06-14)
+
+* Update Meteor to 1.7.0.1
+* Update CircleCI config to 2.0
+* Update NPM packages
 
 # 1.17.0 (2018-05-17)
 
