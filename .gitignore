@@ -1,2 +1,4 @@
 node_modules/
-settings*
+settings.json
+settings-development.json
+settings-staging.json
