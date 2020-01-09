@@ -15,7 +15,7 @@ import validation from '../../api/validation.js'
  * @param {function} [payload] - Function that returns a payload used by validation.
  */
 export default class FormInput {
-  constructor(input, callback) {
+  constructor(input) {
     if (typeof input === 'string') {
       this.name = input
       this.events = {}
@@ -37,8 +37,6 @@ export default class FormInput {
     this.edited = new ReactiveVar(false)
     this.error = new ReactiveVar()
     this.initiated = new ReactiveVar(false)
-
-    if (typeof callback === 'function') callback(this)
   }
 
   /**

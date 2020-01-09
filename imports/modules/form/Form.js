@@ -80,7 +80,7 @@ export default class Form {
 
       array = this.arrays
     } else {
-      array = new FormArray(name)
+      array = new FormArray(names)
 
       this.addArray(array)
     }

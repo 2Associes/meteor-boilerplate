@@ -1,4 +1,5 @@
 import { FlowRouter } from 'meteor/kadira:flow-router'
+import { Template } from 'meteor/templating'
 import moment from 'moment'
 
 const boilerplateRelease = '1.20.0'
@@ -14,7 +15,6 @@ Template.registerHelper('localizedDateAndTime', function (date) {
   }
   return undefined
 })
-
 
 // Format helper for dates using momentJS. Usage in template {{formatDate createdAt}}
 Template.registerHelper('formatDate', function (date) {

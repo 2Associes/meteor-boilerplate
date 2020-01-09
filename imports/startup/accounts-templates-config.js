@@ -1,3 +1,5 @@
+import { AccountsTemplates } from 'meteor/useraccounts:core'
+
 // Options
 AccountsTemplates.configure({
   defaultLayout: 'app',

@@ -1,5 +1,8 @@
 import { Meteor } from 'meteor/meteor'
-
+import { _ } from 'meteor/underscore'
+import { faker } from 'meteor/digilord:faker'
+import { Accounts } from 'meteor/accounts-base'
+import { Roles } from 'meteor/alanning:roles'
 import { Paragraphs } from '../../api/paragraphs/paragraphs'
 
 // if the database is empty on server start, create some sample data.

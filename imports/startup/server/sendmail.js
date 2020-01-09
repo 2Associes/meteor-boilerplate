@@ -1,5 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Accounts } from 'meteor/accounts-base'
+import { SSR } from 'meteor/meteorhacks:ssr'
+import { Email } from 'meteor/email'
 
 Meteor.startup(() => {
   // Uncomment if you use MAIL_URL in settings
