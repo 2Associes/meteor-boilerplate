@@ -1,8 +1,11 @@
 {
   "glossary": {},
   "head": {
-    "title": "Meteor Boilerplate",
-    "description": "Build up your Meteor App."
+    "titlePattern": "__title__ | 2 Associés Meteor Boilerplate",
+    "titles": {
+      "home": "Home",
+      "notFound": "Page introuvable"
+    }
   },
   "header": {
     "menuIcon": "Toggle navigation",
