@@ -6,6 +6,9 @@ export const UserSchema = new SimpleSchema({
     type: String,
     regEx: SimpleSchema.RegEx.Id
   },
+  username: {
+    type: String
+  },
   emails: {
     type: Array,
     optional: true
