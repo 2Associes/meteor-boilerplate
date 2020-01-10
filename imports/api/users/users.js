@@ -1,8 +1,7 @@
 import SimpleSchema from 'simpl-schema'
-import Schemas from '../schemas'
 
 // See example: https://github.com/aldeed/meteor-collection2-core#attach-a-schema-to-meteorusers
-Schemas.User = new SimpleSchema({
+export const UserSchema = new SimpleSchema({
   _id: {
     type: String,
     regEx: SimpleSchema.RegEx.Id
@@ -42,4 +41,4 @@ Schemas.User = new SimpleSchema({
 })
 
 // Automatically validates documents when created or updated (aldeed:collection2-core)
-Meteor.users.attachSchema(Schemas.User)
+Meteor.users.attachSchema(UserSchema)
