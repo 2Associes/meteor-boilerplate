@@ -4,7 +4,7 @@ import { Roles } from 'meteor/alanning:roles'
 
 import './ui-controller.html'
 
-Template.uiController.helpers({
+Template.oldUiController.helpers({
   target() {
     let defaultOptions = {}
 

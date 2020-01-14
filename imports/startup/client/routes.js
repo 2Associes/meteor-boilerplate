@@ -13,10 +13,14 @@ import '../../ui/components/ui-controller'
 const home = () => import('../../ui/pages/home')
 const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
+// const adminHome = {
+//   template: 'adminHome',
+//   import: () => import('../../ui/pages/admin/admin-home')
+// }
 const featuresReactiveForm = () => import('../../ui/pages/features/features-reactive-form')
 
 async function renderAdmin(uiData) {
-  BlazeLayout.render('uiController', {
+  BlazeLayout.render('oldUiController', {
     default: {
       template: 'app',
       header: 'header',
@@ -36,6 +40,34 @@ async function renderAdmin(uiData) {
   })
 }
 
+// async function renderExample(uiData) {
+//   BlazeLayout.render('oldUiController', {
+//     templates: {
+//       main: adminHome,
+//       header: {
+//         template: 'header',
+//         options: {
+//           color: '#ddd'
+//         }
+//       }
+//     },
+//     options: {
+//       authenticated: true,
+//       roles: ['admin'],
+//       layout: 'mainLayout',
+//       loggingInTemplates: {
+//         main: 'loading'
+//       },
+//       signedOutTemplates: {
+//         main: 'login'
+//       },
+//       notInRoleTemplates: {
+//         main: 'notFound'
+//       }
+//     }
+//   })
+// }
+
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
 //     action: function(params, queryParams) {
@@ -49,7 +81,7 @@ FlowRouter.route('/', {
   // subscriptions: function() {},
   async action() {
     await home()
-    BlazeLayout.render('uiController', {
+    BlazeLayout.render('oldUiController', {
       default: {
         template: 'app',
         header: 'header',
@@ -63,7 +95,7 @@ FlowRouter.route('/', {
 
 FlowRouter.notFound = {
   action() {
-    BlazeLayout.render('uiController', {
+    BlazeLayout.render('oldUiController', {
       default: {
         template: 'app',
         header: 'header',
