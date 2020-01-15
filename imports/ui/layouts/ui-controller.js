@@ -10,9 +10,7 @@ import './ui-controller.html'
  * Higher-order component that manages the data passed down the template tree based on authentication and authorization checks.
  * Also imports the templates dynamically if provided by a import function.
  * @param {Object} templates - The data that should be passed down the template tree if the checks were to succeed.
- * @param {string|Object} templates.$ - The template properties. Should either be a template name or template data object.
- * @param {string} template.$.template - The template name.
- * @param {Function} [template.$.import] - The template dynamic import function.
+ * @param {string} [templates.layout="app"] - The name of the template that will be used as the root layout.
  * @param {Object} [options] - The options object.
  * @param {boolean} [options.authenticated] - The required authentication state.
  *   If true, the templates will not render if the user is signed out.
@@ -25,10 +23,6 @@ import './ui-controller.html'
  */
 Template.uiController.onCreated(function () {
   this.renderData = new ReactiveVar({})
-
-  this.resolveTemplates = (templates = {}) => {
-    return templates
-  }
 
   this.getPageLayout = async ({ templates = {}, options = {} } = {}) => {
     // Define default layout for each state
@@ -60,26 +54,26 @@ Template.uiController.onCreated(function () {
             (!options.roles && options.authenticated)
           ) {
             // Render requested templates
-            return this.resolveTemplates(templates)
+            return templates
           }
 
           // Render templates for user not in role
-          return this.resolveTemplates(notInRoleTemplates)
+          return notInRoleTemplates
         }
 
         // Render templates for signed out user
-        return this.resolveTemplates(signedOutTemplates)
+        return signedOutTemplates
       }
 
       // User is signed in
       if (userId) {
         // Render templates for signed in user
-        return this.resolveTemplates(signedInTemplates)
+        return signedInTemplates
       }
     }
 
     // Display requested view
-    return this.resolveTemplates(templates)
+    return templates
   }
 
   this.autorun(() => {
@@ -103,5 +97,8 @@ Template.uiController.onCreated(function () {
 Template.uiController.helpers({
   renderData() {
     return Template.instance().renderData.get()
+  },
+  layoutTemplate() {
+    return Template.instance().renderData.get().layout || 'app'
   }
 })
