@@ -26,39 +26,15 @@ import './ui-controller.html'
 Template.uiController.onCreated(function () {
   this.renderData = new ReactiveVar({})
 
-  this.resolveTemplates = async (templates = {}) => {
-    const imports = []
-    const data = {}
-
-    for (const key in templates) {
-      const template = templates[key]
-
-      // Gather all import promises
-      if (typeof template.import === 'function') {
-        imports.push(template.import())
-      }
-
-      // Format data uniformly
-      if (typeof template === 'string') {
-        data[key]({ template })
-      } else {
-        data[key](template)
-      }
-    }
-
-    // Import all required templates
-    if (imports.length) {
-      await Promise.all(imports)
-    }
-
-    return data
+  this.resolveTemplates = (templates = {}) => {
+    return templates
   }
 
   this.getPageLayout = async ({ templates = {}, options = {} } = {}) => {
     // Define default layout for each state
     const {
       // loggingInTemplates = { main: 'loading' },
-      signedOutTemplates = { main: 'signIn' },
+      signedOutTemplates = { main: 'atForm', state: 'signIn' },
       signedInTemplates = { main: 'home' },
       notInRoleTemplates = { main: 'notFound' }
     } = options
@@ -107,7 +83,18 @@ Template.uiController.onCreated(function () {
   }
 
   this.autorun(() => {
-    const data = Template.currentData()
+    const currentData = Template.currentData()
+    const data = {}
+
+    for (const key in currentData) {
+      const prop = currentData[key]
+
+      if (typeof prop === 'function') {
+        data[key] = prop()
+      } else {
+        data[key] = prop
+      }
+    }
 
     this.getPageLayout(data).then(pageLayout => this.renderData.set(pageLayout))
   })
