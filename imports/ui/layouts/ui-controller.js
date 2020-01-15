@@ -8,7 +8,6 @@ import './ui-controller.html'
 /**
  * Ui Controller
  * Higher-order component that manages the data passed down the template tree based on authentication and authorization checks.
- * Also imports the templates dynamically if provided by a import function.
  * @param {Object} templates - The data that should be passed down the template tree if the checks were to succeed.
  * @param {string} [templates.layout="app"] - The name of the template that will be used as the root layout.
  * @param {Object} [options] - The options object.
