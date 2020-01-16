@@ -1,0 +1,36 @@
+{
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "allowImportExportEverywhere": true
+  },
+  "plugins": [
+    "meteor"
+  ],
+  "extends": [
+    "plugin:meteor/recommended",
+    "standard"
+  ],
+  "settings": {
+    "import/resolver": "meteor"
+  },
+  "rules": {
+    // Meteor rule changes
+    "audit-argument-checks": "off",
+    "eventmap-params": "off",
+
+    // Standard rule changes
+    "space-before-function-paren": [
+      "error",
+      {
+        "anonymous": "always",
+        "named": "never",
+        "asyncArrow": "always"
+      }
+    ]
+  },
+  "globals": {
+    "$": "readonly",
+    "browser": "readonly",
+    "Assets": "readonly"
+  }
+}

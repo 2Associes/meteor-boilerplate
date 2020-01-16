@@ -1,3 +1,4 @@
+import { Meteor } from 'meteor/meteor'
 import { Tracker } from 'meteor/tracker'
 import { TAPi18n } from 'meteor/tap:i18n'
 import { T9n } from 'meteor/softwarerero:accounts-t9n'

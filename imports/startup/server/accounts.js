@@ -1,4 +1,5 @@
 import { Meteor } from 'meteor/meteor'
+import { ServiceConfiguration } from 'meteor/service-configuration'
 
 // Set up login services
 Meteor.startup(() => {

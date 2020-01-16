@@ -1,8 +1,8 @@
+import { Template } from 'meteor/templating'
 import Form from '../../../modules/form/Form.js'
 
-import './features-reactive-form.html'
-
 import './examples/examples-reactive-input.js'
+import './features-reactive-form.html'
 
 Template.featuresReactiveForm.onCreated(function () {
   this.form = new Form()

@@ -1,7 +1,8 @@
 import { Meteor } from 'meteor/meteor'
-import './header.html'
+import { Template } from 'meteor/templating'
 
 import './language-switcher'
+import './header.html'
 
 const navbarHeight = 56 // value taken from $header-height in the file header.scss
 const delta = 5
