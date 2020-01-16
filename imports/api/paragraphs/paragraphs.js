@@ -1,10 +1,9 @@
 import { TAPi18n } from 'meteor/tap:i18n'
 import SimpleSchema from 'simpl-schema'
-import Schemas from '../schemas'
 
 export const Paragraphs = new TAPi18n.Collection('paragraphs', { base_language: 'fr-CA' })
 
-Schemas.Paragraph = new SimpleSchema({
+export const ParagraphSchema = new SimpleSchema({
   _id: {
     type: String,
     regEx: SimpleSchema.RegEx.Id
@@ -23,4 +22,4 @@ Schemas.Paragraph = new SimpleSchema({
 })
 
 // Automatically validates documents when created or updated (aldeed:collection2-core)
-Paragraphs.attachSchema(Schemas.Paragraph)
+Paragraphs.attachSchema(ParagraphSchema)
