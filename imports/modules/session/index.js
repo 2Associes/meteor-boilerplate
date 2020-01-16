@@ -4,7 +4,7 @@ import { Session } from 'meteor/session'
 Session.set({
   languageReady: false,
   title: {
-    string: 'fizik.ca',
+    string: 'meteor-boilplate',
     options: {
       pattern: false,
       key: true
