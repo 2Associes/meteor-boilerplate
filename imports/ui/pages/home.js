@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating'
 import { TAPi18n } from 'meteor/tap:i18n'
-import { Paragraphs } from '../../api/paragraphs/paragraphs.js'
+import { Paragraphs } from '../../api/paragraphs'
 
 import './home.html'
 
