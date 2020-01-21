@@ -1,5 +1,6 @@
 import { ReactiveVar } from 'meteor/reactive-var'
 import Form from './Form.js'
+import FormInput from './FormInput'
 
 /**
  * FormArray class
@@ -11,6 +12,7 @@ export default class FormArray {
   constructor(name) {
     this.name = name
     this.array = new ReactiveVar([])
+    this.events = {}
   }
 
   /**
@@ -85,3 +87,6 @@ export default class FormArray {
     return this.array.get().map(form => form.getData())
   }
 }
+
+FormArray.prototype.attachEvent = FormInput.prototype.attachEvent
+FormArray.prototype.callEvent = FormInput.prototype.callEvent

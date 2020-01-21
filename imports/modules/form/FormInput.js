@@ -1,4 +1,5 @@
 import { ReactiveVar } from 'meteor/reactive-var'
+import { isEqual } from 'lodash'
 import validation from '../../api/validation.js'
 
 /**
@@ -7,7 +8,7 @@ import validation from '../../api/validation.js'
  * Typically used within a form. See {@link Form.createInput}.
  * @param {string|object} input - The input name or a properties object.
  * @param {string} input.name - The input name.
- * @param {key} [input.key] - The key used to validate the value.
+ * @param {sting|[string]} [input.key] - The key used to validate the value.
  * @param {boolean} [input.liveValidation=true] - Whether to validate on value change or not.
  * @param {*} [input.defaultValue=''] - The starting value before init.
  * @param {object} [input.events] - Customizable event functions. See {@link FormInput.callEvent}.
@@ -15,9 +16,10 @@ import validation from '../../api/validation.js'
  * @param {function} [payload] - Function that returns a payload used by validation.
  */
 export default class FormInput {
-  constructor(input) {
+  constructor(input = '') {
     if (typeof input === 'string') {
       this.name = input
+      this.key = []
       this.events = {}
     } else {
       const {
@@ -25,7 +27,9 @@ export default class FormInput {
       } = input
 
       this.name = name
-      this.key = key
+      if (Array.isArray(key)) this.key = key
+      else if (key) this.key = [key]
+      else this.key = []
       this.liveValidation = liveValidation
       this.defaultValue = defaultValue
       this.events = events
@@ -34,6 +38,7 @@ export default class FormInput {
     }
 
     this.reactiveValue = new ReactiveVar(this.defaultValue)
+    this.initialValue = new ReactiveVar()
     this.edited = new ReactiveVar(false)
     this.error = new ReactiveVar()
     this.initiated = new ReactiveVar(false)
@@ -47,10 +52,11 @@ export default class FormInput {
    * This is the value the input is going to be set to when calling {@link FormInput.revertValue}.
    */
   initValue(value) {
-    if (!this.initiated.get()) {
+    if (!this.initiated.curValue) {
       this.reactiveValue.set(value)
+      this.initialValue.set(value)
+      this.validate()
       this.initiated.set(true)
-      this.initialValue = value
     }
   }
 
@@ -80,7 +86,7 @@ export default class FormInput {
    * Revert value to its init value. See {@link FormInput.initValue}
    */
   revertValue() {
-    if (this.initialValue !== undefined) this.reactiveValue.set(this.initialValue)
+    if (this.initialValue.get() !== undefined) this.reactiveValue.set(this.initialValue.get())
     else this.reactiveValue.set(this.defaultValue)
   }
 
@@ -93,17 +99,27 @@ export default class FormInput {
   }
 
   /**
+   * Set default value
+   * Changes the default value and updates the input value if it was default
+   * @param {*} value - The new defaultValue
+   */
+  setDefaultValue(value) {
+    if (this.defaultValue === this.reactiveValue.curValue) this.reactiveValue.set(value)
+    this.defaultValue = value
+  }
+
+  /**
    * Validate
    * Validates the value using the validation key and sets the error property.
    * Will not look for errors if the input has not been edited yet.
-   * @param {*} payload - A payload with data useful to the validation of the value.
+   * @param {*} [options.payload] - A payload with data useful to the validation of the value.
    */
-  validate(payload = this.getPayload()) {
-    if (this.key && this.getEdited()) {
+  validate({ payload = this.getPayload() } = {}) {
+    if (this.key.length) {
       let validationError
 
       try {
-        validation.validate(this.key, this.getValue(), payload)
+        this.key.forEach(key => validation.validate(key, this.getValue(), payload))
       } catch (error) {
         validationError = error
 
@@ -117,19 +133,21 @@ export default class FormInput {
   /**
    * Force validate
    * Changes edited to true to force validation. See {@link FormInput.validate}.
-   * @param {*} payload - A payload with data useful to the validation of the value.
+   * @param {object} [options] - {@link FormInput.validate} options.
    */
-  forceValidate(payload) {
+  forceValidate(options) {
+    this.validate(options)
     this.setEdited(true)
-    this.validate(payload)
   }
 
   /**
    * Get error
    * Return an error (if any) resulted from validation. See {@link FormInput.validate}.
+   * @param {object} [options.force] - Will return an error even when input has not been edited
    */
-  getError() {
-    return this.error.get()
+  getError({ force = false } = {}) {
+    if (force || this.getEdited()) return this.error.get()
+    return null
   }
 
   /**
@@ -150,9 +168,17 @@ export default class FormInput {
   }
 
   /**
+   * Attach event
+   * @param {string} eventKey - The event key.
+   */
+  attachEvent(eventKey, callback) {
+    this.events[eventKey] = callback
+  }
+
+  /**
    * Call event
    * Executes an event function provided on instantiation an pass parameters to it.
-   * @param {*} eventKey - The event function key in the event object.
+   * @param {string} eventKey - The event function key in the event object.
    */
   callEvent(eventKey, ...params) {
     if (typeof this.events[eventKey] === 'function') (this.events[eventKey])(...params)
@@ -201,11 +227,32 @@ export default class FormInput {
   }
 
   /**
+   * Is modified
+   * Returns true if the value is different form the initial value
+   */
+  isModified() {
+    const value = this.getValue()
+    const initialValue = this.initialValue.get()
+
+    if (this.isReady()) {
+      if (initialValue == null) {
+        if (value !== '' && value != null) {
+          return true
+        }
+      } else if (!isEqual(initialValue, value)) {
+        return true
+      }
+    }
+
+    return false
+  }
+
+  /**
    * Get payload
    * Returns the payload using the payload function.
    */
   getPayload() {
-    if (typeof this.payload === 'function') return this.payload()
+    if (typeof this.payload === 'function') return this.payload(this)
     return undefined
   }
 }
