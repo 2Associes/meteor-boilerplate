@@ -1,8 +1,11 @@
 {
   "glossary": {},
   "head": {
-    "title": "Boilerplate Meteor",
-    "description": "Démarrez votre application Meteor."
+    "titlePattern": "__title__ | 2 Associés Meteor Boilerplate",
+    "titles": {
+      "home": "Accueil",
+      "notFound": "Not Found"
+    }
   },
   "header": {
     "menuIcon": "Ouvrir la navigation",
