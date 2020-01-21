@@ -82,7 +82,7 @@ export default class Form {
     } else {
       array = new FormArray(names)
 
-      this.addArray(array)
+      this.addArray(array, names)
     }
 
     return array
@@ -108,14 +108,16 @@ export default class Form {
    * Get errors
    * Returns previously generated errors.
    * To generate errors use {@link Form.validateData} or {@link FormInput.validate}.
-   * @param {boolean} includeArrays - Whether to include arrays errors or not
+   * @param {object} [options] - {@link FormInput.getError} options
+   * @param {boolean} [options.includeArrays] - Whether to include arrays errors or not
    */
-  getErrors(includeArrays = true) {
-    const errors = this.getInputs().map(input => input.getError()).filter(error => error)
+  getErrors(options = {}) {
+    const { includeArrays = true } = options
+    let errors = this.getInputs().map(input => input.getError(options)).filter(error => error)
     if (includeArrays) {
       this.getArrays().forEach((array) => {
         array.getArray().forEach((form) => {
-          errors.concat(form.getErrors())
+          if (form.getErrors()) errors = errors.concat(form.getErrors())
         })
       })
     }
@@ -207,6 +209,7 @@ export default class Form {
     this.clearSubmited()
     if (clear) this.clearValues()
     this.clearErrors()
+    this.validateData({ forceAll: false })
   }
 
   /**
@@ -226,18 +229,22 @@ export default class Form {
   /**
    * Get data
    * Returns all form values in an object.
+   * @param {object} [options] - The options object
+   * @param {boolean} [options.modifiedOnly] - if true returns only the modified values
    */
-  getData() {
+  getData(options = {}) {
     const inputs = this.getInputs()
     const arrays = this.getArrays()
     const data = {}
 
     inputs.forEach((input) => {
-      data[input.name] = input.getValue()
+      if (!options.modifiedOnly || input.isModified()) {
+        data[input.name] = input.getValue()
+      }
     })
 
     arrays.forEach((array) => {
-      data[array.name] = array.getData()
+      data[array.name] = array.getData(options)
     })
 
     return data
@@ -258,28 +265,74 @@ export default class Form {
   /**
    * Validate data
    * Validates all form input values. See {@link FormInput.validate} and {@link FormInput.forceValidate}
-   * @param {*} [args] - Parameters will be sent to validation as a payload
-   * @param {function} [args] - The last parameter is a callback to which the errors are passed
+   * @param {object} [args] - The first parameter (when object) is {@link FormInput.validate} options
+   * @param {function} [args] - The last parameter (when function) is a callback to which the errors are passed
+   * @param {boolean} [options.forceAll] - Use {@link FormInput.forceValidate} instead of {@link FormInput.validate}
+   * @param {boolean} [options.modifiedOnly] - if true validates only the modified values
    */
   validateData(...args) {
-    let payload
-    const callback = args[args.length - 1]
+    let options = {}
+    let callback
 
-    if (args.length > 1) {
-      payload = args.slice(0, args.length)
-      if (payload.length === 1) payload = payload[0]
-    }
+    if (typeof args[0] === 'object') options = args[0]
+    if (typeof args[args.length - 1] === 'function') callback = args[args.length - 1]
+
+    const { forceAll = true } = options
 
     this.getInputs().forEach((input) => {
-      input.forceValidate(payload)
+      if (!options.modifiedOnly || input.isModified()) {
+        if (forceAll) input.forceValidate(options)
+        else input.validate(options)
+      }
     })
 
     this.getArrays().forEach((array) => {
       array.getArray().forEach((form) => {
-        form.validateData()
+        form.validateData(args)
       })
     })
 
     if (typeof callback === 'function') callback(this.getErrors())
+  }
+
+  /**
+   * Is modified
+   * Returns true if at least one input is modified.
+   */
+  isModified() {
+    const inputs = this.getInputs()
+    const arrays = this.getArrays()
+
+    for (const input of inputs) {
+      if (input.isModified()) return true
+    }
+
+    for (const array of arrays) {
+      for (const form of array) {
+        if (form.isModified()) return true
+      }
+    }
+
+    return false
+  }
+
+  /**
+   * Update initial values
+   * Changes the initial value of each input for their current value.
+   * Useful when saving a form.
+   */
+  updateInitialValues() {
+    const inputs = this.getInputs()
+    const arrays = this.getArrays()
+
+    for (const input of inputs) {
+      input.initialValue.set(input.getValue())
+    }
+
+    for (const array of arrays) {
+      for (const form of array.getArray()) {
+        form.updateInitialValues()
+      }
+    }
   }
 }
