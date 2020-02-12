@@ -9,3 +9,9 @@ import './sendmail'
 
 // Register apis
 import './register-api.js'
+
+// Robots
+import './robots'
+
+// Sitemap
+import './sitemap'
