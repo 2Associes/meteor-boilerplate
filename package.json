@@ -27,8 +27,10 @@
     "chimp": "^0.51.1",
     "core-js": "^2.5.7",
     "font-awesome": "^4.7.0",
+    "handlebars": "^4.7.3",
     "jquery": "^3.3.1",
     "meteor-node-stubs": "^0.4.1",
+    "mjml": "^4.5.1",
     "moment": "^2.22.2",
     "popper.js": "^1.14.5",
     "simpl-schema": "^1.5.3"
