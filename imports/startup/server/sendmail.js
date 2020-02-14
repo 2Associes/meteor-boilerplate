@@ -1,7 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import { Accounts } from 'meteor/accounts-base'
-import { SSR } from 'meteor/meteorhacks:ssr'
-import { Email } from 'meteor/email'
+import { renderMjml } from '../../modules/email'
 
 Meteor.startup(() => {
   // Uncomment if you use MAIL_URL in settings
@@ -19,31 +18,16 @@ Accounts.urls.verifyEmail = function (token) {
   return Meteor.absoluteUrl(`verify-email/${token}`)
 }
 
-Accounts.emailTemplates.verifyEmail = {
-  subject() {
-    return '[2 Associés Meteor Boilerplate] Verify Your Email Address'
-  },
-  html(user, url) {
-    SSR.compileTemplate('verifyEmail', Assets.getText('emails/verify-email.html'))
-    return SSR.render('verifyEmail', {
-      username: user.username,
-      url: url
-    })
+Accounts.emailTemplates = {
+  verifyEmail: {
+    subject() {
+      return '[2 Associés Meteor Boilerplate] Verify Your Email Address'
+    },
+    html(user, url) {
+      renderMjml(Assets.getText('emails/verify-email.mjml'), {
+        username: user.username,
+        url
+      })
+    }
   }
 }
-
-Meteor.methods({
-
-  sendEmail: function () {
-    // Let other method calls from the same client start running,
-    // without waiting for the email sending to complete.
-    this.unblock()
-
-    Email.send({
-      to: 'to.email@example.com',
-      from: 'from.email@example.com',
-      subject: 'Example Email',
-      text: 'The contents of our email in plain text.'
-    })
-  }
-})
