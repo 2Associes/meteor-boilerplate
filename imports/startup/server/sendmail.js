@@ -24,7 +24,7 @@ Accounts.emailTemplates = {
       return '[2 Associés Meteor Boilerplate] Verify Your Email Address'
     },
     html(user, url) {
-      renderMjml(Assets.getText('emails/verify-email.mjml'), {
+      return renderMjml(Assets.getText('emails/verify-email.mjml'), {
         username: user.username,
         url
       })
