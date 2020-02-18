@@ -1,45 +1,37 @@
 // https://sass-guidelin.es/#architecture
 
 // Vendors
-@import
-  'vendors/font-awesome',
-  'vendors/bootstrap';
+@import 'vendors/font-awesome';
+@import 'vendors/bootstrap';
 
 // Abstracts
-@import
-  'abstracts/functions',
-  'abstracts/variables',
-  'abstracts/mixins',
-  'abstracts/placeholders';
+@import 'abstracts/functions';
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+@import 'abstracts/placeholders';
 
 // Vendors Extensions
-@import
-  'vendors-extensions/bootstrap';
+@import 'vendors-extensions/bootstrap';
 
 // Base
-@import
-  'base/animations',
-  'base/reset',
-  'base/typography';
+@import 'base/animations';
+@import 'base/reset';
+@import 'base/typography';
 
 // Extends
-@import
-  'extends/button';
+@import 'extends/button';
 
 // Layouts
-@import
-  '{}/imports/ui/layouts/app';
+@import '{}/imports/ui/layouts/app';
 
 // Components
-@import
-  '{}/imports/ui/components/loading',
-  '{}/imports/ui/components/accounts-templates',
-  '{}/imports/ui/components/header',
-  '{}/imports/ui/components/footer';
+@import '{}/imports/ui/components/loading';
+@import '{}/imports/ui/components/accounts-templates';
+@import '{}/imports/ui/components/header';
+@import '{}/imports/ui/components/footer';
 
 // Pages
-@import
-  '{}/imports/ui/pages/not-found',
-  '{}/imports/ui/pages/home',
-  '{}/imports/ui/pages/admin/admin-style-guide',
-  '{}/imports/ui/pages/features/features-reactive-form';
+@import '{}/imports/ui/pages/not-found';
+@import '{}/imports/ui/pages/home';
+@import '{}/imports/ui/pages/admin/admin-style-guide';
+@import '{}/imports/ui/pages/features/features-reactive-form';
