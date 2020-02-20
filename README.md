@@ -28,38 +28,38 @@ nvm use v8.12.0
 
 1. Clone this repo to `<yourapp>` :  
 
-	```
-	git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>
-	```
+  ```
+  git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>
+  ```
 
 2. Change directory to `<yourapp>` and remove `.git` :  
 
-	```
-	cd <yourapp> && rm -rf .git
-	```
+  ```
+  cd <yourapp> && rm -rf .git
+  ```
 3. Install npm packages :
 
-	```
-	meteor npm install
-	```
+  ```
+  meteor npm install
+  ```
 4. Start `meteor` :  
 
-	```
-	meteor npm run dev
-	```
+  ```
+  meteor npm run dev
+  ```
 5. Run [Chimp][1] acceptance tests once or in `@watch` mode :
 
-	```
-	meteor npm run test
-	```
-	```
-	meteor npm run test-watch
-	```
+  ```
+  meteor npm run test
+  ```
+  ```
+  meteor npm run test-watch
+  ```
 6. When you're ready to start, you should clean up the Database, otherwise you're going to have the project collections and data within you're project :
 
-	```
-	meteor reset
-	```
+  ```
+  meteor reset
+  ```
 
 
 ### Collections
