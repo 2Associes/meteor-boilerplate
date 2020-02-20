@@ -1,11 +1,11 @@
 <template name="home">
-  <main class="home" role="main">
-    <div class="home-header">
-      <h1 class="home-header-title">
+  <main class="home  container" role="main">
+    <div class="home__header  jumbotron">
+      <h1 class="home__header-title">
         {{{_ 'homeHeaderTitle'}}}
       </h1>
     </div>
-    <div class="home-content">
+    <div class="home__content  row">
       {{#each paragraphs}}
         {{> paragraph}}
       {{/each}}
@@ -14,7 +14,7 @@
 </template>
 
 <template name="paragraph">
-  <p class="home-content-text">
+  <p class="home__content-text">
     {{text}}
   </p>
 </template>

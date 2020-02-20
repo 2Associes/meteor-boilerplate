@@ -9,7 +9,7 @@ import '../../ui/components/loading'
 import '../../ui/layouts/ui-controller'
 
 const home = () => import('../../ui/pages/home')
-const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
+const styleGuide = () => import('../../ui/pages/admin/style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
 const featuresReactiveForm = () => import('../../ui/pages/features/features-reactive-form')
 
@@ -64,11 +64,11 @@ function renderAdminLayout(uiData) {
 }
 
 adminRoutes.route('/style-guide', {
-  name: 'adminStyleGuide',
+  name: 'styleGuide',
   async action() {
-    await adminStyleGuide()
+    await styleGuide()
     renderAdminLayout({
-      main: 'adminStyleGuide'
+      main: 'styleGuide'
     })
   },
   classname: 'admin-style-guide'
