@@ -15,8 +15,8 @@
   },
   "rules": {
     // Meteor rule changes
-    "audit-argument-checks": "off",
-    "eventmap-params": "off",
+    "meteor/audit-argument-checks": "off",
+    "meteor/eventmap-params": "off",
     "meteor/no-session": "off",
 
     // Standard rule changes
