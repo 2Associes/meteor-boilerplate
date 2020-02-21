@@ -54,7 +54,7 @@ export default class Component {
     return this
   }
 
-  static templateExtentedBy(targetTemplateName) {
+  static createTemplateExtension(targetTemplateName) {
     if (!targetTemplateName) {
       throw new Error('targetTemplateName is required')
     }

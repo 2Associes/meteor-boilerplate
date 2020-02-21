@@ -7,7 +7,7 @@ export default class ExamplesReactiveInput extends Component {
   static templateName = 'examplesReactiveInput'
 }
 
-Component.templateExtentedBy('examplesReactiveInput')
+Component.createTemplateExtension('examplesReactiveInput')
 
 Template.examplesReactiveInput.helpers({
   hasError() {
