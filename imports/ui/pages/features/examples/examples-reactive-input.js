@@ -1,20 +1,23 @@
 import { Template } from 'meteor/templating'
 
+import Component from '../../../components/component'
 import './examples-reactive-input.html'
 
-Template.examplesReactiveInput.onCreated(function () {
-  if (this.data.input) this.data.input.initValue(this.data.value)
-})
+export default class ExamplesReactiveInput extends Component {
+  static templateName = 'examplesReactiveInput'
+}
+
+Component.templateExtentedBy('examplesReactiveInput')
 
 Template.examplesReactiveInput.helpers({
   hasError() {
-    if (this.input.getError()) return 'is-invalid'
+    // if (this.input.getError()) return 'is-invalid'
     return undefined
   }
 })
 
 Template.examplesReactiveInput.events({
-  'input .js-input-text'(event) {
-    this.input.setValue(event.target.value)
+  'input .js-input-text'(event, instance) {
+    instance.component.emit('input', event.target.value)
   }
 })

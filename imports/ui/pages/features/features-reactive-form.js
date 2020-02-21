@@ -1,18 +1,23 @@
 import { Template } from 'meteor/templating'
-import Form from '../../../modules/form/Form.js'
+import { ReactiveVar } from 'meteor/reactive-var'
 
-import './examples/examples-reactive-input.js'
+import ExamplesReactiveInput from './examples/examples-reactive-input.js'
 import './features-reactive-form.html'
 
 Template.featuresReactiveForm.onCreated(function () {
-  this.form = new Form()
+  this.formData = {
+    foo: new ReactiveVar('Bar')
+  }
 
-  this.form.createInput([{
-    name: 'foo',
-    key: 'foo'
-  }])
+  this.form = {
+    foo: new ExamplesReactiveInput()
+      .on('input', (value) => {
+        this.formData.foo.set(value)
+      })
+  }
 })
 
 Template.featuresReactiveForm.helpers({
-  inputs: () => Template.instance().form.inputs
+  formData: () => Template.instance().formData,
+  form: () => Template.instance().form
 })
