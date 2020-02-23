@@ -1,0 +1,20 @@
+// Reset
+//
+// Add default elements style here
+
+html {
+  font-size: #{$font-size-root}px;
+
+  @if ($max-viewport-width) {
+    // Scale after max-width is reached
+    // Will only work if rem units are used instead of px
+    @media (min-width: $max-viewport-width) {
+      font-size: 100vw / (($max-viewport-width / 1px) / $font-size-root);
+    }
+  }
+}
+
+body {
+  font-size: $font-size-base;
+  letter-spacing: $letter-spacing-base;
+}

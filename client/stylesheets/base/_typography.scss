@@ -1,29 +1,11 @@
-// Add Google fonts and text styling below
+// Typography
 
-.large {
-  font-size: $font-size-lg;
-}
+//
+// Font definition
+//
 
-.text-is-small {
-  @extend .small;
-}
+// @import url('https://fonts.googleapis.com/css?family=');
 
-.text-is-large {
-  @extend .large;
-}
-
-.text-is-light {
-  color: $white;
-}
-
-.text-is-dark {
-  color: $gray-800;
-}
-
-.text-is-light > a {
-  @extend .text-is-light;
-
-  &:hover {
-    color: darken($white, 15%);
-  }
-}
+//
+// Typography styles
+//
