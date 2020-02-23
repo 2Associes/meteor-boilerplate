@@ -1,0 +1,32 @@
+<mjml>
+  <mj-body>
+    <mj-section>
+      <mj-column>
+        <mj-text>
+          <h1>
+            VerifyEmail Template
+          </h1>
+          <h2>
+            Hello {{username}}, Etiam sit amet eleifend nisi. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+          </h2>
+          <p>
+            Proin tincidunt eleifend facilisis. Donec elit justo, pretium et elit sed, varius pretium augue. Morbi eget venenatis arcu. Morbi fermentum euismod libero et ultricies. Fusce eleifend dui magna, eget semper velit maximus a. Nullam mollis eget eros ac sodales. Sed placerat, ligula non tincidunt aliquet, sapien libero dapibus tortor, non mattis eros quam imperdiet magna.
+          </p>
+        </mj-text>
+        <mj-table border="1px solid #eee">
+          <tr>
+            <td style="text-align: left; padding: 10px;">
+              {{username}}
+            </td>
+            <td style="text-align: left; padding: 10px;">
+              <a href="{{url}}">Verify your email</a>
+            </td>
+            <td style="text-align: left; padding: 10px;">
+              {{url}}
+            </td>
+          </tr>
+        </mj-table>
+      </mj-column>
+    </mj-section>
+  </mj-body>
+</mjml>
