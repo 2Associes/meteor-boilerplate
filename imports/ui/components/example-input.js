@@ -10,7 +10,7 @@ import './example-input.html'
  * @prop {string} label - The label text
  * @prop {string} value - The value of the input
  */
-export default class ExampleInput extends Component { // Extend Component to have access to helpers
+export default class ExampleInput extends Component {
   static templateName = 'exampleInput'
 }
 
