@@ -4,7 +4,7 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "meteor run --settings settings-development.json",
-    "dev:prod": "meteor run --production --settings settings.json",
+    "simulate:prod": "meteor run --production --settings settings.json",
     "test": "chimp --ddp=http://localhost:3000 --browser=chrome --path=tests",
     "test-watch": "chimp --watch --ddp=http://localhost:3000 --browser=chrome --path=tests",
     "lint": "eslint .",
