@@ -2,36 +2,65 @@ import { Template } from 'meteor/templating'
 
 import './component.html'
 
+/**
+ * Component
+ *
+ * @prop {Component} component - The Component instance
+ */
 export default class Component {
+  /**
+   * Template name
+   * Used when creating template extension
+   */
   static templateName = 'component'
 
   constructor() {
     this.listeners = {}
   }
 
-  init(templateInstance) {
-    this.instance = templateInstance
+  /**
+   * Init
+   * Initializes the component once the template instance is created
+   *
+   * @param {Blaze.TemplateInstance} instance - The template instance
+   */
+  init(instance) {
+    this.instance = instance
     this.instance.component = this
 
     return this
   }
 
-  on(key, listener) {
+  /**
+   * On
+   * Adds listener to component
+   *
+   * @param {string} type       - The event type
+   * @param {function} listener - The listener function
+   */
+  on(type, listener) {
     if (typeof listener !== 'function') {
       throw new Error('listener should be a function')
     }
 
-    if (!this.listeners[key]) {
-      this.listeners[key] = []
+    if (!this.listeners[type]) {
+      this.listeners[type] = []
     }
 
-    this.listeners[key].push(listener)
+    this.listeners[type].push(listener)
 
     return this
   }
 
-  off(key, listener) {
-    if (this.listeners[key]) {
+  /**
+   * Off
+   * Removes listener from the component
+   *
+   * @param {string} type       - The event type
+   * @param {function} listener - The listener function
+   */
+  off(type, listener) {
+    if (this.listeners[type]) {
       const targetIndex = this.listeners.findIndex(registeredListener => registeredListener === listener)
 
       if (targetIndex >= 0) {
@@ -42,9 +71,16 @@ export default class Component {
     return this
   }
 
-  emit(key, ...args) {
-    if (this.listeners[key]) {
-      for (const listener of this.listeners[key]) {
+  /**
+   * Emit
+   * Triggers all component listeners registered with type
+   *
+   * @param {string} type - The event type
+   * @param {...*} args   - The arguments passed to the listeners
+   */
+  emit(type, ...args) {
+    if (this.listeners[type]) {
+      for (const listener of this.listeners[type]) {
         if (typeof listener === 'function') {
           listener.call(this, args)
         }
@@ -54,6 +90,12 @@ export default class Component {
     return this
   }
 
+  /**
+   * Create Template Extension
+   * Make component's template inherit from another template
+   *
+   * @param {string} targetTemplateName - The name of the target template
+   */
   static createTemplateExtension(targetTemplateName) {
     if (!targetTemplateName) {
       throw new Error('targetTemplateName is required')

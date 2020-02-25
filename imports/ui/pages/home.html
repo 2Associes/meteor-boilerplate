@@ -10,6 +10,21 @@
         {{> paragraph}}
       {{/each}}
     </div>
+    <div class="container">
+      <div>
+        {{!-- Pass component to template --}}
+        {{> exampleInput
+          component=form.foo
+          id="foo"
+          label="Foo"
+          value=formData.foo.get
+        }}
+      </div>
+      <p>
+        {{!-- Use ReactiveVar.get method to get the value --}}
+         Value:&nbsp;<code>{{formData.foo.get}}</code>
+      </p>
+    </div>
   </main>
 </template>
 

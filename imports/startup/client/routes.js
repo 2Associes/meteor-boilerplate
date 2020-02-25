@@ -11,7 +11,6 @@ import '../../ui/layouts/ui-controller'
 const home = () => import('../../ui/pages/home')
 const styleGuide = () => import('../../ui/pages/admin/style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
-const featuresReactiveForm = () => import('../../ui/pages/features/features-reactive-form')
 
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
@@ -22,8 +21,6 @@ const featuresReactiveForm = () => import('../../ui/pages/features/features-reac
 
 FlowRouter.route('/', {
   name: 'home',
-  // Subscriptions registered here don't have Fast Render support.
-  // subscriptions: function() {},
   async action() {
     await home()
     BlazeLayout.render('uiController', {
@@ -83,22 +80,6 @@ adminRoutes.route('/home', {
     })
   },
   classname: 'admin-home'
-})
-
-const features = adminRoutes.group({
-  prefix: '/features',
-  name: 'features'
-})
-
-features.route('/reactive-form', {
-  name: 'features-reactive-form',
-  async action() {
-    await featuresReactiveForm()
-    renderAdminLayout({
-      main: 'featuresReactiveForm'
-    })
-  },
-  classname: 'features features-reactive-form'
 })
 
 // Configure Accounts Templates default
