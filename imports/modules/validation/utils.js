@@ -7,10 +7,23 @@ export function getErrorDefinition(errorKey) {
   return definitions[errorKey]
 }
 
-export function prop(propName) {
-  return new Validator(propName)
+/**
+ * Property validator
+ *
+ * @param {stirng} targetProp - The target property name
+ * @returns {Validator}
+ */
+export function prop(targetProp) {
+  return new Validator(targetProp)
 }
 
+/**
+ * Validate properties
+ * Use to validate data against validators
+ *
+ * @param {Validator[]} validators - An array of validators
+ * @param {Object} props           - The data to be validated
+ */
 export function validate(validators, props) {
   if (!Array.isArray(validators)) {
     throw new Error('validators argument must be an array.')

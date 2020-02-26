@@ -10,20 +10,46 @@ import {
 } from './error-types'
 import { getErrorDefinition } from './utils'
 
+/**
+ * Validator class
+ * Allows the creation of a validator through a method chain syntax.
+ */
 export default class Validator {
-  constructor(propName) {
-    this.propName = propName
-    this.optional = false
-    this.nullable = true
-    this.checkFalsy = true
+  /**
+   * Validator constructor
+   *
+   * @param {string} targetProp - The target property name
+   */
+  constructor(targetProp) {
+    this.targetProp = targetProp
+
+    this.isRequired()
   }
 
+  /**
+   * Check
+   * Adds a validator that will use the meteor/check library to
+   * validate the type.
+   *
+   * @param pattern - check's pattern argument
+   * @returns {Validator}
+   */
   check(pattern) {
     this.pattern = pattern
 
     return this
   }
 
+  /**
+   * Is optional
+   * Makes the Validator stop without throwing an error if the value
+   * is undefined.
+   *
+   * @param {Object} [options]
+   * @param {boolean} [options.nullable=true]   - Will also stop if value is null
+   * @param {boolean} [options.checkFalsy=true] - Will also stop if value is falsy
+   * @returns {Validator}
+   */
   isOptional({
     nullable = true,
     checkFalsy = true
@@ -35,42 +61,102 @@ export default class Validator {
     return this
   }
 
-  hasMinLength(length = 1) {
+  /**
+   * Is required
+   * Makes the Validator throw an error if the value is undefined.
+   * This is the default behavior of a Validator.
+   *
+   * @param {Object} [options]
+   * @param {boolean} [options.nullable=true]   - Will also throw if value is null
+   * @param {boolean} [options.checkFalsy=true] - Will also throw if value is falsy
+   * @returns {Validator}
+   */
+  isRequired({
+    nullable = true,
+    checkFalsy = true
+  } = {}) {
+    this.optional = false
+    this.nullable = nullable
+    this.checkFalsy = checkFalsy
+
+    return this
+  }
+
+  /**
+   * Has min length
+   * Adds a validator that will throw an error if the value's length
+   * is smaller than the @param length
+   *
+   * @param {number} length - The minimum length
+   * @returns {Validator}
+   */
+  hasMinLength(length) {
     this.minLength = length
 
     return this
   }
 
-  hasMaxLength(length = 10) {
+  /**
+   * Has max length
+   * Adds a validator that will throw an error if the value's length
+   * is larger than the @param length
+   *
+   * @param {number} length - The maximum length
+   * @returns {Validator}
+   */
+  hasMaxLength(length) {
     this.maxLength = length
 
     return this
   }
 
+  /**
+   * Is date string
+   * Adds a validator that will throw an error if the value's format
+   * is not YYYY-MM-DD.
+   *
+   * @returns {Validator}
+   */
   isDateString() {
     this.dateString = true
 
     return this
   }
 
+  /**
+   * Throw validation error
+   * Throws a format Meteor.Error.
+   *
+   * @param {string} errorName         - The error name. See ./error-types.js
+   * @param {Object} [options]
+   * @param {string} [options.reason]  - The error reason message. By default will use ./error-definitions.js
+   * @param {Object} [options.details] - The details object attached to the error.
+   *                                     Useful for client validation integration
+   */
   throw(errorName = VALIDATION_ERROR, { reason = '', details = {} } = {}) {
     throw new Meteor.Error(
       errorName,
-      this.propName + ': ' + (
+      this.targetProp + ': ' + (
         reason ||
         getErrorDefinition(errorName) ||
         getErrorDefinition(VALIDATION_ERROR)
       ),
-      { prop: this.propName, ...details }
+      { prop: this.targetProp, ...details }
     )
   }
 
+  /**
+   * Run Validator
+   * Run all validators against the validator's target property
+   *
+   * @param {Object} props - The method properties object
+   */
   run(props = {}) {
     if (typeof props !== 'object') {
       throw new Error('props argument must be an object.')
     }
 
-    const value = props[this.propName]
+    const value = props[this.targetProp]
 
     // Check undefined and null
     if (
