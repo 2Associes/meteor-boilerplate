@@ -1,10 +1,26 @@
 import { Meteor } from 'meteor/meteor'
+import { TAPi18n } from 'meteor/tap:i18n'
 import { VALIDATION_FAILED } from './error-types'
 import definitions from './error-definitions'
 import Validator from './Validator'
 
-export function getErrorDefinition(errorKey) {
-  return definitions[errorKey]
+export function getErrorDefinition(errorType) {
+  return definitions[errorType]
+}
+
+/**
+ * Get error message
+ * Meant for client only
+ *
+ * @param {string} errorType - The error type
+ * @param {object} [details] - The message data used by i18n
+ */
+export function getErrorMessage(error) {
+  if (error) {
+    return TAPi18n.__(`errors.types.${error.error}`, error.details)
+  }
+
+  return null
 }
 
 /**
@@ -21,25 +37,26 @@ export function prop(targetProp) {
  * Validate properties
  * Use to validate data against validators
  *
- * @param {Validator[]} validators - An array of validators
  * @param {Object} props           - The data to be validated
+ * @param {Validator[]} validators - An array of validators
  */
-export function validate(validators, props) {
+export function validate(props, validators) {
   if (!Array.isArray(validators)) {
     throw new Error('validators argument must be an array.')
   }
 
-  const errors = []
+  let errors
 
   validators.forEach(validator => {
     try {
       validator.run(props)
     } catch (error) {
-      errors.push(error)
+      if (!errors) errors = {}
+      errors[validator.targetProp] = error
     }
   })
 
-  if (errors.length) {
+  if (errors) {
     throw new Meteor.Error(VALIDATION_FAILED, getErrorDefinition(VALIDATION_FAILED), errors)
   }
 }
