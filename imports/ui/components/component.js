@@ -82,7 +82,7 @@ export default class Component {
     if (this.listeners[type]) {
       for (const listener of this.listeners[type]) {
         if (typeof listener === 'function') {
-          listener.call(this, args)
+          listener.call(this, ...args)
         }
       }
     }
