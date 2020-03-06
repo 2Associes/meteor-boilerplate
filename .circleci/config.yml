@@ -41,6 +41,7 @@ jobs:
     - checkout
     - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
     - restore_cache: *restore-cache
+    - run: node --version
     - run: *install-meteor
     - run: sudo npm install -g wait-on
     - run: *install-chrome
