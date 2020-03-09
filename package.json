@@ -14,8 +14,7 @@
     "chimp-test": "node_modules/.bin/chimpy ./tests/_chimp_config.js --ddp=http://localhost:3000 --mocha --path=tests",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "pretest": "npm run lint --silent",
-    "deploy:test": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy --settings settings-test.json test.fizik.ca"
+    "pretest": "npm run lint --silent"
   },
   "postcss": {
     "plugins": {
