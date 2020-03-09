@@ -48,6 +48,10 @@ export function validate(props, validators) {
   let errors
 
   validators.forEach(validator => {
+    if (!(validator instanceof Validator)) {
+      throw new Error('Each validator must be a Validator. Use the prop utility.')
+    }
+
     try {
       validator.run(props)
     } catch (error) {
