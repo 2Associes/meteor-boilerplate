@@ -1,0 +1,7 @@
+export const VALIDATION_FAILED = 'VALIDATION_FAILED'
+export const VALIDATION_ERROR = 'VALIDATION_ERROR'
+export const MATCH_FAILED = 'MATCH_FAILED'
+export const IS_REQUIRED = 'IS_REQUIRED'
+export const TOO_SHORT = 'TOO_SHORT'
+export const TOO_LONG = 'TOO_LONG'
+export const WRONG_DATE_FORMAT = 'WRONG_DATE_FORMAT'

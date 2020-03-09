@@ -1,30 +1,36 @@
 <template name="home">
-  <main class="home  container" role="main">
-    <div class="home__header  jumbotron">
-      <h1 class="home__header-title">
-        {{{_ 'homeHeaderTitle'}}}
-      </h1>
-    </div>
-    <div class="home__content  row">
-      {{#each paragraphs}}
-        {{> paragraph}}
-      {{/each}}
-    </div>
+  <main class="home" role="main">
     <div class="container">
+      <div class="home__header  jumbotron">
+        <h1 class="home__header-title">
+          {{{_ 'homeHeaderTitle'}}}
+        </h1>
+      </div>
+      <div class="home__content  row">
+        {{#each paragraphs}}
+          {{> paragraph}}
+        {{/each}}
+      </div>
+    </div>
+    <form class="container container--small  js-paragraph-form">
       <div>
         {{!-- Pass component to template --}}
         {{> exampleInput
-          component=form.foo
-          id="foo"
-          label="Foo"
-          value=formData.foo.get
+          component=formComponents.text
+          id="form-text"
+          label=(_ "pages.home.formFields.text.label")
+          value=(fieldValue "text")
+          errorMessage=(fieldErrorMessage "text")
         }}
       </div>
-      <p>
+      <p class="small mt-1">
         {{!-- Use ReactiveVar.get method to get the value --}}
-         Value:&nbsp;<code>{{formData.foo.get}}</code>
+        {{{_ "glossary.preview"}}}: <span class="text-info">{{fieldValue "text"}}</span>
       </p>
-    </div>
+      <p>
+        <button type="submit" class="btn btn-primary">{{_ "pages.home.formFields.addNewParagraph.label"}}</button>
+      </p>
+    </form>
   </main>
 </template>
 

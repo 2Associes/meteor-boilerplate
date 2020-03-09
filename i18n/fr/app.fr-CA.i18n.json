@@ -1,5 +1,13 @@
 {
-  "glossary": {},
+  "glossary": {
+    "preview": "Aperçu"
+  },
+  "errors": {
+    "types": {
+      "IS_REQUIRED": "Requis",
+      "TOO_SHORT": "Trop court (minimum de __minLength__ caractères)"
+    }
+  },
   "head": {
     "titlePattern": "__title__ | 2 Associés Meteor Boilerplate",
     "titles": {
@@ -33,7 +41,17 @@
   },
   "pages": {
     "adminHomeTitle": "Administration",
-    "adminStyleGuideTitle": "Guide de style"
+    "adminStyleGuideTitle": "Guide de style",
+    "home": {
+      "formFields": {
+        "text": {
+          "label": "Texte"
+        },
+        "addNewParagraph": {
+          "label": "Ajouter un nouveau paragraphe"
+        }
+      }
+    }
   },
   "addToHomeScreen": {
     "bodyText": "Pour ajouter cette application sur l'écran d'accueil: Appuyez sur l'icône <img src=\"/images/icons/ios-share.svg\" class=\"add-to-home-screen-share-icon\"> et sélectionnez <strong>Ajouter sur l'écran d'accueil.</strong>",

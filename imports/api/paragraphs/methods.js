@@ -1,13 +1,17 @@
 import { ValidatedMethod } from 'meteor/mdg:validated-method'
-import { check } from 'meteor/check'
 import { Paragraphs } from './model'
+import { validate, prop } from '../../modules/validation'
 
 // Method example
 export const createParagraph = new ValidatedMethod({
   // Validate before doing anything
   name: 'paragraphs.create',
-  validate({ text }) {
-    check(text, String)
+  validate(props) {
+    validate(props, [
+      // All fields are required by default.
+      // Add .isOptional() to make optional.
+      prop('text').check(String).hasMinLength(20)
+    ])
   },
   run({ text }) {
     if (!this.isSimulation) {
