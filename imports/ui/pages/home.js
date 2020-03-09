@@ -84,7 +84,7 @@ Template.home.events({
         instance.formErrors.set(null)
       })
       .catch((error) => {
-        // Set errors on error
+        // Set errors on validation error
         if (error.error === errorTypes.VALIDATION_FAILED) {
           instance.formErrors.set(error.details)
         }

@@ -26,7 +26,7 @@ export function getErrorMessage(error) {
 /**
  * Property validator
  *
- * @param {stirng} targetProp - The target property name
+ * @param {string} targetProp - The target property name
  * @returns {Validator}
  */
 export function prop(targetProp) {
