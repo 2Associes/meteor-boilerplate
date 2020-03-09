@@ -7,9 +7,15 @@
     "simulate:prod": "meteor run --production --settings settings.json",
     "test": "chimp --ddp=http://localhost:3000 --browser=chrome --path=tests",
     "test-watch": "chimp --watch --ddp=http://localhost:3000 --browser=chrome --path=tests",
+    "dev:test": "meteor run --settings settings-test.json",
+    "dev:prod": "meteor run --production --settings settings.json",
+    "test": "meteor test --full-app --driver-package tmeasday:acceptance-test-driver --settings settings-development.json",
+    "chimp-watch": "node_modules/.bin/chimpy --ddp=http://localhost:3000 --watch --mocha --path=tests",
+    "chimp-test": "node_modules/.bin/chimpy ./tests/_chimp_config.js --ddp=http://localhost:3000 --mocha --path=tests",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
-    "pretest": "npm run lint --silent"
+    "pretest": "npm run lint --silent",
+    "deploy:test": "DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy --settings settings-test.json test.fizik.ca"
   },
   "postcss": {
     "plugins": {
