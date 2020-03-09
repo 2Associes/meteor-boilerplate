@@ -4,9 +4,6 @@
   "scripts": {
     "start": "npm run dev",
     "dev": "meteor run --settings settings-development.json",
-    "simulate:prod": "meteor run --production --settings settings.json",
-    "test": "chimp --ddp=http://localhost:3000 --browser=chrome --path=tests",
-    "test-watch": "chimp --watch --ddp=http://localhost:3000 --browser=chrome --path=tests",
     "dev:test": "meteor run --settings settings-test.json",
     "dev:prod": "meteor run --production --settings settings.json",
     "test": "meteor test --full-app --driver-package tmeasday:acceptance-test-driver --settings settings-development.json",
@@ -30,7 +27,6 @@
     "babel-runtime": "^6.23.0",
     "bcrypt": "^3.0.2",
     "bootstrap": ">=4.3.1",
-    "chimp": "^0.51.1",
     "core-js": "^2.5.7",
     "font-awesome": "^4.7.0",
     "handlebars": "^4.7.3",
@@ -45,8 +41,8 @@
   "devDependencies": {
     "autoprefixer": "^9.3.1",
     "babel-eslint": "^10.0.3",
-    "chimpy": "^3.0.1",
-    "chromedriver": "^80.0.1",
+    "chimpy": "^2.0.0",
+    "chromedriver": "^79.0.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
