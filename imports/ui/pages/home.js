@@ -18,7 +18,7 @@ Template.home.onCreated(function () {
 
   // Create reactive form data
   this.formData = new ReactiveDict('formData', {
-    text: '...'
+    text: ''
   })
 
   // Create reactive errors
