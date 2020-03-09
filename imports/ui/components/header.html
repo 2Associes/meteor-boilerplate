@@ -1,95 +1,95 @@
 <template name="header">
-  <header class="main-header main-header-down">
+  <header class="header  js-hide-on-scroll is-down">
     {{> navigationMain}}
   </header>
 </template>
 
 <template name="navigationMain">
-  <nav class="navbar navbar-expand-xl navbar-light bg-light navigations-main">
-    <div class="container-fluid navigations-main-container">
+  <nav class="navigation-main  navbar navbar-expand-xl navbar-light bg-light">
+    <div class="navigation-main__container  container-fluid">
       <!-- Brand and toggle get grouped for better mobile display -->
-      <a class="navbar-brand navigations-main-header-brand" href="{{pathFor '/'}}">{{_ 'header.brand' }}</a>
-      <button type="button" class="navbar-toggler navbar-toggler-right navigations-main-header-menu-icon" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
+      <a class="navigation-main__brand  navbar-brand" href="{{pathFor '/'}}">{{_ 'header.brand' }}</a>
+      <button type="button" class="navigation-main__menu-icon  navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false">
         <span class="sr-only">{{_ 'header.menuIcon' }}</span>
         <span class="navbar-toggler-icon"></span>
       </button>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse navigations-main-navbar" id="navbarSupportedContent">
-        <ul class="navbar-nav navigations-main-navbar-list">
-          <li class="navbar-item navigations-main-navbar-item {{isActiveRoute 'home'}}">
-            <a class="nav-link navigations-main-navbar-link" href="{{pathFor '/' }}">
+      <div class="navigation-main__menu  collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navigation-main__menu-list  navbar-nav">
+          <li class="navigation-main__menu-item  navbar-item {{isActiveRoute 'home'}}">
+            <a class="navigation-main__link  nav-link" href="{{pathFor '/' }}">
               <i class="fa fa-home"></i> {{_ 'header.navbarLinkHome' }} <span class="sr-only">({{_ 'header.navbarLinkCurrent' }})</span>
             </a>
           </li>
-          <li class="navbar-item navigations-main-navbar-item dropdown navigations-main-navbar-dropdown">
-            <a href="#" class="nav-link dropdown-toggle navigations-main-navbar-link navigations-main-navbar-link-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{_ 'header.navbarLinkDropdown' }} <span class="caret"></span></a>
-            <ul class="dropdown-menu mb-3 mb-xl-0 navigations-main-navbar-link-dropdown-list">
-              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+          <li class="navigation-main__menu-item  navbar-item dropdown">
+            <a href="#" class="navigation-main__link  nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{_ 'header.navbarLinkDropdown' }} <span class="caret"></span></a>
+            <ul class="navigations-main__dropdown-list  dropdown-menu mb-3 mb-xl-0">
+              <li class="navigations-main__dropdown-item  dropdown-item">
+                <a class="navigation-main__link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionOne' }}
                 </a>
               </li>
-              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+              <li class="navigations-main__dropdown-item  dropdown-item">
+                <a class="navigation-main__link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionTwo' }}
                 </a>
               </li>
-              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+              <li class="navigations-main__dropdown-item  dropdown-item">
+                <a class="navigation-main__link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionThree' }}
                 </a>
               </li>
-              <li role="separator" class="dropdown-divider navigations-main-navbar-link-dropdown-divider"></li>
-              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+              <li role="separator" class="navigations-main__menu-divider  dropdown-divider"></li>
+              <li class="navigations-main__dropdown-item  dropdown-item">
+                <a class="navigation-main__link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionFour' }}
                 </a>
               </li>
-              <li role="separator" class="dropdown-divider navigations-main-navbar-link-dropdown-divider"></li>
-              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+              <li role="separator" class="navigations-main__menu-divider  dropdown-divider"></li>
+              <li class="navigations-main__dropdown-item  dropdown-item">
+                <a class="navigation-main__link" href="#">
                   {{_ 'header.navbarLinkDropdownOptionFive' }}
                 </a>
               </li>
             </ul>
           </li>
         </ul>
-        <form class="form-inline navigations-main-navbar-form" role="search">
-          <input type="text" class="form-control ml-xl-4 navigations-main-navbar-form-control" placeholder="{{_ 'header.navbarSearchPlaceholder' }}">
-          <button type="submit" class="btn btn-outline-success ml-xl-1 navigations-main-navbar-form-button">{{_ 'header.navbarSearchButton' }}</button>
+        <form class="navigations-main__search  form-inline" role="search">
+          <input type="text" class="navigations-main__search-input  form-control ml-xl-4" placeholder="{{_ 'header.navbarSearchPlaceholder' }}">
+          <button type="submit" class="navigations-main__search-button  btn btn-outline-success ml-xl-1">{{_ 'header.navbarSearchButton' }}</button>
         </form>
-        <ul class="navbar-nav ml-auto navigations-main-navbar-list">
-          <li class="navbar-item navigations-main-navbar-item">
-            <a class="nav-link navigations-main-navbar-link" href="https://github.com/2Associes/meteor-boilerplate">
+        <ul class="navigation-main__menu-list  navbar-nav ml-auto">
+          <li class="navigation-main__menu-item  navbar-item">
+            <a class="navigation-main__link  nav-link" href="https://github.com/2Associes/meteor-boilerplate">
               GitHub
             </a>
           </li>
           {{#if currentUser}}
-          <li class="navbar-item navigations-main-navbar-item dropdown navigations-main-navbar-dropdown">
-            <a id="current-user-username" href="#" class="nav-link dropdown-toggle navigations-main-navbar-link navigations-main-navbar-link-dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <li class="navigation-main__menu-item  navbar-item dropdown">
+            <a id="current-user-username" href="#" class="navigation-main__link  nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
               {{_ 'header.navbarGreetings' }} {{currentUserIdentity}} <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu mb-3 mb-xl-0 navigations-main-navbar-link-dropdown-list">
-              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+            <ul class="navigations-main__dropdown-list  dropdown-menu mb-3 mb-xl-0">
+              <li class="navigations-main__dropdown-item  dropdown-item">
+                <a class="navigation-main__link" href="#">
                   {{_ 'header.navbarProfile' }}
                 </a>
               </li>
-              <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                <a class="navigations-main-navbar-link-dropdown-link" href="#">
+              <li class="navigations-main__dropdown-item  dropdown-item">
+                <a class="navigation-main__link" href="#">
                   {{_ 'header.navbarSettings' }}
                 </a>
               </li>
               {{#if isInRole 'admin' 'default-group'}}
-                <li role="separator" class="dropdown-divider navigations-main-navbar-link-dropdown-divider"></li>
-                <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                  <a class="navigations-main-navbar-link-dropdown-link" href="{{pathFor 'adminStyleGuide'}}">
+                <li role="separator" class="navigations-main__menu-divider  dropdown-divider"></li>
+                <li class="navigations-main__dropdown-item  dropdown-item">
+                  <a class="navigation-main__link" href="{{pathFor 'styleGuide'}}">
                     {{_ 'header.navbarStyleGuide' }}
                   </a>
                 </li>
-                <li class="dropdown-item navigations-main-navbar-link-dropdown-item">
-                  <a class="navigations-main-navbar-link-dropdown-link" href="{{pathFor 'adminHome'}}">
+                <li class="navigations-main__dropdown-item  dropdown-item">
+                  <a class="navigation-main__link" href="{{pathFor 'adminHome'}}">
                     {{_ 'header.navbarAdmin' }}
                   </a>
                 </li>
@@ -97,10 +97,10 @@
             </ul>
           </li>
           {{/if}}
-          <li class="navbar-item navigations-main-navbar-item">
+          <li class="navigation-main__menu-item  navbar-item">
             {{> atNavButton}}
           </li>
-          <li class="navbar-item navigations-main-navbar-item">
+          <li class="navigation-main__menu-item  navbar-item">
             {{> languageSwitcher}}
           </li>
         </ul>
