@@ -1,164 +1,124 @@
-# This configuration was automatically generated from a CircleCI 1.0 config.
-# It should include any build commands you had along with commands that CircleCI
-# inferred from your project structure. We strongly recommend you read all the
-# comments in this file to understand the structure of CircleCI 2.0, as the idiom
-# for configuration has changed substantially in 2.0 to allow arbitrary jobs rather
-# than the prescribed lifecycle of 1.0. In general, we recommend using this generated
-# configuration as a reference rather than using it in production, though in most
-# cases it should duplicate the execution of your original 1.0 config.
+defaults: &defaults
+  docker:
+    - image: circleci/node:8.11.4-jessie-browsers
+  working_directory: ~/2associes/meteor-boilerplate
+  parallelism: 1
+  shell: /bin/bash --login
+  environment:
+    CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
+    CIRCLE_TEST_REPORTS: /tmp/circleci-test-reports
+
+aliases:
+  - &restore-cache
+    keys:
+      - v1-dependencies-{{ checksum "package.json" }}
+      - v1-dependencies-
+  - &save-cache
+    paths:
+      - node_modules
+      - ~/.meteor
+      - ~/.npm
+    key: v1-dependencies-{{ checksum "package.json" }}
+  - &install-meteor
+    name: Install Meteor
+    command: |
+      if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
+      if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
+      npm install
+  - &install-chrome
+    name: Install Chrome
+    command: |
+      wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+      sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+      sudo apt-get update
+      sudo apt-get -y install google-chrome-stable
+
 version: 2
 jobs:
   build:
-    working_directory: ~/2Associes/meteor-boilerplate
-    parallelism: 1
-    shell: /bin/bash --login
-    # CircleCI 2.0 does not support environment variables that refer to each other the same way as 1.0 did.
-    # If any of these refer to each other, rewrite them so that they don't or see https://circleci.com/docs/2.0/env-vars/#interpolating-environment-variables-to-set-other-environment-variables .
-    environment:
-      CIRCLE_ARTIFACTS: /tmp/circleci-artifacts
-      CIRCLE_TEST_REPORTS: /tmp/circleci-test-results
-    # In CircleCI 1.0 we used a pre-configured image with a large number of languages and other packages.
-    # In CircleCI 2.0 you can now specify your own image, or use one of our pre-configured images.
-    # The following configuration line tells CircleCI to use the specified docker image as the runtime environment for you job.
-    # We have selected a pre-built image that mirrors the build environment we use on
-    # the 1.0 platform, but we recommend you choose an image more tailored to the needs
-    # of each job. For more information on choosing an image (or alternatively using a
-    # VM instead of a container) see https://circleci.com/docs/2.0/executor-types/
-    # To see the list of pre-built images that CircleCI provides for most common languages see
-    # https://circleci.com/docs/2.0/circleci-images/
-    docker:
-      - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
-        command: /sbin/init
+    <<: *defaults
     steps:
-    # Machine Setup
-    #   If you break your build into multiple jobs with workflows, you will probably want to do the parts of this that are relevant in each
-    # The following `checkout` command checks out your code to your working directory. In 1.0 we did this implicitly. In 2.0 you can choose where in the course of a job your code should be checked out.
     - checkout
-    # Prepare for artifact and test results  collection equivalent to how it was done on 1.0.
-    # In many cases you can simplify this from what is generated here.
-    # 'See docs on artifact collection here https://circleci.com/docs/2.0/artifacts/'
     - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
-    # This is based on your 1.0 configuration file or project settings
-    - run:
-        working_directory: ~/2Associes/meteor-boilerplate
-        command: nvm install 8.12.0 && nvm alias default 8.12.0
-    # Dependencies
-    #   This would typically go in either a build or a build-and-test job when using workflows
-    # Restore the dependency cache
-    - restore_cache:
-        keys:
-        # This branch if available
-        - v1-dep-{{ .Branch }}-
-        # Default branch if not
-        - v1-dep-master-
-        # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
-        - v1-dep-
-    # This is based on your 1.0 configuration file or project settings
-    - run: if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
-    - run: if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
-    - run: npm install -g chimp
-    - run: npm install
-    # This is based on your 1.0 configuration file or project settings
-    - run: meteor --version
-    # Save dependency cache
-    - save_cache:
-        key: v1-dep-{{ .Branch }}-{{ epoch }}
-        paths:
-        # This is a broad list of cache paths to include many possible development environments
-        # You can probably delete some of these entries
-        - vendor/bundle
-        - ~/virtualenvs
-        - ~/.m2
-        - ~/.ivy2
-        - ~/.bundle
-        - ~/.go_workspace
-        - ~/.gradle
-        - ~/.cache/bower
-        # These cache paths were specified in the 1.0 config
-        - node_modules
-        - ~/.npm
-        - ~/.meteor
-        - ./node_modules
-    # Test
-    #   This would typically be a build job when using workflows, possibly combined with build
-    # This is based on your 1.0 configuration file or project settings
+    - restore_cache: *restore-cache
+    - run: node --version
+    - run: *install-meteor
+    - run: sudo npm install -g wait-on
+    - run: *install-chrome
+    - run: node --version && npm --version && java -version && meteor --version && google-chrome --version;
+    - save_cache: *save-cache
     - run: echo $SETTINGS_DEVELOPMENT > settings-development.json
     - run:
-        command: npm run dev
+        name: Run test application
+        command: npm run test
         background: true
-    - run: sleep 30
-    # Install Chrome
     - run:
-        name: Install Chrome
-        command: |
-          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
-          sudo apt-get update
-          sudo apt-get -y install google-chrome-stable
-    - run: npm run test
-    # Deployment
-    # Your existing circle.yml file contains deployment steps.
-    # The config translation tool does not support translating deployment steps
-    # since deployment in CircleCI 2.0 are better handled through workflows.
-    # See the documentation for more information https://circleci.com/docs/2.0/workflows/
-    # Teardown
-    #   If you break your build into multiple jobs with workflows, you will probably want to do the parts of this that are relevant in each
-    # Save test results
-    - store_test_results:
-        path: /tmp/circleci-test-results
-    # Save artifacts
-    - store_artifacts:
-        path: /tmp/circleci-artifacts
-    - store_artifacts:
-        path: /tmp/circleci-test-results
+        name: Wait for application to start
+        command: wait-on http://localhost:3000 --httpTimeout 240000 # 4 minutes
+    # - run: mkdir reports
+    # - run:
+    #     name: Run Chimp tests
+    #     command: npm run chimp-test
+    # - store_test_results:
+    #     path: reports
+    # - store_artifacts:
+    #     path: ./reports/mocha/test-results.xml
   deploy_on_staging:
-    working_directory: ~/2Associes/meteor-boilerplate
-    shell: /bin/bash --login
-    docker:
-      - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
-        command: /sbin/init
+    <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-          # This branch if available
-          - v1-dep-{{ .Branch }}-
-          # Default branch if not
-          - v1-dep-master-
-          # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
-          - v1-dep-
-      - run: if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
-      - run: if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
-      - run: meteor --version
+      - restore_cache: *restore-cache
+      - run: *install-meteor
+      - save_cache: *save-cache
       - run: echo $SETTINGS_STAGING > settings-staging.json
       - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
       - run:
-          working_directory: ~/2Associes/meteor-boilerplate
-          command: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json --owner 2associes
+          name: Deploy to Staging
+          command: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_STAGING --settings settings-staging.json --owner 2associes --deploy-polling-timeout 1200000
+          no_output_timeout: 30m
   deploy_on_production:
-    working_directory: ~/2Associes/meteor-boilerplate
-    shell: /bin/bash --login
-    docker:
-      - image: circleci/build-image:ubuntu-14.04-XXL-upstart-1189-5614f37
-        command: /sbin/init
+    <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          keys:
-          # This branch if available
-          - v1-dep-{{ .Branch }}-
-          # Default branch if not
-          - v1-dep-master-
-          # Any branch if there are none on the default branch - this should be unnecessary if you have your default branch configured correctly
-          - v1-dep-
-      - run: if [ -d ~/.meteor ]; then sudo ln -s ~/.meteor/meteor /usr/local/bin/meteor; fi
-      - run: if [ ! -e $HOME/.meteor/meteor ]; then curl https://install.meteor.com | sh; fi
-      - run: meteor --version
+      - restore_cache: *restore-cache
+      - run: *install-meteor
+      - save_cache: *save-cache
       - run: echo $SETTINGS > settings.json
       - run: echo $DEPLOYMENT_TOKEN > deployment_token.json
       - run:
-          working_directory: ~/2Associes/meteor-boilerplate
-          command: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_PRODUCTION --settings settings.json --owner 2associes
+          name: Deploy to Production
+          command: METEOR_SESSION_FILE=deployment_token.json DEPLOY_HOSTNAME=us-east-1.galaxy-deploy.meteor.com meteor deploy $DEPLOY_HOSTNAME_PRODUCTION --settings settings.json --owner 2associes --deploy-polling-timeout 1200000
+          no_output_timeout: 30m
+  run_audit:
+    docker:
+      - image: kporras07/lighthouse-ci
+    steps:
+      - checkout
+      - run:
+          name: Run lighthouse against staging environment
+          environment:
+            TEST_URL: https://meteor-boilerplate.staging.2associes.net
+          command: |
+            lighthouse $TEST_URL \
+              --port=9222 \
+              --chrome-flags=\"--headless\" \
+              --output-path=/home/chrome/reports/anonymous-"$(echo -n $CIRCLE_SHELL_ENV | md5sum | awk '{print $1}')" \
+              --output=json \
+              --output=html
+      - persist_to_workspace:
+          root: /home/chrome
+          paths:
+            - reports
+  report:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache: *restore-cache
+      - attach_workspace:
+          at: "."
+      - store_artifacts:
+          path: reports
+          destination: reports
 workflows:
   version: 2
   build_and_test:
@@ -170,6 +130,12 @@ workflows:
           filters:
             branches:
               only: develop
+      - run_audit:
+          requires:
+            - deploy_on_staging
+      - report:
+          requires:
+            - run_audit
       - deploy_on_production:
           requires:
             - build
