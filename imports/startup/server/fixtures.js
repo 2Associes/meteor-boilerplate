@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import { Paragraphs } from '../../api/paragraphs'
-import { generateParagraphs, generateUsers } from '../../modules/fixtures'
+import { generateParagraphs, generateUsers } from '../../utils/server/fixtures'
 
 if (Meteor.settings.private.fixtures) {
   // if the database is empty on server start, create some sample data.

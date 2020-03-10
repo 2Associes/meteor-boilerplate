@@ -1,5 +1,5 @@
 import { Template } from 'meteor/templating'
-import setPageTitle from '../../modules/setPageTitle'
+import { setPageTitle } from '../../modules/head'
 
 import './not-found.html'
 

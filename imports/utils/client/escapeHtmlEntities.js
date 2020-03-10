@@ -1,6 +1,6 @@
 const escapeEl = document.createElement('textarea')
 
-export function escapeHTMLEntities(str) {
+export default function escapeHtmlEntities(str) {
   let result = str
 
   if (typeof result === 'string') {

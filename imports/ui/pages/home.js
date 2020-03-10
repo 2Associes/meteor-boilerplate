@@ -5,7 +5,7 @@ import { ReactiveDict } from 'meteor/reactive-dict'
 import { TAPi18n } from 'meteor/tap:i18n'
 import { Paragraphs } from '../../api/paragraphs'
 import { types as errorTypes, getErrorMessage } from '../../modules/validation'
-import setPageTitle from '../../modules/setPageTitle'
+import { setPageTitle } from '../../modules/head'
 
 import ExampleInput from '../components/example-input'
 import './home.html'
