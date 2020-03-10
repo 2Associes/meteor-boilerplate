@@ -17,7 +17,7 @@ Template.home.onCreated(function () {
   TAPi18n.subscribe('paragraphs')
 
   // Create reactive form data
-  this.formData = new ReactiveDict('formData', {
+  this.formData = new ReactiveDict({
     text: ''
   })
 
