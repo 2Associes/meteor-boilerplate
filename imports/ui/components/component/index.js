@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating'
 
-import './component.html'
+import './template.html'
 
 /**
  * Component

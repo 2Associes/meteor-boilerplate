@@ -1,6 +1,6 @@
 import { Template } from 'meteor/templating'
 
-import './loading.html'
+import './template.html'
 
 // Template.registerHelper('getBody', function () {
 //   return Session.get('splashLoaded') ? 'homeIndex' : 'loading'

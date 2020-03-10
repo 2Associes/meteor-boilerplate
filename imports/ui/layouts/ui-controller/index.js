@@ -3,7 +3,7 @@ import { Template } from 'meteor/templating'
 import { ReactiveVar } from 'meteor/reactive-var'
 import { Roles } from 'meteor/alanning:roles'
 
-import './ui-controller.html'
+import './template.html'
 
 /**
  * Ui Controller
