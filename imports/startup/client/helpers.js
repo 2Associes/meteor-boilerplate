@@ -6,7 +6,7 @@ import moment from 'moment'
 
 import { escapeHTMLEntities } from '../../modules/escape-html-entities'
 
-const boilerplateRelease = '1.20.0'
+const boilerplateRelease = '1.21.0'
 
 Template.registerHelper('boilerplateRelease', function () {
   return boilerplateRelease
