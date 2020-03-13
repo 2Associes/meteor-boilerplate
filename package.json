@@ -2,52 +2,16 @@
   "name": "2associes-meteor-boilerplate",
   "private": true,
   "scripts": {
-    "start": "meteor run",
+    "start": "npm run dev",
     "dev": "meteor run --settings settings-development.json",
-    "test": "chimp --ddp=http://localhost:3000 --browser=chrome --path=tests",
-    "test-watch": "chimp --watch --ddp=http://localhost:3000 --browser=chrome --path=tests",
+    "dev:test": "meteor run --settings settings-test.json",
+    "dev:prod": "meteor run --production --settings settings.json",
+    "test": "meteor test --full-app --driver-package tmeasday:acceptance-test-driver --settings settings-development.json",
+    "chimp-watch": "node_modules/.bin/chimpy --ddp=http://localhost:3000 --watch --mocha --path=tests",
+    "chimp-test": "node_modules/.bin/chimpy ./tests/_chimp_config.js --ddp=http://localhost:3000 --mocha --path=tests",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "pretest": "npm run lint --silent"
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "allowImportExportEverywhere": true
-    },
-    "plugins": [
-      "meteor"
-    ],
-    "extends": [
-      "airbnb",
-      "plugin:meteor/recommended"
-    ],
-    "settings": {
-      "import/resolver": "meteor"
-    },
-    "rules": {
-      "semi": [
-        "error",
-        "never"
-      ],
-      "comma-dangle": [
-        "error",
-        "never"
-      ],
-      "max-len": "off",
-      "no-undef": "off",
-      "no-undef-init": "off",
-      "import/extensions": "off",
-      "import/no-extraneous-dependencies": "off",
-      "func-names": "off",
-      "meteor/no-template-lifecycle-assignments": "off",
-      "object-shorthand": "off",
-      "prefer-arrow-callback": "off",
-      "no-restricted-syntax": "off",
-      "import/prefer-default-export": "off",
-      "linebreak-style": "off",
-      "no-underscore-dangle": "off"
-    }
   },
   "postcss": {
     "plugins": {
@@ -59,32 +23,33 @@
     }
   },
   "dependencies": {
-    "@babel/runtime": "^7.1.5",
+    "@babel/runtime": "^7.7.2",
     "babel-runtime": "^6.23.0",
     "bcrypt": "^3.0.2",
     "bootstrap": ">=4.3.1",
-    "chimp": "^0.51.1",
     "core-js": "^2.5.7",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.3.1",
-    "meteor-node-stubs": "^0.4.1",
+    "handlebars": "^4.7.3",
+    "jquery": "^3.4.1",
+    "meteor-node-stubs": "^1.0.0",
+    "mjml": "^4.5.1",
     "moment": "^2.22.2",
     "popper.js": "^1.14.5",
     "simpl-schema": "^1.5.3",
-    "deep-extend": ">=0.5.1",
-    "cryptiles": ">=4.1.2",
-    "hapi": ">=11.1.3",
-    "hoek": ">=4.2.1"
+    "wait-on": "^4.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.3.1",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.9.0",
-    "eslint-config-airbnb": "^17.1.0",
+    "autoprefixer": "^9.7.4",
+    "babel-eslint": "^10.1.0",
+    "chimpy": "^2.0.0",
+    "chromedriver": "^79.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-meteor": "^5.1.0",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-meteor": "^6.0.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1"
   }
 }

@@ -1,4 +1,6 @@
+import { Meteor } from 'meteor/meteor'
 import { Tracker } from 'meteor/tracker'
+import { Session } from 'meteor/session'
 import { TAPi18n } from 'meteor/tap:i18n'
 import { T9n } from 'meteor/softwarerero:accounts-t9n'
 import moment from 'moment'
@@ -14,6 +16,11 @@ const getUserLanguage = function () {
 
 Meteor.startup(() => {
   TAPi18n.setLanguage(getUserLanguage())
+    .done(() => {
+      Session.set({
+        languageReady: true
+      })
+    })
   T9n.setLanguage(getUserLanguage())
 
   // Runs whenever language is changed

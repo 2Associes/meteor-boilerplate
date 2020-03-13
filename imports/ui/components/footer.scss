@@ -1,9 +1,9 @@
 // Footer styles here
 .footer {
-  @extend .container;
   margin-top: 30px;
-}
 
-.footer-copyright {
-  @extend .text-center, .text-muted;
+  &__copyright {
+    color: $text-muted;
+    text-align: center;
+  }
 }

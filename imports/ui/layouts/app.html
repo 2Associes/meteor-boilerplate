@@ -1,9 +1,9 @@
 <template name="app">
   <div class="app {{ currentRouteClassname }}">
     {{#transition in="fadeIn"}}
-      {{> Template.dynamic template=header}}
+      {{> header}}
       {{> Template.dynamic template=main}}
-      {{> Template.dynamic template=footer}}
+      {{> footer}}
     {{/transition}}
   </div>
 </template>

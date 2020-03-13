@@ -1,8 +1,19 @@
 {
-  "glossary": {},
+  "glossary": {
+    "preview": "Preview"
+  },
+  "errors": {
+    "types": {
+      "IS_REQUIRED": "Required",
+      "TOO_SHORT": "Too short (__minLength__ characters minimum)"
+    }
+  },
   "head": {
-    "title": "Meteor Boilerplate",
-    "description": "Build up your Meteor App."
+    "titlePattern": "__title__ | 2 Associés Meteor Boilerplate",
+    "titles": {
+      "home": "Home",
+      "notFound": "Page introuvable"
+    }
   },
   "header": {
     "menuIcon": "Toggle navigation",
@@ -30,7 +41,17 @@
   },
   "pages": {
     "adminHomeTitle": "Administration",
-    "adminStyleGuideTitle": "Style Guide"
+    "adminStyleGuideTitle": "Style Guide",
+    "home": {
+      "formFields": {
+        "text": {
+          "label": "Text"
+        },
+        "addNewParagraph": {
+          "label": "Add a new paragraph"
+        }
+      }
+    }
   },
   "addToHomeScreen": {
     "bodyText": "Install this web app on your device: tap <img src=\"/images/icons/ios-share.svg\" class=\"add-to-home-screen-share-icon\"> and then <strong>Add to Home Screen.</strong>",

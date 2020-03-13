@@ -10,8 +10,8 @@ A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 
 ### Prerequisites
 
-* [Node.js][2] >= v8.12.0
-* [npm][4] >= 6.4.1
+* [Node.js][2] >= v12.14.0
+* [npm][4] >= 6.13.7
 
 ```
 node -v && npm -v
@@ -20,46 +20,46 @@ node -v && npm -v
 We recommand using [Node Version Manager][3] but [Yarn][5] can also be used.
 
 ```
-nvm install v8.12.0
-nvm use v8.12.0
+nvm install v12.14.0
+nvm use v12.14.0
 ```
 
 ### Installation
 
 1. Clone this repo to `<yourapp>` :  
 
-	```
-	git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>
-	```
+  ```
+  git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>
+  ```
 
 2. Change directory to `<yourapp>` and remove `.git` :  
 
-	```
-	cd <yourapp> && rm -rf .git
-	```
+  ```
+  cd <yourapp> && rm -rf .git
+  ```
 3. Install npm packages :
 
-	```
-	meteor npm install
-	```
+  ```
+  meteor npm install
+  ```
 4. Start `meteor` :  
 
-	```
-	meteor npm run dev
-	```
+  ```
+  meteor npm run dev
+  ```
 5. Run [Chimp][1] acceptance tests once or in `@watch` mode :
 
-	```
-	meteor npm run test
-	```
-	```
-	meteor npm run test-watch
-	```
+  ```
+  meteor npm run test
+  ```
+  ```
+  meteor npm run test-watch
+  ```
 6. When you're ready to start, you should clean up the Database, otherwise you're going to have the project collections and data within you're project :
 
-	```
-	meteor reset
-	```
+  ```
+  meteor reset
+  ```
 
 
 ### Collections

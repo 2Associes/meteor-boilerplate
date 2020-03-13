@@ -1,39 +1,16 @@
 import { FlowRouter } from 'meteor/kadira:flow-router'
 import { BlazeLayout } from 'meteor/kadira:blaze-layout'
+import { AccountsTemplates } from 'meteor/useraccounts:core'
 
 import '../../ui/layouts/app'
 import '../../ui/pages/not-found'
 import '../../ui/components/loading'
-import '../../ui/components/header'
-import '../../ui/components/footer'
 
-import '../../ui/components/ui-controller'
+import '../../ui/layouts/ui-controller'
 
 const home = () => import('../../ui/pages/home')
-const adminStyleGuide = () => import('../../ui/pages/admin/admin-style-guide')
+const styleGuide = () => import('../../ui/pages/admin/style-guide')
 const adminHome = () => import('../../ui/pages/admin/admin-home')
-const featuresReactiveForm = () => import('../../ui/pages/features/features-reactive-form')
-
-async function renderAdmin(uiData) {
-  BlazeLayout.render('uiController', {
-    default: {
-      template: 'app',
-      header: 'header',
-      main: 'atForm',
-      state: 'signIn',
-      footer: 'footer'
-    },
-    loggedIn: {
-      main: 'notFound'
-    },
-    isInRole: [
-      {
-        roles: ['admin'],
-        ...uiData
-      }
-    ]
-  })
-}
 
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {
@@ -44,16 +21,11 @@ async function renderAdmin(uiData) {
 
 FlowRouter.route('/', {
   name: 'home',
-  // Subscriptions registered here don't have Fast Render support.
-  // subscriptions: function() {},
   async action() {
     await home()
     BlazeLayout.render('uiController', {
-      default: {
-        template: 'app',
-        header: 'header',
-        main: 'home',
-        footer: 'footer'
+      templates: {
+        main: 'home'
       }
     })
   },
@@ -63,11 +35,8 @@ FlowRouter.route('/', {
 FlowRouter.notFound = {
   action() {
     BlazeLayout.render('uiController', {
-      default: {
-        template: 'app',
-        header: 'header',
-        main: 'notFound',
-        footer: 'footer'
+      templates: {
+        main: 'notFound'
       }
     })
   },
@@ -79,12 +48,24 @@ const adminRoutes = FlowRouter.group({
   name: 'admin'
 })
 
+function renderAdminLayout(uiData) {
+  BlazeLayout.render('uiController', {
+    templates: {
+      ...uiData
+    },
+    options: {
+      authenticated: true,
+      roles: ['admin']
+    }
+  })
+}
+
 adminRoutes.route('/style-guide', {
-  name: 'adminStyleGuide',
+  name: 'styleGuide',
   async action() {
-    await adminStyleGuide()
-    renderAdmin({
-      main: 'adminStyleGuide'
+    await styleGuide()
+    renderAdminLayout({
+      main: 'styleGuide'
     })
   },
   classname: 'admin-style-guide'
@@ -94,27 +75,11 @@ adminRoutes.route('/home', {
   name: 'adminHome',
   async action() {
     await adminHome()
-    renderAdmin({
+    renderAdminLayout({
       main: 'adminHome'
     })
   },
   classname: 'admin-home'
-})
-
-const features = adminRoutes.group({
-  prefix: '/features',
-  name: 'features'
-})
-
-features.route('/reactive-form', {
-  name: 'features-reactive-form',
-  async action() {
-    await featuresReactiveForm()
-    renderAdmin({
-      main: 'featuresReactiveForm'
-    })
-  },
-  classname: 'features features-reactive-form'
 })
 
 // Configure Accounts Templates default

@@ -1,1 +1,8 @@
 // Override bootstrap style here
+.container {
+  &--small {
+    @include media-breakpoint-up(md) {
+      max-width: map-get($grid-breakpoints, sm);
+    }
+  }
+}

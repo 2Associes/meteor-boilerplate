@@ -1,1 +1,158 @@
-// Boostrap additions
+// Variables
+//
+// Vendor config and custom variables
+// See "node_modules/bootstrap/scss/_variables.css" for bootstrap config
+//
+// Remove !default when changing values
+
+//
+// Scaling setup
+//
+
+$font-size-root: 16;
+$max-viewport-width: null; // Activates rem scaling above that width
+
+//
+// Unit functions
+//
+
+// Convert px to rem
+
+@function rem($px) {
+  @return $px * 1rem / $font-size-root;
+}
+
+// Convert px to em
+
+@function em($px, $base: $font-size-root) {
+  @return ($px * 1em / $base);
+}
+
+//
+// Font Awesome
+//
+
+$fa-font-path: "//netdna.bootstrapcdn.com/font-awesome/4.7.0/fonts"; // for referencing Bootstrap CDN font files directly
+
+//
+// Grid
+//
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px
+) !default;
+
+$grid-columns:                12 !default;
+$grid-gutter-width:           30px !default;
+
+//
+// Colors
+//
+
+$white:    #fff !default;
+$gray-100: #f8f9fa !default;
+$gray-200: #e9ecef !default;
+$gray-300: #dee2e6 !default;
+$gray-400: #ced4da !default;
+$gray-500: #adb5bd !default;
+$gray-600: #6c757d !default;
+$gray-700: #495057 !default;
+$gray-800: #343a40 !default;
+$gray-900: #212529 !default;
+$black:    #000 !default;
+
+$grays: () !default;
+
+$blue:    #007bff !default;
+$indigo:  #6610f2 !default;
+$purple:  #6f42c1 !default;
+$pink:    #e83e8c !default;
+$red:     #dc3545 !default;
+$orange:  #fd7e14 !default;
+$yellow:  #ffc107 !default;
+$green:   #28a745 !default;
+$teal:    #20c997 !default;
+$cyan:    #17a2b8 !default;
+
+$colors: () !default;
+
+// Theme
+
+$primary:       $blue !default;
+$secondary:     $gray-600 !default;
+$success:       $green !default;
+$info:          $cyan !default;
+$warning:       $yellow !default;
+$danger:        $red !default;
+$light:         $gray-100 !default;
+$dark:          $gray-800 !default;
+
+$theme-colors: () !default;
+
+$body-bg:       $white !default;
+$body-color:    $gray-900 !default;
+
+//
+// Transitions
+//
+
+$transition-base-duration: 200ms;
+$transition-base:          $transition-base-duration ease-out;
+
+//
+// Typography
+//
+
+$font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+$font-family-base:            $font-family-sans-serif !default;
+
+$font-size-base:              1rem !default;
+$font-size-lg:                $font-size-base * 1.25 !default;
+$font-size-sm:                $font-size-base * .875 !default;
+
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+
+$font-weight-base:            $font-weight-normal !default;
+$line-height-base:            1.5 !default;
+
+$letter-spacing-base:         0em;
+
+//
+// z-index
+//
+
+// 0000–1999: Elements and Components
+
+// 2000–2999: Element and Component Drop Downs
+
+// 3000–3999: Secondary Navigation
+
+// 4000–4999: Header / Footer
+
+// 5000–5999: Primary Navigation
+
+// 6000–6999: Full Screen Features
+
+// 7000–7999: Special Cases
+
+// 8000–8999: Modals / Dialog Windows
+
+// 9000–9999: Notifications
+
+//
+// Buttons
+//

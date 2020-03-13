@@ -1,0 +1,14 @@
+{
+  "public": {
+    "env": "development",
+    "analyticsSettings": {
+      "Google Analytics" : {
+        "trackingId": "UA-000000-2"
+      }
+    }
+  },
+  "private": {
+    "fixtures": true,
+    "MAIL_URL": "smtp://example.com"
+  }
+}

@@ -1,0 +1,11 @@
+<template name="exampleInput">
+  <div class="form-group">
+    <label for="{{id}}">{{label}}</label>
+    <textarea class="form-control js-input-text {{_if errorMessage "is-invalid"}}" id="{{id}}">{{{value}}}</textarea>
+    {{#if errorMessage}}
+      <div class="invalid-feedback">
+        {{errorMessage}}
+      </div>
+    {{/if}}
+  </div>
+</template>
