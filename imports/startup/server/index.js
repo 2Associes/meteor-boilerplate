@@ -7,7 +7,7 @@ import './accounts'
 // Defines sendmail setup
 import './sendmail'
 
-// Register apis
+// Register api
 import './register-api.js'
 
 // Robots

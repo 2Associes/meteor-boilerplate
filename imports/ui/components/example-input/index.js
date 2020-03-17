@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating'
 
-import Component from './component'
-import './example-input.html'
+import Component from '../component'
+import './template.html'
 
 /**
  * Example Input

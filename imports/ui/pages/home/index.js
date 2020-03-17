@@ -3,12 +3,12 @@ import { Template } from 'meteor/templating'
 import { ReactiveVar } from 'meteor/reactive-var'
 import { ReactiveDict } from 'meteor/reactive-dict'
 import { TAPi18n } from 'meteor/tap:i18n'
-import { Paragraphs } from '../../api/paragraphs'
-import { types as errorTypes, getErrorMessage } from '../../modules/validation'
-import setPageTitle from '../../modules/setPageTitle'
+import { Paragraphs } from '../../../api/paragraphs'
+import { types as errorTypes, getErrorMessage } from '../../../modules/validation'
+import { setPageTitle } from '../../../modules/head'
 
-import ExampleInput from '../components/example-input'
-import './home.html'
+import ExampleInput from '../../components/example-input'
+import './template.html'
 
 Template.home.onCreated(function () {
   setPageTitle('home')
@@ -17,7 +17,7 @@ Template.home.onCreated(function () {
   TAPi18n.subscribe('paragraphs')
 
   // Create reactive form data
-  this.formData = new ReactiveDict('formData', {
+  this.formData = new ReactiveDict({
     text: ''
   })
 

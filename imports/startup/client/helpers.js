@@ -4,9 +4,9 @@ import { FlowRouter } from 'meteor/kadira:flow-router'
 import { Template } from 'meteor/templating'
 import moment from 'moment'
 
-import { escapeHTMLEntities } from '../../modules/escape-html-entities'
+import escapeHtmlEntities from '../../utils/client/escapeHtmlEntities'
 
-const boilerplateRelease = '1.21.0'
+const boilerplateRelease = '1.22.0'
 
 Template.registerHelper('boilerplateRelease', function () {
   return boilerplateRelease
@@ -145,7 +145,7 @@ Template.registerHelper('object', function (...args) {
 })
 
 Template.registerHelper('escape', function (str) {
-  return escapeHTMLEntities(str)
+  return escapeHtmlEntities(str)
 })
 
 Template.registerHelper('getProp', function (object, key) {

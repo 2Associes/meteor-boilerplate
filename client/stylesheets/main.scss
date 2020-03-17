@@ -56,10 +56,10 @@
 
 @import 'components/button';
 
-@import '{}/imports/ui/components/loading';
 @import '{}/imports/ui/components/accounts-templates';
-@import '{}/imports/ui/components/header';
-@import '{}/imports/ui/components/footer';
+@import '{}/imports/ui/components/loading/styles';
+@import '{}/imports/ui/components/header/styles';
+@import '{}/imports/ui/components/footer/styles';
 
 //
 // Layouts
@@ -67,7 +67,7 @@
 // https://sass-guidelin.es/#layouts-folder
 //
 
-@import '{}/imports/ui/layouts/app';
+@import '{}/imports/ui/layouts/app/styles';
 
 //
 // Pages
@@ -75,6 +75,6 @@
 // https://sass-guidelin.es/#pages-folder
 //
 
-@import '{}/imports/ui/pages/not-found';
-@import '{}/imports/ui/pages/home';
-@import '{}/imports/ui/pages/admin/style-guide';
+@import '{}/imports/ui/pages/not-found/styles';
+@import '{}/imports/ui/pages/home/styles';
+@import '{}/imports/ui/pages/admin/style-guide/styles';

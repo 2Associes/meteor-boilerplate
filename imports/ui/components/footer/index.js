@@ -1,7 +1,7 @@
 import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
 
-import './footer.html'
+import './template.html'
 
 Template.footer.helpers({
   meteorRelease() {
