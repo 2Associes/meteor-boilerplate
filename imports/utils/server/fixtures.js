@@ -2,7 +2,7 @@ import { Accounts } from 'meteor/accounts-base'
 import { Roles } from 'meteor/alanning:roles'
 import { _ } from 'meteor/underscore'
 import { faker } from 'meteor/digilord:faker'
-import { Paragraphs } from '../api/paragraphs'
+import { Paragraphs } from '../../api/paragraphs'
 
 export function generateParagraphs() {
   // No paragraph in the database... Create some sample paragraphs...

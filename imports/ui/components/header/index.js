@@ -1,8 +1,8 @@
 import { Meteor } from 'meteor/meteor'
 import { Template } from 'meteor/templating'
 
-import './language-switcher'
-import './header.html'
+import '../language-switcher'
+import './template.html'
 
 Template.header.onRendered(function () {
   const HEADER_IS_DOWN_CLASS = 'is-down'

@@ -1,6 +1,6 @@
 import { Meteor } from 'meteor/meteor'
 import { Accounts } from 'meteor/accounts-base'
-import { renderMjml } from '../../modules/email'
+import { renderMjml } from '../../utils/server/email'
 
 Meteor.startup(() => {
   // Uncomment if you use MAIL_URL in settings

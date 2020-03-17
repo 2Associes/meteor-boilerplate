@@ -10,7 +10,7 @@ import '../../ui/layouts/ui-controller'
 
 const home = () => import('../../ui/pages/home')
 const styleGuide = () => import('../../ui/pages/admin/style-guide')
-const adminHome = () => import('../../ui/pages/admin/admin-home')
+const adminHome = () => import('../../ui/pages/admin/home')
 
 // FlowRouter sample route
 // FlowRouter.route('/blog/:postId', {

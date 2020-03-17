@@ -9,6 +9,8 @@ import moment from 'moment'
 import 'moment/locale/en-ca'
 import 'moment/locale/fr-ca'
 
+Session.set({ languageReady: false })
+
 const getUserLanguage = function () {
   // Put here the logic for determining the user language
   return 'fr-CA'
