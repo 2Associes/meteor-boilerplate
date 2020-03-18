@@ -13,21 +13,20 @@
     "lint:fix": "eslint --fix .",
     "pretest": "npm run lint --silent"
   },
+  "browserslist": [
+    "last 2 versions"
+  ],
   "postcss": {
     "plugins": {
-      "autoprefixer": {
-        "browsers": [
-          "last 2 versions"
-        ]
-      }
+      "autoprefixer": {}
     }
   },
   "dependencies": {
     "@babel/runtime": "^7.7.2",
     "babel-runtime": "^6.23.0",
-    "bcrypt": "^3.0.2",
+    "bcrypt": "^4.0.1",
     "bootstrap": ">=4.3.1",
-    "core-js": "^2.5.7",
+    "core-js": "^3.6.4",
     "font-awesome": "^4.7.0",
     "handlebars": "^4.7.3",
     "jquery": "^3.4.1",
@@ -41,8 +40,8 @@
   "devDependencies": {
     "autoprefixer": "^9.7.4",
     "babel-eslint": "^10.1.0",
-    "chimpy": "^2.0.0",
-    "chromedriver": "^79.0.0",
+    "chimpy": "^3.0.3",
+    "chromedriver": "^80.0.1",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
