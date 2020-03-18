@@ -1,6 +1,6 @@
 defaults: &defaults
   docker:
-    - image: circleci/node:12.14.0-buster-browsers
+    - image: circleci/node:11.15.0-stretch-browsers
   working_directory: ~/2associes/meteor-boilerplate
   parallelism: 1
   shell: /bin/bash --login
@@ -41,7 +41,6 @@ jobs:
     - checkout
     - run: mkdir -p $CIRCLE_ARTIFACTS $CIRCLE_TEST_REPORTS
     - restore_cache: *restore-cache
-    - run: node --version
     - run: *install-meteor
     - run: sudo npm install -g wait-on
     - run: *install-chrome
