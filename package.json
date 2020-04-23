@@ -7,11 +7,62 @@
     "dev:test": "meteor run --settings settings-test.json",
     "dev:prod": "meteor run --production --settings settings.json",
     "test": "meteor test --full-app --driver-package tmeasday:acceptance-test-driver --settings settings-development.json",
-    "chimp-watch": "node_modules/.bin/chimpy --ddp=http://localhost:3000 --watch --mocha --path=tests",
-    "chimp-test": "node_modules/.bin/chimpy ./tests/_chimp_config.js --ddp=http://localhost:3000 --mocha --path=tests",
+    "wdio-test": "wdio wdio.config.js",
+    "wdio-watch": "npm run wdio-test -- --watch --spec",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "pretest": "npm run lint --silent"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "parserOptions": {
+      "allowImportExportEverywhere": true
+    },
+    "plugins": [
+      "meteor"
+    ],
+    "extends": [
+      "airbnb",
+      "plugin:meteor/recommended"
+    ],
+    "settings": {
+      "import/resolver": "meteor"
+    },
+    "rules": {
+      "semi": [
+        "error",
+        "never"
+      ],
+      "comma-dangle": [
+        "error",
+        "never"
+      ],
+      "func-names": "off",
+      "import/extensions": "off",
+      "import/no-extraneous-dependencies": "off",
+      "import/prefer-default-export": "off",
+      "linebreak-style": "off",
+      "max-len": "off",
+      "meteor/no-session": "off",
+      "meteor/no-template-lifecycle-assignments": "off",
+      "no-restricted-syntax": "off",
+      "no-undef": "off",
+      "no-undef-init": "off",
+      "no-underscore-dangle": "off",
+      "object-shorthand": "off",
+      "prefer-arrow-callback": "off",
+      "arrow-body-style": "off"
+    },
+    "overrides": [
+      {
+        "files": [
+          "tests/**/*.js"
+        ],
+        "rules": {
+          "no-console": "off"
+        }
+      }
+    ]
   },
   "browserslist": [
     "last 2 versions"
@@ -21,35 +72,68 @@
       "autoprefixer": {}
     }
   },
+  "meteor": {
+    "mainModule": {
+      "client": "client/main.js",
+      "server": "server/main.js"
+    }
+  },
   "dependencies": {
-    "@babel/runtime": "^7.7.2",
-    "babel-runtime": "^6.23.0",
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/register": "^7.9.0",
+    "@babel/runtime": "^7.9.2",
+    "aws-sdk": "^2.648.0",
     "bcrypt": "^4.0.1",
     "bootstrap": ">=4.3.1",
-    "core-js": "^3.6.4",
+    "circle-github-bot": "^2.0.1",
+    "faker": "^4.1.0",
     "fibers": "^4.0.2",
     "font-awesome": "^4.7.0",
     "handlebars": "^4.7.3",
     "jquery": "^3.4.1",
+    "libphonenumber-js": "^1.7.7",
+    "lodash": "^4.17.11",
     "meteor-node-stubs": "^1.0.0",
     "mjml": "^4.5.1",
     "moment": "^2.22.2",
+    "normalize-strings": "^1.1.0",
+    "outdated-browser-rework": "^2.9.0",
+    "owl.carousel": "^2.2.0",
+    "pikaday": "^1.7.0",
     "popper.js": "^1.14.5",
     "simpl-schema": "^1.5.3",
     "wait-on": "^4.0.1"
   },
   "devDependencies": {
-    "autoprefixer": "^9.7.4",
-    "babel-eslint": "^10.1.0",
-    "chimpy": "^3.0.3",
-    "chromedriver": "^80.0.1",
+    "@wdio/cli": "^5.22.3",
+    "@wdio/junit-reporter": "^5.22.4",
+    "@wdio/local-runner": "^5.22.3",
+    "@wdio/mocha-framework": "^5.18.7",
+    "@wdio/spec-reporter": "^5.22.4",
+    "@wdio/sync": "^5.20.1",
+    "autoprefixer": "^9.3.1",
+    "babel-eslint": "^10.0.1",
+    "chai": "^4.2.0",
+    "chromedriver": "^80.0.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-meteor": "^6.0.0",
-    "eslint-plugin-node": "^11.0.0",
-    "eslint-plugin-promise": "^4.2.1",
-    "eslint-plugin-standard": "^4.0.1"
+    "eslint-plugin-react": "^6.10.3",
+    "isomorphic-ws": "^4.0.1",
+    "simpleddp": "^2.2.4",
+    "wdio-chromedriver-service": "^5.0.2",
+    "ws": "^7.2.3"
+  },
+  "lighthouse": {
+    "requiredScores": {
+      "performance": 50,
+      "accessibility": 50,
+      "best-practices": 50,
+      "seo": 50
+    }
   }
 }
