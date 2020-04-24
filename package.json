@@ -11,57 +11,6 @@
     "lint:fix": "eslint --fix .",
     "pretest": "npm run lint --silent"
   },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "allowImportExportEverywhere": true
-    },
-    "plugins": [
-      "meteor"
-    ],
-    "extends": [
-      "airbnb",
-      "plugin:meteor/recommended"
-    ],
-    "settings": {
-      "import/resolver": "meteor"
-    },
-    "rules": {
-      "semi": [
-        "error",
-        "never"
-      ],
-      "comma-dangle": [
-        "error",
-        "never"
-      ],
-      "func-names": "off",
-      "import/extensions": "off",
-      "import/no-extraneous-dependencies": "off",
-      "import/prefer-default-export": "off",
-      "linebreak-style": "off",
-      "max-len": "off",
-      "meteor/no-session": "off",
-      "meteor/no-template-lifecycle-assignments": "off",
-      "no-restricted-syntax": "off",
-      "no-undef": "off",
-      "no-undef-init": "off",
-      "no-underscore-dangle": "off",
-      "object-shorthand": "off",
-      "prefer-arrow-callback": "off",
-      "arrow-body-style": "off"
-    },
-    "overrides": [
-      {
-        "files": [
-          "tests/**/*.js"
-        ],
-        "rules": {
-          "no-console": "off"
-        }
-      }
-    ]
-  },
   "browserslist": [
     "last 2 versions"
   ],
