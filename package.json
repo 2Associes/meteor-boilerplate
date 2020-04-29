@@ -30,7 +30,7 @@
     "core-js": "^2.5.7",
     "font-awesome": "^4.7.0",
     "handlebars": "^4.7.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "meteor-node-stubs": "^1.0.0",
     "mjml": "^4.5.1",
     "moment": "^2.22.2",
