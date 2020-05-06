@@ -2,3 +2,4 @@ node_modules/
 settings.json
 settings-development.json
 settings-staging.json
+reports
