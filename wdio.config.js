@@ -70,7 +70,7 @@ exports.config = {
   // =====
   // Hooks
   // =====
-  beforeSession: async function (config) {
+  beforeSession: function (config) {
     // Allow interaction with Meteor Server during tests
     // To learn more about this, see https://github.com/TheBrainFamily/chimpy/issues/152#issuecomment-600141534
 
@@ -90,7 +90,7 @@ exports.config = {
      */
     server.execute = async function (func, ...args) {
       let result
-      const timeout = config.waitforTimeout
+      const timeout = config.waitforTimeout || 500
 
       setTimeout(function () {
         if (!result) {
