@@ -10,8 +10,8 @@ A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 
 ### Prerequisites
 
-* [Node.js][2] >= v12.14.0
-* [npm][4] >= 6.13.7
+* [Node.js][2] >= v12.16.1
+* [npm][4] >= 6.14.4
 
 ```
 node -v && npm -v
@@ -20,8 +20,8 @@ node -v && npm -v
 We recommand using [Node Version Manager][3] but [Yarn][5] can also be used.
 
 ```
-nvm install v12.14.0
-nvm use v12.14.0
+nvm install v12.16.1
+nvm use v12.16.1
 ```
 
 ### Installation
@@ -47,20 +47,30 @@ nvm use v12.14.0
   ```
   meteor npm run dev
   ```
-5. Run [Chimp][1] acceptance tests once or in `@watch` mode :
 
-  ```
-  meteor npm run test
-  ```
-  ```
-  meteor npm run test-watch
-  ```
-6. When you're ready to start, you should clean up the Database, otherwise you're going to have the project collections and data within you're project :
+## Running tests
 
-  ```
-  meteor reset
-  ```
+1. Validate that you are running the latest Chromedriver:
 
+	```
+	npm install chromedriver@latest --save-dev
+	```
+
+2. Start local server for tests:
+
+	```
+	npm run test
+	```
+3. Execute all tests:
+
+	```
+	npm run wdio-test
+	```
+4. Execute and watch an individual test:
+
+	```
+	npm run wdio-watch tests/my-test.js
+	```
 
 ### Collections
 

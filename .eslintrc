@@ -31,7 +31,23 @@
   },
   "globals": {
     "$": "readonly",
-    "browser": "readonly",
     "Assets": "readonly"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["tests/**/*.js"],
+      "globals": {
+        "$$": "readonly",
+        "browser": "readonly",
+        "server": "readonly",
+        "assert": "readonly",
+        "describe": "readonly",
+        "it": "readonly",
+        "before": "readonly",
+        "after": "readonly",
+        "beforeEach": "readonly",
+        "afterEach": "readonly"
+      }
+    }
+  ]
 }
