@@ -47,20 +47,30 @@ nvm use v12.16.1
   ```
   meteor npm run dev
   ```
-5. Run [Chimp][1] acceptance tests once or in `@watch` mode :
 
-  ```
-  meteor npm run test
-  ```
-  ```
-  meteor npm run test-watch
-  ```
-6. When you're ready to start, you should clean up the Database, otherwise you're going to have the project collections and data within you're project :
+## Running tests
 
-  ```
-  meteor reset
-  ```
+1. Validate that you are running the latest Chromedriver:
 
+	```
+	npm install chromedriver@latest --save-dev
+	```
+
+2. Start local server for tests:
+
+	```
+	npm run test
+	```
+3. Execute all tests:
+
+	```
+	npm run wdio-test
+	```
+4. Execute and watch an individual test:
+
+	```
+	npm run wdio-watch tests/my-test.js
+	```
 
 ### Collections
 

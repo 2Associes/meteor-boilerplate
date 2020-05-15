@@ -7,6 +7,8 @@
     "dev:test": "meteor run --settings settings-test.json",
     "dev:prod": "meteor run --production --settings settings.json",
     "test": "meteor test --full-app --driver-package tmeasday:acceptance-test-driver --settings settings-development.json",
+    "wdio-test": "wdio wdio.config.js",
+    "wdio-watch": "npm run wdio-test -- --watch --spec",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "pretest": "npm run lint --silent"
