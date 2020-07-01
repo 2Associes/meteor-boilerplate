@@ -28,53 +28,69 @@ nvm use v12.16.1
 
 1. Clone this repo to `<yourapp>` :  
 
-  ```
-  git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>
-  ```
+    ```
+    git clone https://github.com/2associes/meteor-boilerplate.git <yourapp>
+    ```
 
 2. Change directory to `<yourapp>` and remove `.git` :  
 
-  ```
-  cd <yourapp> && rm -rf .git
-  ```
+    ```
+    cd <yourapp> && rm -rf .git
+    ```
 3. Install npm packages :
 
-  ```
-  meteor npm install
-  ```
+    ```
+    meteor npm install
+    ```
 4. Start `meteor` :  
 
-  ```
-  meteor npm run dev
-  ```
+    ```
+    meteor npm run dev
+    ```
 
 ## Running tests
 
 1. Validate that you are running the latest Chromedriver:
 
-	```
-	npm install chromedriver@latest --save-dev
-	```
+    ```
+    npm install chromedriver@latest --save-dev
+    ```
 
 2. Start local server for tests:
 
-	```
-	npm run test
-	```
+    ```
+    npm run test
+    ```
 3. Execute all tests:
 
-	```
-	npm run wdio-test
-	```
+    ```
+    npm run wdio-test
+    ```
 4. Execute and watch an individual test:
 
-	```
-	npm run wdio-watch tests/my-test.js
-	```
+    ```
+    npm run wdio-watch tests/my-test.js
+    ```
 
-### Collections
+## Collections
 
-This project make uses of [digilord:faker][6] to generate data to Paragraphs Collection (the 3 lorem ipsum paragraphs you see on the demo app). You can change this behavious by editing `/imports/startup/server/fixtures.js`
+This project make uses of [digilord:faker][6] to generate data to Paragraphs Collection (the 3 lorem ipsum paragraphs you see on the demo app). You can change this behaviour by editing `/imports/startup/server/fixtures.js`
+
+## Stylesheets
+
+You can find stylesheets in the `client/stylesheets` folder. The structure mostly follows Hugo Giraudel's *7 to 1 pattern* documented in their [Sass Guidelines](https://sass-guidelin.es/#the-7-1-pattern).
+
+### Components, pages and layouts
+
+Instead of keeping `components`, `pages`, and `layouts` folders inside `stylesheets` we are importing them from their javascript component folder.
+
+Note that a `components` folder could be added for css only components.
+
+### `vendors` vs `vendors-extensions`
+
+The `vendors` folder is meant for vendors import and configuration and the `vendors-extensions` folder is meant for selector overrides. This means you can add classes there that are meant to redefine the properties of vendors classes.
+
+For example, in `vendors/bootstrap` we are managing which bootstrap modules are imported. While in `vendors-extensions/bootstrap` we are adding a modifier to bootstrap's `.contrainer` class.
 
 ## Directory Structure
 
@@ -95,9 +111,15 @@ This project make uses of [digilord:faker][6] to generate data to Paragraphs Col
 │   ├── imports
 │   │   ├── api
 │   │   │   ├── paragraphs
+│   │   │   │   ├── server
+│   │   │   │   │   ├── publications
+│   │   │   │   ├── methods
+│   │   │   │   ├── model
 │   │   │   ├── users
+│   │   │   ├── schemas
 │   │   ├── modules
-│   │   │   ├── form
+│   │   │   ├── validation
+│   │   │   ├── head
 │   │   ├── startup
 │   │   │   ├── client
 │   │   │   ├── server
@@ -106,17 +128,18 @@ This project make uses of [digilord:faker][6] to generate data to Paragraphs Col
 │   │   │   ├── layouts
 │   │   │   ├── pages
 │   │   │   │   ├── admin
-│   │   │   │   ├── features
-│   │   │   │   │   ├── examples
+│   │   ├── utils
+│   │   │   ├── client
+│   │   │   ├── server
 │   ├── private
-|   │   ├── emails
+│   │   ├── emails
 │   ├── public
-|   │   ├── favicons
-|   │   ├── images
-|   │   ├── offline
+│   │   ├── favicons
+│   │   ├── images
+│   │   ├── offline
 │   ├── server
 │   ├── tests
-│   │   ├── step-definitions
+│   │   ├── utils
 ```
 
 ## Included Packages
