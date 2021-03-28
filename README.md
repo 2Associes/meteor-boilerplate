@@ -11,7 +11,7 @@ A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 ### Prerequisites
 
 * [Node.js][2] >= v12.16.1
-* [npm][4] >= 6.14.4
+* [npm][4] >= 6.14.8
 
 ```
 node -v && npm -v
