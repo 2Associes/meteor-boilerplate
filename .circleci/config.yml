@@ -1,6 +1,6 @@
 defaults: &defaults
   docker:
-    - image: circleci/node:11.15.0-stretch-browsers
+    - image: circleci/node:12.21.0-browsers
   working_directory: ~/2associes/meteor-boilerplate
   parallelism: 1
   shell: /bin/bash --login
