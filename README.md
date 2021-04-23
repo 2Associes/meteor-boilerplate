@@ -10,8 +10,8 @@ A boilerplate for Meteor projects using Sass, Font Awesome and Bootstrap 4.
 
 ### Prerequisites
 
-* [Node.js][2] >= v12.21.0
-* [npm][4] >= 6.14.11
+* [Node.js][2] >= v12.22.1
+* [npm][4] >= 6.14.12
 
 ```
 node -v && npm -v
@@ -20,8 +20,8 @@ node -v && npm -v
 We recommand using [Node Version Manager][3] but [Yarn][5] can also be used.
 
 ```
-nvm install v12.16.1
-nvm use v12.16.1
+nvm install v12.22.1
+nvm use v12.22.1
 ```
 
 ### Installation
