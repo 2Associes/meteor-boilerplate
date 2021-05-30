@@ -69,7 +69,7 @@
     "isomorphic-ws": "^4.0.1",
     "simpleddp": "^2.2.4",
     "wdio-chromedriver-service": "^5.0.2",
-    "ws": "^7.4.4"
+    "ws": "^7.4.6"
   },
   "lighthouse": {
     "requiredScores": {
