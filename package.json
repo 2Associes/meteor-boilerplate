@@ -42,7 +42,7 @@
     "jquery": "^3.6.0",
     "meteor-node-stubs": "^1.0.3",
     "mjml": "^4.9.0",
-    "moment": "^2.29.1",
+    "moment": "^2.29.2",
     "popper.js": "^1.14.5",
     "simpl-schema": "^1.10.2",
     "wait-on": "^6.0.0"
